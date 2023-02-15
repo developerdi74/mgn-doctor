@@ -1,0 +1,166 @@
+pre{
+	font-size: 16px !important;
+}
+.section_vrachi .row_vr{
+	margin-bottom: 20px;
+	border:  1px solid #B5B7BA;
+	overflow: hidden;
+}
+
+.section_vrachi .row_vr img{
+	max-height:  100%;
+}
+.section_vrachi .row_vr .cnt_vr{
+	display: flex;
+	margin: 20px;
+}
+.section_vrachi .img_vr{
+	max-width: 180px;
+	max-height:  180px;
+	border-radius: 100px;
+	overflow: hidden;
+	margin-right:27px;
+}
+
+.section_vrachi .name-vr{
+	font-family: 'Mont';
+	font-style: normal;
+	font-weight: 800;
+	font-size: 20px;
+	line-height: 26px;
+	color: #2C3E50;
+	margin-bottom: 18px;
+}
+
+.section_vrachi .name-cherta-vr{
+	position: relative;
+	width: 100px;
+	height: 8px;
+	left: 0px;
+	top: -15px;
+	background: #7CA82B;
+}
+.section_vrachi .price_vr{
+	font-size: 16px;
+	color: #2C3E50;
+	margin-top: 15px;
+	font-weight: bold;
+}
+
+ .section_vrachi .save-btn-vr{
+	width:  174px;
+	height:  44px;
+	background: #7CA82B;
+	color: #fff;
+	padding: 15px 45px;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	display: block;
+	line-height: 16px;
+    position: absolute;
+    bottom: 0px;
+    right: 40px;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+}
+
+.section_vrachi .save-btn-vr:hover{
+	text-decoration: none;
+    background-color: transparent;
+    border: 1px solid var(--green-color);
+    color: var(--green-color);
+}
+.section_vrachi .save_vr{
+	margin-left: auto;
+	position: relative;
+}
+
+.section_vrachi{
+    margin-right: -15px;
+    margin-left: -15px;
+
+}
+
+.spec-vr, .staz-vr,.category-vr{
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	color: #2C3E50;
+}
+.descrip_vr a{
+    font-style: normal;
+    font-size: 20px;
+    line-height: 26px;
+    color: #2C3E50;
+    margin-bottom: 15px;
+	font-weight: bold;
+}
+@media screen and (max-width: 700px){
+		.section_vrachi .save-btn-vr{
+			position: static;
+		}
+		.section_vrachi .row_vr .cnt_vr{
+			margin: 15px 5px;
+			display:flex;
+			flex-wrap: wrap;
+		}
+		.section_vrachi .save_vr{
+			margin-left: 0;
+			position: static;
+			text-align: right;
+			width: 100%;
+		}
+		.section_vrachi .price_vr{
+			margin-bottom: 10px;
+		}
+		.section_vrachi .img_vr{
+			width: 75px;
+			height:  75px;
+		}
+		.section_vrachi .save-btn-vr{
+			display: inline;
+			color: #7CA82B;
+			background: none;
+			margin:0px;
+			padding: 0px;
+			margin-right: 10px;
+		}
+		.descrip_vr{
+			width: 70%;
+		}
+		.section_vrachi .img_vr{
+			margin-right: 10px;
+		}
+			.descrip_vr a{
+			font-size: 16px;
+			font-weight: bold;
+			font-family: 'Fira Sans', sans-serif;
+			text-transform: uppercase;
+		}
+		.name-cherta-vr{
+			height: 3px !important;
+		}
+		.section_vrachi .name-vr a,.section_vrachi .name-vr{
+			line-height: 18px;
+		}
+
+		.all-our-specialists .all-our-specialists__title{
+			font-size: 16px;
+			margin: 0px;
+			margin-bottom: 15px;
+			line-height: 16px;
+		}
+}
+.descrip_vr a:hover{
+    text-decoration: none;
+}
+.img_vr a{
+
+}
+
+.name-vr h2{
+	margin: 0;
+	padding: 0;
+	line-height: 16px;
+}

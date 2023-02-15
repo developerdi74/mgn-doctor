@@ -1,0 +1,43 @@
+.all-specialists .row{
+	font-size: 16px;
+}
+
+.specialists-inner .row-all-specialists{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 470px;
+    margin-top: 30px;
+}
+.all-specialists a, .row-all-specialists a{
+	text-decoration: none;
+    color: var(--grey-color);
+    font-family: 'Fira Sans', sans-serif;
+}
+.delitel_vr{
+	display: none;
+	margin-left: -15px;
+	margin-top: 19px;
+	margin-bottom: 5px;
+}
+.block_row_vr{
+	margin-bottom: 20px;
+}
+@media screen and (max-width: 700px){
+
+	.specialists-inner .row-all-specialists{
+	    height: auto;
+	}
+		.block_row_vr{
+		padding-bottom: 25px;
+	    margin-top: 7px;
+		border-bottom:  1px solid #B2B3B3;
+		width: 100%;
+	}
+	.all-our-specialists .all-our-specialists__title{
+		font-size: 16px;
+		margin: 0px;
+		line-height: 16px;
+	}
+
+}
