@@ -449,10 +449,11 @@ $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 				<div class="services-prices row-white services-prices--desktop" style="margin-left: -15px; margin-right: -15px;">
 <!--					<div class="container services">-->
 						<div class="services">
+								<h1 class="page-title services-prices__title">Услуги и цены</h1>
 							<div class="row">
 								<div class="col-4">
 									<div class="row top-static" style="margin: 0;">
-										<h6 class="services-prices__subtitle">Популярные услуги</h6>
+										<h2 class="services-prices__subtitle">Популярные услуги</h2>
 									</div>
 									<div class="container services services-static">
 										<div class="line-green-full-small line-green-static"></div>
@@ -496,7 +497,7 @@ $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 									</div>
 									<div class="container services">
 										<div class="row">
-											<h6 class="services-prices__subtitle">Справки и комиссии</h6>
+											<h2 class="services-prices__subtitle">Справки и комиссии</h2>
 											<div class="line-green-full-small"></div>
 										</div>
 										<div class="row">
@@ -534,7 +535,7 @@ $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 									</div>
 									<div class="container services">
 										<div class="row">
-											<h6 class="services-prices__subtitle">Диагностика</h6>
+											<h2 class="services-prices__subtitle">Диагностика</h2>
 											<div class="line-green-full-small"></div>
 										</div>
 										<div class="row">
@@ -596,7 +597,7 @@ $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 									</div>
 									<div class="container services">
 										<div class="row">
-											<h6 class="services-prices__subtitle">Направления</h6>
+											<h2 class="services-prices__subtitle">Направления</h2>
 											<div class="line-green-full-small"></div>
 										</div>
 										<div id="directions">
@@ -647,145 +648,6 @@ $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 							</div>
 						</div>
 
-<!--					<div class="documents-col documents__navi all-services__navi">-->
-<!--						<h2 class="documents__title">Все услуги</h2>-->
-<!--						--><?// $APPLICATION->IncludeComponent("bitrix:catalog.section.list", "list", [
-//							"ADD_SECTIONS_CHAIN"   =>"Y",
-//							"CACHE_FILTER"         =>"N",
-//							"CACHE_GROUPS"         =>"Y",
-//							"CACHE_TIME"           =>"36000000",
-//							"CACHE_TYPE"           =>"N",
-//							"COUNT_ELEMENTS_FILTER"=>"CNT_ACTIVE",
-//							"COUNT_ELEMENTS"       =>"Y",
-//							"FILTER_NAME"          =>"sectionsFilter",
-//							"IBLOCK_ID"            =>"24",
-//							"IBLOCK_TYPE"          =>"mgn_doctor_service",
-//							"SECTION_CODE"         =>"",
-//							"SECTION_FIELDS"       =>[
-//								0=>"",
-//								1=>"",
-//							],
-//							"SECTION_ID"           =>$_REQUEST["SECTION_ID"],
-//							"SECTION_URL"          =>"",
-//							"SECTION_USER_FIELDS"  =>[
-//								0=>"",
-//								1=>"",
-//							],
-//							"SHOW_PARENT_NAME"     =>"Y",
-//							"TOP_DEPTH"            =>"2",
-//							"VIEW_MODE"            =>"LIST",
-//							"COMPONENT_TEMPLATE"   =>"list"
-//						], false); ?>
-<!--					</div>-->
-
-<!--					--><?//$APPLICATION->IncludeComponent("bitrix:catalog.section", "service", [
-//						"COMPONENT_TEMPLATE"             =>"service",
-//						"IBLOCK_TYPE"                    =>"mgn_doctor_service",
-//						"IBLOCK_ID"                      =>"24",
-//						"SECTION_ID"                     =>$sectionID,
-//						"SECTION_CODE"                   =>$sectionID?'':$_REQUEST['SECTION_CODE'],
-//						"SECTION_USER_FIELDS"            =>[
-//							0=>"UF_SRV_AGE",
-//							1=>"UF_CLINIC",
-//							2=>"",
-//						],
-//						"FILTER_NAME"                    =>"arrFilter",
-//						"INCLUDE_SUBSECTIONS"            =>"Y",
-//						"SHOW_ALL_WO_SECTION"            =>"Y",
-//						"CUSTOM_FILTER"                  =>"{\"CLASS_ID\":\"CondGroup\",\"DATA\":{\"All\":\"AND\",\"True\":\"True\"},\"CHILDREN\":[]}",
-//						"HIDE_NOT_AVAILABLE"             =>"N",
-//						"HIDE_NOT_AVAILABLE_OFFERS"      =>"Y",
-//						"ELEMENT_SORT_FIELD"             =>"sort",
-//						"ELEMENT_SORT_ORDER"             =>"asc",
-//						"ELEMENT_SORT_FIELD2"            =>"id",
-//						"ELEMENT_SORT_ORDER2"            =>"desc",
-//						"PAGE_ELEMENT_COUNT"             =>"12",
-//						"LINE_ELEMENT_COUNT"             =>"3",
-//						"OFFERS_LIMIT"                   =>"5",
-//						"BACKGROUND_IMAGE"               =>"-",
-//						"TEMPLATE_THEME"                 =>"blue",
-//						"PRODUCT_ROW_VARIANTS"           =>"[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
-//						"ENLARGE_PRODUCT"                =>"STRICT",
-//						"PRODUCT_BLOCKS_ORDER"           =>"price,props,sku,quantityLimit,quantity,buttons",
-//						"SHOW_SLIDER"                    =>"Y",
-//						"SLIDER_INTERVAL"                =>"3000",
-//						"SLIDER_PROGRESS"                =>"N",
-//						"ADD_PICT_PROP"                  =>"-",
-//						"LABEL_PROP"                     =>[],
-//						"PRODUCT_SUBSCRIPTION"           =>"N",
-//						"SHOW_DISCOUNT_PERCENT"          =>"N",
-//						"SHOW_OLD_PRICE"                 =>"N",
-//						"SHOW_MAX_QUANTITY"              =>"N",
-//						"SHOW_CLOSE_POPUP"               =>"N",
-//						"MESS_BTN_BUY"                   =>"Купить",
-//						"MESS_BTN_ADD_TO_BASKET"         =>"В корзину",
-//						"MESS_BTN_SUBSCRIBE"             =>"Подписаться",
-//						"MESS_BTN_DETAIL"                =>"Подробнее",
-//						"MESS_NOT_AVAILABLE"             =>"Нет в наличии",
-//						"RCM_TYPE"                       =>"personal",
-//						"RCM_PROD_ID"                    =>$_REQUEST["PRODUCT_ID"],
-//						"SHOW_FROM_SECTION"              =>"N",
-//						"SECTION_URL"                    =>"",
-//						"DETAIL_URL"                     =>"",
-//						"SECTION_ID_VARIABLE"            =>"SECTION_CODE",
-//						"SEF_MODE"                       =>"Y",
-//						"AJAX_MODE"                      =>"N",
-//						"AJAX_OPTION_JUMP"               =>"N",
-//						"AJAX_OPTION_STYLE"              =>"Y",
-//						"AJAX_OPTION_HISTORY"            =>"N",
-//						"AJAX_OPTION_ADDITIONAL"         =>"",
-//						"CACHE_TYPE"                     =>"A",
-//						"CACHE_TIME"                     =>"36000000",
-//						"CACHE_GROUPS"                   =>"Y",
-//						"SET_TITLE"                      =>"Y",
-//						"SET_BROWSER_TITLE"              =>"Y",
-//						"BROWSER_TITLE"                  =>"-",
-//						"SET_META_KEYWORDS"              =>"Y",
-//						"META_KEYWORDS"                  =>"-",
-//						"SET_META_DESCRIPTION"           =>"Y",
-//						"META_DESCRIPTION"               =>"-",
-//						"SET_LAST_MODIFIED"              =>"N",
-//						"USE_MAIN_ELEMENT_SECTION"       =>"N",
-//						"ADD_SECTIONS_CHAIN"             =>"Y",
-//						"CACHE_FILTER"                   =>"N",
-//						"ACTION_VARIABLE"                =>"action",
-//						"PRODUCT_ID_VARIABLE"            =>"id",
-//						"PRICE_CODE"                     =>[
-//							0=>"BASE",
-//						],
-//						"USE_PRICE_COUNT"                =>"N",
-//						"SHOW_PRICE_COUNT"               =>"1",
-//						"PRICE_VAT_INCLUDE"              =>"Y",
-//						"CONVERT_CURRENCY"               =>"N",
-//						"BASKET_URL"                     =>"/personal/basket.php",
-//						"USE_PRODUCT_QUANTITY"           =>"N",
-//						"PRODUCT_QUANTITY_VARIABLE"      =>"quantity",
-//						"ADD_PROPERTIES_TO_BASKET"       =>"Y",
-//						"PRODUCT_PROPS_VARIABLE"         =>"prop",
-//						"PARTIAL_PRODUCT_PROPERTIES"     =>"N",
-//						"ADD_TO_BASKET_ACTION"           =>"ADD",
-//						"DISPLAY_COMPARE"                =>"N",
-//						"USE_ENHANCED_ECOMMERCE"         =>"N",
-//						"PAGER_TEMPLATE"                 =>".default",
-//						"DISPLAY_TOP_PAGER"              =>"N",
-//						"DISPLAY_BOTTOM_PAGER"           =>"N",
-//						"PAGER_TITLE"                    =>"Товары",
-//						"PAGER_SHOW_ALWAYS"              =>"N",
-//						"PAGER_DESC_NUMBERING"           =>"N",
-//						"PAGER_DESC_NUMBERING_CACHE_TIME"=>"36000",
-//						"PAGER_SHOW_ALL"                 =>"N",
-//						"PAGER_BASE_LINK_ENABLE"         =>"N",
-//						"LAZY_LOAD"                      =>"Y",
-//						"LOAD_ON_SCROLL"                 =>"N",
-//						"SET_STATUS_404"                 =>"Y",
-//						"SHOW_404"                       =>"N",
-//						"MESSAGE_404"                    =>"",
-//						"COMPATIBLE_MODE"                =>"Y",
-//						"DISABLE_INIT_JS_IN_COMPONENT"   =>"N",
-//						"SEF_RULE"                       =>"/service/#SECTION_CODE#/",
-//						"SECTION_CODE_PATH"              =>"",
-//						"MESS_BTN_LAZY_LOAD"             =>"Показать ещё"
-//					], false); ?>
 
 				</div>
 				<!-- DESKTOP BLOCK END -->
@@ -793,122 +655,11 @@ $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 				<!-- MOBILE BLOCK -->
 				<div class="services-prices row-white services-prices--mobile" style="margin-left: -30px; margin-right: -30px;">
 
-					<!-- Это старый вариант -->
-					<!--		--><? //if($sectionID){
-					//			$APPLICATION->IncludeComponent("bitrix:catalog.section", "mob-service", [
-					//				"COMPONENT_TEMPLATE"             =>"service",
-					//				"IBLOCK_TYPE"                    =>"mgn_doctor_service",
-					//				"IBLOCK_ID"                      =>"24",
-					//				"SECTION_ID"                     =>$sectionID,
-					//				"SECTION_CODE"                   =>$sectionID?'':$_REQUEST['SECTION_CODE'],
-					//				"SECTION_USER_FIELDS"            =>[
-					//					0=>"UF_SRV_AGE",
-					//					1=>"UF_CLINIC",
-					//					2=>"",
-					//				],
-					//				"FILTER_NAME"                    =>"arrFilter",
-					//				"INCLUDE_SUBSECTIONS"            =>"Y",
-					//				"SHOW_ALL_WO_SECTION"            =>"Y",
-					//				"CUSTOM_FILTER"                  =>"{\"CLASS_ID\":\"CondGroup\",\"DATA\":{\"All\":\"AND\",\"True\":\"True\"},\"CHILDREN\":[]}",
-					//				"HIDE_NOT_AVAILABLE"             =>"N",
-					//				"HIDE_NOT_AVAILABLE_OFFERS"      =>"Y",
-					//				"ELEMENT_SORT_FIELD"             =>"sort",
-					//				"ELEMENT_SORT_ORDER"             =>"asc",
-					//				"ELEMENT_SORT_FIELD2"            =>"id",
-					//				"ELEMENT_SORT_ORDER2"            =>"desc",
-					//				"PAGE_ELEMENT_COUNT"             =>"6",
-					//				"LINE_ELEMENT_COUNT"             =>"3",
-					//				"OFFERS_LIMIT"                   =>"5",
-					//				"BACKGROUND_IMAGE"               =>"-",
-					//				"TEMPLATE_THEME"                 =>"blue",
-					//				"PRODUCT_ROW_VARIANTS"           =>"[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
-					//				"ENLARGE_PRODUCT"                =>"STRICT",
-					//				"PRODUCT_BLOCKS_ORDER"           =>"price,props,sku,quantityLimit,quantity,buttons",
-					//				"SHOW_SLIDER"                    =>"Y",
-					//				"SLIDER_INTERVAL"                =>"3000",
-					//				"SLIDER_PROGRESS"                =>"N",
-					//				"ADD_PICT_PROP"                  =>"-",
-					//				"LABEL_PROP"                     =>[],
-					//				"PRODUCT_SUBSCRIPTION"           =>"N",
-					//				"SHOW_DISCOUNT_PERCENT"          =>"N",
-					//				"SHOW_OLD_PRICE"                 =>"N",
-					//				"SHOW_MAX_QUANTITY"              =>"N",
-					//				"SHOW_CLOSE_POPUP"               =>"N",
-					//				"MESS_BTN_BUY"                   =>"Купить",
-					//				"MESS_BTN_ADD_TO_BASKET"         =>"В корзину",
-					//				"MESS_BTN_SUBSCRIBE"             =>"Подписаться",
-					//				"MESS_BTN_DETAIL"                =>"Подробнее",
-					//				"MESS_NOT_AVAILABLE"             =>"Нет в наличии",
-					//				"RCM_TYPE"                       =>"personal",
-					//				"RCM_PROD_ID"                    =>$_REQUEST["PRODUCT_ID"],
-					//				"SHOW_FROM_SECTION"              =>"N",
-					//				"SECTION_URL"                    =>"",
-					//				"DETAIL_URL"                     =>"",
-					//				"SECTION_ID_VARIABLE"            =>"SECTION_CODE",
-					//				"SEF_MODE"                       =>"Y",
-					//				"AJAX_MODE"                      =>"N",
-					//				"AJAX_OPTION_JUMP"               =>"N",
-					//				"AJAX_OPTION_STYLE"              =>"Y",
-					//				"AJAX_OPTION_HISTORY"            =>"N",
-					//				"AJAX_OPTION_ADDITIONAL"         =>"",
-					//				"CACHE_TYPE"                     =>"A",
-					//				"CACHE_TIME"                     =>"36000000",
-					//				"CACHE_GROUPS"                   =>"Y",
-					//				"SET_TITLE"                      =>"Y",
-					//				"SET_BROWSER_TITLE"              =>"Y",
-					//				"BROWSER_TITLE"                  =>"-",
-					//				"SET_META_KEYWORDS"              =>"Y",
-					//				"META_KEYWORDS"                  =>"-",
-					//				"SET_META_DESCRIPTION"           =>"Y",
-					//				"META_DESCRIPTION"               =>"-",
-					//				"SET_LAST_MODIFIED"              =>"N",
-					//				"USE_MAIN_ELEMENT_SECTION"       =>"N",
-					//				"ADD_SECTIONS_CHAIN"             =>"Y",
-					//				"CACHE_FILTER"                   =>"N",
-					//				"ACTION_VARIABLE"                =>"action",
-					//				"PRODUCT_ID_VARIABLE"            =>"id",
-					//				"PRICE_CODE"                     =>[
-					//					0=>"BASE",
-					//				],
-					//				"USE_PRICE_COUNT"                =>"N",
-					//				"SHOW_PRICE_COUNT"               =>"1",
-					//				"PRICE_VAT_INCLUDE"              =>"Y",
-					//				"CONVERT_CURRENCY"               =>"N",
-					//				"BASKET_URL"                     =>"/personal/basket.php",
-					//				"USE_PRODUCT_QUANTITY"           =>"N",
-					//				"PRODUCT_QUANTITY_VARIABLE"      =>"quantity",
-					//				"ADD_PROPERTIES_TO_BASKET"       =>"Y",
-					//				"PRODUCT_PROPS_VARIABLE"         =>"prop",
-					//				"PARTIAL_PRODUCT_PROPERTIES"     =>"N",
-					//				"ADD_TO_BASKET_ACTION"           =>"ADD",
-					//				"DISPLAY_COMPARE"                =>"N",
-					//				"USE_ENHANCED_ECOMMERCE"         =>"N",
-					//				"PAGER_TEMPLATE"                 =>".default",
-					//				"DISPLAY_TOP_PAGER"              =>"N",
-					//				"DISPLAY_BOTTOM_PAGER"           =>"N",
-					//				"PAGER_TITLE"                    =>"Товары",
-					//				"PAGER_SHOW_ALWAYS"              =>"N",
-					//				"PAGER_DESC_NUMBERING"           =>"N",
-					//				"PAGER_DESC_NUMBERING_CACHE_TIME"=>"36000",
-					//				"PAGER_SHOW_ALL"                 =>"N",
-					//				"PAGER_BASE_LINK_ENABLE"         =>"N",
-					//				"LAZY_LOAD"                      =>"Y",
-					//				"LOAD_ON_SCROLL"                 =>"N",
-					//				"SET_STATUS_404"                 =>"N",
-					//				"SHOW_404"                       =>"N",
-					//				"MESSAGE_404"                    =>"",
-					//				"COMPATIBLE_MODE"                =>"Y",
-					//				"DISABLE_INIT_JS_IN_COMPONENT"   =>"N",
-					//				"SEF_RULE"                       =>"/service/#SECTION_CODE#/",
-					//				"SECTION_CODE_PATH"              =>"",
-					//				"MESS_BTN_LAZY_LOAD"             =>"Показать ещё"
-					//			], false);
-					//		}?>
-					<!-- /Это старый вариант -->
-
 					<div class="container services">
+
+									<h1 class="page-title row services-prices__title">Услуги и цены</h1>
 						<div class="row">
-							<h6 class="services-prices__subtitle">Популярные услуги</h6>
+							<h2 class="services-prices__subtitle">Популярные услуги</h2>
 							<div class="line-green-full-small"></div>
 						</div>
 						<?$GLOBALS['sectionsFilter']=[
@@ -951,7 +702,7 @@ $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 					</div>
 					<div class="container services">
 						<div class="row">
-							<h6 class="services-prices__subtitle">Диагностика</h6>
+							<h2 class="services-prices__subtitle">Диагностика</h2>
 							<div class="line-green-full-small"></div>
 						</div>
 						<div class="row">
@@ -975,7 +726,7 @@ $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 					</div>
 					<div class="container services">
 						<div class="row">
-							<h6 class="services-prices__subtitle">Справки и комиссии</h6>
+							<h2 class="services-prices__subtitle">Справки и комиссии</h2>
 							<div class="line-green-full-small"></div>
 						</div>
 						<div class="row">
@@ -1005,7 +756,7 @@ $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 					</div>
 					<div class="container services">
 						<div class="row">
-							<h6 class="services-prices__subtitle">Направления</h6>
+							<h2 class="services-prices__subtitle">Направления</h2>
 							<div class="line-green-full-small"></div>
 						</div>
 						<div id="directions">

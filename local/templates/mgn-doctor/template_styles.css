@@ -10688,7 +10688,7 @@ input:-webkit-autofill,
 	}
 
 	.page-title{
-		font-size:   36px;
+		font-size:   20px;
 		line-height: 36px;
 	}
 
@@ -14070,6 +14070,11 @@ input:-webkit-autofill,
 	.page-title{
 		font-size:      32px;
 		line-height:    38px;
+		letter-spacing: 0.5px;
+	}
+	.services .services-prices__title{
+		font-size:     20px;
+		line-height:    auto;
 		letter-spacing: 0.5px;
 	}
 
