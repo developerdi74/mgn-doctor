@@ -56,6 +56,9 @@ $TimeData=$entity_data_class::getList([
 	]
 ]);
 
+//prnt($rsData->Fetch());
+//prnt($TimeData->Fetch());
+
 $arTime=[];
 $arDateCurent=[];
 while($arDataT=$TimeData->Fetch()){
@@ -210,7 +213,7 @@ while($arDataT=$TimeData->Fetch()){
 //							console($noCalendar);
 //							console($noCalendarFlag);
 							?>
-							<?if(1==1 /*$rsData->getSelectedRowsCount()>0*/ /*&& ($noCalendarFlag==true && $noCalendar==false)*/){?>
+							<?if(/*1==1 */ $rsData->getSelectedRowsCount()>0 /*&& ($noCalendarFlag==true && $noCalendar==false)*/){?>
 								<div class="timesheet-nav">
 									<div class="slider__nav-prev"><img src="<?=SITE_TEMPLATE_PATH?>/img/arrow-prev.svg" alt="prev"></div>
 									<div class="timesheet-nav__text specialists-item__title"><?=$strFirst?> - <?=$strLastday;?></div>
@@ -299,9 +302,9 @@ while($arDataT=$TimeData->Fetch()){
 									</div>
 								</div>
 							<?}else{?>
-								<div class="no-timesheet">
+							<!-- 	<div class="no-timesheet">
 									В связи с техническими работами запись на прием недоступна. Приносим свои извинения за неудобства.
-								</div>
+								</div> -->
 								<div class="no-timesheet">
 									Узнать акуальное расписание данного специалиста и записаться:
 									<ul>
