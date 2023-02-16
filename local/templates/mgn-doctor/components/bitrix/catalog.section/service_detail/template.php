@@ -235,7 +235,11 @@ $ar_result=$db_list->GetNext();
 <!--					<div data-use="show-more---><?//=$navParams['NavNum']?><!--" class="btn btn-grey-tr btn-serviceit-price__show">Показать ещё</div>-->
 <!--				</div>-->
 			</div>
-			<?$GLOBALS['arrFilter']=["PROPERTY_SECTION"=>$arResult["ID"]];?>
+			<?$GLOBALS['arrFilter']=["PROPERTY_SECTION"=>$arResult["ID"]];
+			$arrFilter = array('SECTION_ID'=>$arResult["ID"]);
+			//prnt($GLOBALS['sectionID']);
+			//prnt($arResult['ID']);
+			?>
 			<?$APPLICATION->IncludeComponent(																													// слайдер с докторами
 				"bitrix:news.list", "doctor-slide", [
 					"ACTIVE_DATE_FORMAT"             =>"d.m.Y",

@@ -1,4 +1,6 @@
-<? require($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
+<?define('STOP_STATISTICS', true);
+require($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
+$APPLICATION->RestartBuffer();
 if(stripos($_SERVER['HTTP_REFERER'],'service')){
 	/**
 	 * Created by PhpStorm.
