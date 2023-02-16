@@ -1,6 +1,13 @@
-<?require($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
+<?require($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');?>
 
-//console('+++'.$_REQUEST['SECTION_CODE']);
+<?$URI_LENGTH=count(explode("/",$_SERVER['REQUEST_URI'])); //Длина УРЛА больше 5 элементов уход на 404?>
+<?
+	if($URI_LENGTH>4){
+		\CHTTP::setStatus("404 Not Found");
+		require(\Bitrix\Main\Application::getDocumentRoot()."/404.php");
+		die();
+	}
+
 if(isset($_REQUEST['SECTION_CODE']) || isset($_REQUEST['SECTION_ID'])){
 	$sectionID=$_REQUEST["SECTION_ID"]?$_REQUEST["SECTION_ID"]:getSectionIDByCode_($_REQUEST["SECTION_CODE"]);
 	if(!$sectionID){
@@ -15,8 +22,7 @@ $APPLICATION->SetTitle("Услуги и цены");
 $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 <link rel="stylesheet" href="/service/styles.css">
 <script src="/service/script.js"></script>
-
-<?//console('!!!'.$sectionID);?>
+<?=$URI_LENGTH;?>
 
 <?if($sectionID){
 	$activeElements=CIBlockSection::GetSectionElementsCount($sectionID, ["CNT_ACTIVE"=>"Y", 'GLOBAL_ACTIVE'=>'Y', 'ACTIVE'=>'Y']);

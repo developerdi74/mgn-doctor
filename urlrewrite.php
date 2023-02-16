@@ -1,13 +1,5 @@
 <?php
 $arUrlRewrite=array (
-  1 => 
-  array (
-    'CONDITION' => '#^/detskie-vrachi/([^/]+?)/filter/(.+?)/apply/\\??(.*)#',
-    'RULE' => 'SECTION_CODE=$1&SMART_FILTER_PATH=$2&$3',
-    'ID' => 'bitrix:catalog.smart.filter',
-    'PATH' => '/local/templates/mgn-doctor/components/bitrix/catalog/specialists/section_horizontal.php',
-    'SORT' => 100,
-  ),
   2 => 
   array (
     'CONDITION' => '#^/service-detail/([^/]+?)/\\??(.*)#',
