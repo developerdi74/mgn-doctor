@@ -1581,6 +1581,7 @@ $(document).ready(function(){
 			// dataType:'json',
 			cache:false,
 			success:function(data){
+				console.log(data);
 				$('#directions').html(data).css('height', '100%');
 			},
 			error:function(jqXHR, exception){

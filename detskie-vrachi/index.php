@@ -3,11 +3,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Детские врачи");
 ?><section class="specialists-inner all-our-specialists">
 <div class="container">
-	<?if($_SESSION['isMobile']!==true):?>
-		<div class="row">
-			<h1 class="page-title specialists-inner__title all-our-specialists__title"><?$APPLICATION->ShowTitle();?></h1>
-		</div>
-	<?endif;?>
+	<div class="row">
+		<h1 class="page-title specialists-inner__title all-our-specialists__title"><?$APPLICATION->ShowTitle();?></h1>
+	</div>
 	<div class="row page-row-middle all-specialists">
  <a href="/specialists/"><button class="btn btn-spec-flt">Взрослые</button></a><button class="btn btn-spec-flt active">Детские</button>
 	</div><?

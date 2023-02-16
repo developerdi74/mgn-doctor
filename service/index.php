@@ -1,7 +1,6 @@
 <?require($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 
 //console('+++'.$_REQUEST['SECTION_CODE']);
-
 if(isset($_REQUEST['SECTION_CODE']) || isset($_REQUEST['SECTION_ID'])){
 	$sectionID=$_REQUEST["SECTION_ID"]?$_REQUEST["SECTION_ID"]:getSectionIDByCode_($_REQUEST["SECTION_CODE"]);
 	if(!$sectionID){
@@ -101,72 +100,78 @@ $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 							}?>
 						</div>
 					</div>
-					<?$GLOBALS['arrFilter']=["PROPERTY_SECTION"=>$sectionID];?>
-					<?$APPLICATION->IncludeComponent(																											// слайдер с докторами
-						"bitrix:news.list", "doctor-slide", [
-						"ACTIVE_DATE_FORMAT"             =>"d.m.Y",
-						"ADD_SECTIONS_CHAIN"             =>"Y",
-						"AJAX_MODE"                      =>"N",
-						"AJAX_OPTION_ADDITIONAL"         =>"",
-						"AJAX_OPTION_HISTORY"            =>"N",
-						"AJAX_OPTION_JUMP"               =>"N",
-						"AJAX_OPTION_STYLE"              =>"Y",
-						"CACHE_FILTER"                   =>"N",
-						"CACHE_GROUPS"                   =>"Y",
-						"CACHE_TIME"                     =>"36000000",
-						"CACHE_TYPE"                     =>"N",
-						"CHECK_DATES"                    =>"Y",
-						"DETAIL_URL"                     =>"",
-						"DISPLAY_BOTTOM_PAGER"           =>"Y",
-						"DISPLAY_DATE"                   =>"Y",
-						"DISPLAY_NAME"                   =>"Y",
-						"DISPLAY_PICTURE"                =>"Y",
-						"DISPLAY_PREVIEW_TEXT"           =>"Y",
-						"DISPLAY_TOP_PAGER"              =>"N",
-						"FIELD_CODE"                     =>[
-							0=>"PREVIEW_PICTURE",
-							1=>"DETAIL_TEXT",
-							2=>"",
-						],
-						"FILTER_NAME"                    =>"",
-						"HIDE_LINK_WHEN_NO_DETAIL"       =>"N",
-						"IBLOCK_ID"                      =>"25",
-						"IBLOCK_TYPE"                    =>"mgn_doctor_service",
-						"INCLUDE_IBLOCK_INTO_CHAIN"      =>"Y",
-						"PARENT_SECTION"                 =>"",
-						"INCLUDE_SUBSECTIONS"            =>"Y",
-						"MESSAGE_404"                    =>"",
-						"NEWS_COUNT"                     =>"",
-						"PAGER_BASE_LINK_ENABLE"         =>"N",
-						"PAGER_DESC_NUMBERING"           =>"N",
-						"PAGER_DESC_NUMBERING_CACHE_TIME"=>"36000",
-						"PAGER_SHOW_ALL"                 =>"N",
-						"PAGER_SHOW_ALWAYS"              =>"N",
-						"PAGER_TEMPLATE"                 =>".default",
-						"PAGER_TITLE"                    =>"",
-//						"PARENT_SECTION_CODE"            =>$arResult["CODE"],
-						"PREVIEW_TRUNCATE_LEN"           =>"",
-						"PROPERTY_CODE"                  =>[
-							0=>"DATE",
-							1=>"CLINIC",
-							2=>"AGE",
-							3=>"SPECIALIZATION",
-							4=>"",
-						],
-						"SET_BROWSER_TITLE"              =>"Y",
-						"SET_LAST_MODIFIED"              =>"N",
-						"SET_META_DESCRIPTION"           =>"Y",
-						"SET_META_KEYWORDS"              =>"Y",
-						"SET_STATUS_404"                 =>"N",
-						"SET_TITLE"                      =>"Y",
-						"SHOW_404"                       =>"N",
-						"SORT_BY1"                       =>"ACTIVE_FROM",
-						"SORT_BY2"                       =>"SORT",
-						"SORT_ORDER1"                    =>"DESC",
-						"SORT_ORDER2"                    =>"ASC",
-						"STRICT_SECTION_CHECK"           =>"N",
-						"COMPONENT_TEMPLATE"             =>"doctor-slide"
-					], false);?>
+					<?//вывод слайда врачей?>
+					<?$GLOBALS['arrFilter']=["PROPERTY_SECTION"=>$sectionID];
+					$arrFilter = array("SECTION_ID" => $sectionID);?>
+					<?$APPLICATION->IncludeComponent(
+						"bitrix:news.list",
+						"doctor-slide",
+						array(
+							"ACTIVE_DATE_FORMAT" => "d.m.Y",
+							"ADD_SECTIONS_CHAIN" => "Y",
+							"AJAX_MODE" => "N",
+							"AJAX_OPTION_ADDITIONAL" => "",
+							"AJAX_OPTION_HISTORY" => "N",
+							"AJAX_OPTION_JUMP" => "N",
+							"AJAX_OPTION_STYLE" => "Y",
+							"CACHE_FILTER" => "N",
+							"CACHE_GROUPS" => "Y",
+							"CACHE_TIME" => "36000000",
+							"CACHE_TYPE" => "N",
+							"CHECK_DATES" => "Y",
+							"DETAIL_URL" => "",
+							"DISPLAY_BOTTOM_PAGER" => "Y",
+							"DISPLAY_DATE" => "Y",
+							"DISPLAY_NAME" => "Y",
+							"DISPLAY_PICTURE" => "Y",
+							"DISPLAY_PREVIEW_TEXT" => "Y",
+							"DISPLAY_TOP_PAGER" => "N",
+							"FIELD_CODE" => array(
+								0 => "PREVIEW_PICTURE",
+								1 => "DETAIL_TEXT",
+								2 => "",
+							),
+							"FILTER_NAME" => "arrFilter",
+							"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+							"IBLOCK_ID" => "25",
+							"IBLOCK_TYPE" => "mgn_doctor_service",
+							"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+							"PARENT_SECTION" => "",
+							"INCLUDE_SUBSECTIONS" => "Y",
+							"MESSAGE_404" => "",
+							"NEWS_COUNT" => "",
+							"PAGER_BASE_LINK_ENABLE" => "N",
+							"PAGER_DESC_NUMBERING" => "N",
+							"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+							"PAGER_SHOW_ALL" => "N",
+							"PAGER_SHOW_ALWAYS" => "N",
+							"PAGER_TEMPLATE" => ".default",
+							"PAGER_TITLE" => "",
+							"PREVIEW_TRUNCATE_LEN" => "",
+							"PROPERTY_CODE" => array(
+								0 => "DATE",
+								1 => "CLINIC",
+								2 => "AGE",
+								3 => "SPECIALIZATION",
+								4 => "",
+							),
+							"SET_BROWSER_TITLE" => "Y",
+							"SET_LAST_MODIFIED" => "N",
+							"SET_META_DESCRIPTION" => "Y",
+							"SET_META_KEYWORDS" => "Y",
+							"SET_STATUS_404" => "N",
+							"SET_TITLE" => "Y",
+							"SHOW_404" => "N",
+							"SORT_BY1" => "ACTIVE_FROM",
+							"SORT_BY2" => "SORT",
+							"SORT_ORDER1" => "DESC",
+							"SORT_ORDER2" => "ASC",
+							"STRICT_SECTION_CHECK" => "N",
+							"COMPONENT_TEMPLATE" => "doctor-slide",
+							"PARENT_SECTION_CODE" => ""
+						),
+						false
+					);?>
 				</div>
 			</div>
 		</section>
@@ -321,7 +326,7 @@ $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 		
 		$APPLICATION->SetTitle($arSection['NAME'].'. Цены на услуги | Семейный Доктор в Магнитогорске');?>
 	<?}else{
-//		console('@@@'.$sectionID);
+		//prnt('@@@'.$sectionID);
 		$APPLICATION->IncludeComponent("bitrix:catalog.section", "service_detail", [
 			"COMPONENT_TEMPLATE"             =>"service_detail",
 			"IBLOCK_TYPE"                    =>"mgn_doctor_service",

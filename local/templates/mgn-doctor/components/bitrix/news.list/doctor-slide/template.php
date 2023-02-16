@@ -11,7 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);?>
-
+<?//prnt($arResult);?>
 <?if(count($arResult["ITEMS"])){?>
 	<div class="serviceit-price__item serviceit-price__item--team">
 		<!-- Swiper -->

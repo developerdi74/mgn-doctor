@@ -39,10 +39,10 @@ $arUrlRewrite=array (
     'PATH' => '/doctors/section.php',
     'SORT' => 100,
   ),
-  5 => 
+  14 => 
   array (
     'CONDITION' => '#^/service/([^/]+?)/\\??(.*)#',
-    'RULE' => 'SECTION_CODE=$1',
+    'RULE' => 'SECTION_CODE=$1&$2',
     'ID' => 'bitrix:catalog.section',
     'PATH' => '/service/index.php',
     'SORT' => 100,
