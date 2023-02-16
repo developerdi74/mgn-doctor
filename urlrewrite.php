@@ -41,7 +41,7 @@ $arUrlRewrite=array (
   ),
   6 => 
   array (
-    'CONDITION' => '#^/about/([^/]+?)/\\??(.*)#',
+    'CONDITION' => '#^/about/([^/]+?)/#',
     'RULE' => 'ELEMENT_CODE=$1',
     'PATH' => '/about/index.php',
     'SORT' => 100,
