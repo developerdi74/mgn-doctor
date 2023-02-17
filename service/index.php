@@ -22,7 +22,6 @@ $APPLICATION->SetTitle("Услуги и цены");
 $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 <link rel="stylesheet" href="/service/styles.css">
 <script src="/service/script.js"></script>
-<?=$URI_LENGTH;?>
 
 <?if($sectionID){
 	$activeElements=CIBlockSection::GetSectionElementsCount($sectionID, ["CNT_ACTIVE"=>"Y", 'GLOBAL_ACTIVE'=>'Y', 'ACTIVE'=>'Y']);
