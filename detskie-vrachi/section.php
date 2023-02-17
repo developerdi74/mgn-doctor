@@ -112,8 +112,6 @@ $APPLICATION->SetTitle("Врачи в медицинском центре “С�
 );?>
 <?else: // вызов деталки если раздела не существует
 
-
-print_r($_REQUEST['SECTION_CODE']);
 $APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
 	"specialist",
