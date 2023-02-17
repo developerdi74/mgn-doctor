@@ -1,0 +1,110 @@
+.calendar-item{
+	width:          100%;
+	display:        inline-block;
+	vertical-align: top;
+	margin:         0 0 0 5%;
+	font:           14px/1.2 Arial, sans-serif;
+}
+
+.calendar-head{
+	font-weight: 700;
+	font-size:   14px;
+	border-top: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+}
+.calendar-footer{
+	font-weight: 700;
+	font-size:   14px;
+	border-bottom: 1px solid #dddddd;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.calendar-item table{
+	border-collapse: collapse;
+	width:           100%;
+}
+
+.calendar-item th{
+	padding:     6px 7px;
+	text-align:  center;
+	color:       var(--main-color);
+	border-right:  1px solid #dddddd;
+
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 19px;
+
+}
+
+.calendar-item td{
+	padding:    6px 5px;
+	text-align: center;
+	border:     1px solid #dddddd;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+}
+
+.calendar-item tr th:nth-child(6), .calendar-item tr th:nth-child(7),
+.calendar-item tr td:nth-child(6), .calendar-item tr td:nth-child(7){
+	color: #e65a5a;
+}
+
+.calendar-day.last{
+	color: #999999 !important;
+}
+
+.calendar-day.today{
+	background-color: var(--light-red-color);
+	color: white;
+}
+.today-link{
+	background-color: inherit!important;
+	color: var(--light-red-color)!important;
+	width: auto!important;
+	font-style: normal!important;
+	font-weight: 400!important;
+	font-size: 15px!important;
+	/*line-height: 19px!important;*/
+	margin-right: 15px!important;
+}
+
+.calendar-day.event{
+	background: #ffe2ad;
+	position:   relative;
+	cursor:     pointer;
+}
+
+.calendar-day.event:hover .calendar-popup{
+	display: block;
+}
+
+.calendar-popup{
+	display:    none;
+	position:   absolute;
+	top:        40px;
+	left:       0;
+	min-width:  200px;
+	padding:    15px;
+	background: #ffffff;
+	text-align: left;
+	font-size:  13px;
+	z-index:    100;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	color:      #000000;
+}
+
+.calendar-popup:before{
+	content:             "";
+	border:              solid transparent;
+	position:            absolute;
+	left:                8px;
+	bottom:              100%;
+	border-bottom-color: #ffffff;
+	border-width:        9px;
+	margin-left:         0;
+}

@@ -1,13 +1,14 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Детские врачи");
+$APPLICATION->SetTitle("Врачи в медицинском центре “Семейный доктор”");
+
 ?><section class="specialists-inner all-our-specialists">
 <div class="container">
 	<div class="row">
 		<h1 class="page-title specialists-inner__title all-our-specialists__title"><?$APPLICATION->ShowTitle();?></h1>
 	</div>
 	<div class="row page-row-middle all-specialists">
- <a href="/specialists/"><button class="btn btn-spec-flt">Взрослые</button></a><button class="btn btn-spec-flt active">Детские</button>
+ 		<a href="/specialists/"><button class="btn btn-spec-flt">Взрослые</button></a><button class="btn btn-spec-flt active">Детские</button>
 	</div><?
 			define("AGE",110);
 			$arrFilterVrachi = array("PROPERTY" => array("AGE"=>AGE));
@@ -38,7 +39,7 @@ $APPLICATION->SetTitle("Детские врачи");
 		"FILTER_NAME" => "arrFilterVrachi",
 		"VIEW_MODE" => "LINE",
 		"SHOW_PARENT_NAME" => "Y",
-		"SECTION_URL" => "/specialists/#CODE#?age=".AGE,
+		"SECTION_URL" => "/detskie-vrachi/#CODE#/",
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "36000000",
 		"CACHE_GROUPS" => "Y",

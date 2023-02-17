@@ -1,11 +1,12 @@
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-
 //Получение SEO раздела
 
-$rsSections = CIBlockSection::GetList(array(),array('IBLOCK_ID' => 25, '=CODE' => SECTION_CODE));
-if ($arSection = $rsSections->Fetch())
+$rsSections = CIBlockSection::GetList(array(),array('IBLOCK_ID' => 25, '=CODE' => SECTION_CODE), false, Array("UF_DETI"));
+if ($arSection = $rsSections->Fetch()){
 	$sec_id = $arSection["ID"];
+	$title_detskii=$arSection['UF_DETI'];
+}
 
 		$ipropValues = new \Bitrix\Iblock\InheritedProperty\SectionValues(25,$sec_id);
 		$IPROPERTY  = $ipropValues->getValues();
@@ -14,8 +15,18 @@ if ($arSection = $rsSections->Fetch())
 		}else {
 			$header =  $IPROPERTY['SECTION_PAGE_TITLE'];
 		}
+//-----------------------------------------------------------------------------
+//Проверка на какой мы странице если детская то установить детский заголовок
+		$section_code = explode("/",$_SERVER['REQUEST_URI']);
+		$title = $IPROPERTY['SECTION_META_TITLE'];
+		if($title_detskii && $section_code[1] == 'detskie-vrachi'){
+			$header = $title_detskii;
+			$title = $title_detskii." | Семейный доктор в Магнитогорске";
+		}
+//-----------------------------------------------------------------------------
 
-	$APPLICATION->SetPageProperty("title", $IPROPERTY['SECTION_META_TITLE']);
+
+	$APPLICATION->SetPageProperty("title", $title);
 	$APPLICATION->SetPageProperty("description",$IPROPERTY['SECTION_META_DESCRIPTION']);
 	$APPLICATION->SetPageProperty("keywords", $IPROPERTY['SECTION_META_KEYWORDS']);
 	//prnt($IPROPERTY);
@@ -48,15 +59,13 @@ if ($arSection = $rsSections->Fetch())
 			}
 		 }
 		 $chet = 0;
-
-
 ?>
 
 	<?
 	$this->AddEditAction($item['ID'], $item['EDIT_LINK'], CIBlock::GetArrayByID($item["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($item['ID'], $item['DELETE_LINK'], CIBlock::GetArrayByID($item["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?>
-<? //prnt($item);?>
+
 		<div class='row_vr'  id="<?=$this->GetEditAreaId($item['ID']);?>">
 			<div class="cnt_vr">
 				<div class="img_vr">
@@ -71,10 +80,11 @@ if ($arSection = $rsSections->Fetch())
 					<?if(!empty($item['PROPERTIES']['ONE_PRIEM']['VALUE'])):?><div class="price_vr">Первичный прием <?=$item['PROPERTIES']['ONE_PRIEM']['VALUE']?></div><?endif;?>
 				</div>
 				<div class="save_vr">
-						<a class = "save-btn-vr" href="<?=$item['DETAIL_PAGE_URL']?>">Записаться</a> <? // Формируется ссылка на детальную страницу специалистов?>
+						<a class = "save-btn-vr" href="/<?=$item['CODE']?>/">Записаться</a> <? // Формируется ссылка на детальную страницу специалистов?>
 				</div>
 			</div>
 		</div>
+
 	<?endforeach;?>
 	</div>
 <?
