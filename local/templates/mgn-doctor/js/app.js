@@ -714,13 +714,17 @@ $(document).ready(function(){
 
 	$(document).ready(function () {																														// Количество услуг и галереи на странице Специалиста
 		if (jQuery('.specialists-tabs__service').length > 0) {
+			let cntReview = $('#comments li').length;
 			let lengthServices = jQuery('.tab-services .tab-services__list li').length;
 			let lengthSlides = jQuery('.tab-gallery-slider__wrapper-1 .gallery-item').length;
 			let lengthSlides2 = jQuery('.tab-gallery-slider__wrapper-2 .gallery-item').length;
 			let allSlides = lengthSlides + lengthSlides2;
-
+			jQuery(".specialists-tabs__reviews span").html(cntReview);
 			jQuery('.specialists-tabs__service span').html(lengthServices);
 			jQuery('.specialists-tabs__gallery span').html(allSlides);
+			if(allSlides == 0){
+				$('#spec_gallery-specialist').html("<div class=''>В галереи врача нет фотографий</div>");
+			}
 		}
 	});
 
@@ -820,12 +824,14 @@ $(document).ready(function(){
 	$('#tabs-specialists a').click(function (e) {
 		e.preventDefault();
 		$(this).tab('show');
+		$("#tabs-specialists li").removeClass('active');
+		$(this).parent().addClass('active');
 		let curHref = $(this).attr('href');
-		if (curHref == '#spec_reviews') {
+		/*if (curHref == '#spec_reviews') {
 			$('.specialists-tabs').addClass('grey-tabs');
 		} else {
 			$('.specialists-tabs').removeClass('grey-tabs');
-		}
+		}*/
 	});
 
 	// TABS DOCUMENTS

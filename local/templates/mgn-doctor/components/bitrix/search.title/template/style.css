@@ -8,7 +8,7 @@ div.title-search-result {
 table.title-search-result {
 	border-collapse: collapse;
 	border:none;
-	width:10%;
+	width:100%;
 }
 
 table.title-search-result th {

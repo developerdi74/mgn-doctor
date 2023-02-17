@@ -4009,10 +4009,6 @@ nav.menu{
 	width:   25%;
 }
 
-.tab-content__education{
-
-}
-
 .tab-pane-edu__title{
 	font-weight: 500;
 	font-size:   26px;
@@ -4043,6 +4039,10 @@ nav.menu{
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+}
+.specialists-tab-content>div{
+	padding-left: 15px;
+
 }
 
 .tab-education-wrapper{

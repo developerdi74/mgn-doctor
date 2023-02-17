@@ -334,14 +334,13 @@ while($arDataT=$TimeData->Fetch()){
 							<a class="nav-link " href="#spec_education">Квалификация</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link specialists-tabs__reviews" href="#spec_reviews">Отзывы (<span>3</span>)</a>
+							<a class="nav-link specialists-tabs__reviews" href="#spec_reviews">Отзывы(<span>0</span>)</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link specialists-tabs__service" href="#spec_services">Услуги (<span>0</span>)</a>
+							<a class="nav-link specialists-tabs__service" href="#spec_services">Услуги(<span>0</span>)</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link specialists-tabs__gallery" href="#spec_gallery-specialist">Галерея врача
-								(<span>10</span>)</a>
+							<a class="nav-link specialists-tabs__gallery" href="#spec_gallery-specialist">Галерея врача(<span>0</span>)</a>
 						</li>
 					</ul>
 				</div>
