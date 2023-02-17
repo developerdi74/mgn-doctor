@@ -24,9 +24,10 @@ if ($arSection = $rsSections->Fetch()){
 		if($title_detskii && $section_code[1] == 'detskie-vrachi'){
 			$header = $title_detskii;
 			$title = $title_detskii." | Семейный доктор в Магнитогорске";
-			$uri = "/detskie-vrachi";
 		}
-		if($section_code[1]=="specialists"){
+		if($section_code[1]=="detskie-vrachi"){
+			$uri = "/detskie-vrachi";
+		}else{
 			$uri = "/specialists";
 		}
 //-----------------------------------------------------------------------------
