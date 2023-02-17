@@ -22,6 +22,10 @@ if ($arSection = $rsSections->Fetch()){
 		if($title_detskii && $section_code[1] == 'detskie-vrachi'){
 			$header = $title_detskii;
 			$title = $title_detskii." | Семейный доктор в Магнитогорске";
+			$uri = "/detskie-vrachi";
+		}
+		if($section_code[1]=="specialists"){
+			$uri = "/specialists";
 		}
 //-----------------------------------------------------------------------------
 
@@ -69,10 +73,10 @@ if ($arSection = $rsSections->Fetch()){
 		<div class='row_vr'  id="<?=$this->GetEditAreaId($item['ID']);?>">
 			<div class="cnt_vr">
 				<div class="img_vr">
-					<a href = "<?=$item['DETAIL_PAGE_URL']?>"><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>" alt=""></a>
+					<a href = "<?=$uri?>/<?=$item['CODE']?>/"><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>" alt=""></a>
 				</div>
 				<div class="descrip_vr">
-					<div class="name-vr"><h2><a href = "<?=$item['DETAIL_PAGE_URL']?>"><?=$item['NAME']?></a></h2></div>
+					<div class="name-vr"><h2><a href = "<?=$uri?>/<?=$item['CODE']?>/"><?=$item['NAME']?></a></h2></div>
 					<div class="name-cherta-vr"></div>
 					<div class="spec-vr"><? foreach($NAME_SPECIAL as $SPEC){ echo $SPEC;$chet++; if(count($NAME_SPECIAL)!=$chet) echo ", ";}?></div>
 					<?if(!empty($item['PROPERTIES']['STAZH']['VALUE'])):?><div class="staz-vr">Стаж <?=$item['PROPERTIES']['STAZH']['VALUE']?></div><?endif;?>
@@ -80,7 +84,7 @@ if ($arSection = $rsSections->Fetch()){
 					<?if(!empty($item['PROPERTIES']['ONE_PRIEM']['VALUE'])):?><div class="price_vr">Первичный прием <?=$item['PROPERTIES']['ONE_PRIEM']['VALUE']?></div><?endif;?>
 				</div>
 				<div class="save_vr">
-						<a class = "save-btn-vr" href="/<?=$item['CODE']?>/">Записаться</a> <? // Формируется ссылка на детальную страницу специалистов?>
+						<a class = "save-btn-vr" href="<?=$uri?>/<?=$item['CODE']?>/">Записаться</a> <? // Формируется ссылка на детальную страницу специалистов?>
 				</div>
 			</div>
 		</div>
