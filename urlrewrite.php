@@ -23,14 +23,6 @@ $arUrlRewrite=array (
     'PATH' => '/about/faq/index.php',
     'SORT' => 100,
   ),
-  13 => 
-  array (
-    'CONDITION' => '#^/doctors/([^\\/]+)/($|\\?.*)#',
-    'RULE' => 'SECTION_CODE=$1',
-    'ID' => '',
-    'PATH' => '/doctors/section.php',
-    'SORT' => 100,
-  ),
   14 => 
   array (
     'CONDITION' => '#^/service/([^/]+?)/\\??(.*)#',
@@ -48,10 +40,10 @@ $arUrlRewrite=array (
   ),
   7 => 
   array (
-    'CONDITION' => '#^/detskie-vrachi/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/detskie-vrachi/index.php',
+    'CONDITION' => '#^/detskie-vrachi/([^/]+?)/\\??(.*)#',
+    'RULE' => 'SECTION_CODE=$1',
+    'ID' => '',
+    'PATH' => '/detskie-vrachi/section.php',
     'SORT' => 100,
   ),
   8 => 
