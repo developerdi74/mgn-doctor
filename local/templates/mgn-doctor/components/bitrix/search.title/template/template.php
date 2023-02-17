@@ -24,7 +24,7 @@ $CONTAINER_ID = CUtil::JSEscape($CONTAINER_ID);
 
 if ($arParams["SHOW_INPUT"] !== "N") : ?>
 
-	<div id="<? echo $CONTAINER_ID ?>" class="inline-search-block search-block ">
+	<div class="inline-search-block search-block ">
 		<div class="container">
 			<div class="col-md-12">
 				<div class="search-wrapper">

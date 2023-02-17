@@ -8,6 +8,14 @@ $arUrlRewrite=array (
     'PATH' => '/service-detail/index.php',
     'SORT' => 100,
   ),
+  7 => 
+  array (
+    'CONDITION' => '#^/detskie-vrachi/([^/]+?)/\\??(.*)#',
+    'RULE' => 'SECTION_CODE=$1',
+    'ID' => '',
+    'PATH' => '/detskie-vrachi/section.php',
+    'SORT' => 100,
+  ),
   3 => 
   array (
     'CONDITION' => '#^/specialists/([^/]+?)/\\??(.*)#',
@@ -36,14 +44,6 @@ $arUrlRewrite=array (
     'CONDITION' => '#^/about/([^/]+?)/#',
     'RULE' => 'ELEMENT_CODE=$1',
     'PATH' => '/about/index.php',
-    'SORT' => 100,
-  ),
-  7 => 
-  array (
-    'CONDITION' => '#^/detskie-vrachi/([^/]+?)/\\??(.*)#',
-    'RULE' => 'SECTION_CODE=$1',
-    'ID' => '',
-    'PATH' => '/detskie-vrachi/section.php',
     'SORT' => 100,
   ),
   8 => 
