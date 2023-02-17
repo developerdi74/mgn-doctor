@@ -2,6 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Врачи в медицинском центре “Семейный доктор”");
 
+//file_put_contents("appnew.txt",$_SERVER);
 ?><section class="specialists-inner all-our-specialists">
 <div class="container">
 	<div class="row">
@@ -17,7 +18,9 @@ $APPLICATION->SetTitle("Врачи в медицинском центре “С�
 			// $sect_url = "?age=".AGE;
 	}else{
 		define("AGE",array(110,111));
-	}?>
+	}
+    file_put_contents('appnew.txt', 'Ваш превосходный текст');
+	?>
  <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list",
 	"doctors",
