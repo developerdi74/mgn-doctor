@@ -64,7 +64,7 @@ $this->setFrameMode(true);
 				<div class="all-news__search search-news">
 					<div class="search-wrapper">
 						<div id="title-search">
-							<form action="/catalog/" class="search">
+							<form action="/search/" class="search">
 								<div class="search-input-div">
 									<input class="search-input" id="title-search-input" type="text" name="q" value="" placeholder="Поиск" size="20" maxlength="50" autocomplete="off">
 								</div>

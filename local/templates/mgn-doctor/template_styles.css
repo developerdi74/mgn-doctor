@@ -2394,6 +2394,7 @@ nav.menu{
 	.specialist-inner .specialists-item__position{
 		letter-spacing: .33px;
 	}
+
 }
 
 .specialists-item__place svg{
@@ -9295,6 +9296,9 @@ input:-webkit-autofill,
 	.serviceit-price__item--team .swiper-container{
 		margin-top: 0;
 	}
+	.main-slider{
+		min-height: 460px;
+	}
 }
 
 .specialists-item__admission--title{
@@ -12841,7 +12845,6 @@ input:-webkit-autofill,
 	.main-slider__owl .item{
 		background: none !important;
 	}
-
 	.main-slider__owl .item:before{
 		content: none;
 	}
