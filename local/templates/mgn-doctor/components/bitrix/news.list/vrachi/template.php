@@ -1,7 +1,6 @@
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
 //Получение SEO раздела
-
 $rsSections = CIBlockSection::GetList(array(),array('IBLOCK_ID' => 25, '=CODE' => SECTION_CODE), false, Array("UF_DETI"));
 if ($arSection = $rsSections->Fetch()){
 	$sec_id = $arSection["ID"];
@@ -44,6 +43,8 @@ if ($arSection = $rsSections->Fetch()){
 	<div class='section_vrachi'>
 		<!-- Сортировка сюда-->
 	<?foreach($arResult['ITEMS'] as $item):?>
+
+
 <?
 		// получение свойств специализации
 		$NAME_SPECIAL=null;
@@ -68,6 +69,30 @@ if ($arSection = $rsSections->Fetch()){
 		 $chet = 0;
 ?>
 
+<?
+//-----------------------------------------------------------------------------
+
+		 //Получаем цену первичного приема по ID услуги
+		 //
+
+		 foreach ($item['PROPERTIES']['SERVICE']['VALUE'] as $value) {
+		 		$serv = CIBlockElement::GetList(Array(), array("IBLOCK_ID"=>24,"ID"=>$value), false, Array());
+		 		$ob2 = $serv->GetNextElement();
+		 		$arFields2 = $ob2->GetFields();
+		 		$arProps2 = $ob2->GetProperties();
+		 		//Сравнение разделов врача и его услуг
+		 		if($arProps2['SPECIALIZATION']['VALUE'] == $sec_id){
+			 		if(mb_stripos($arFields2['NAME'],"первичный")){
+			 			$price = CPrice::GetBasePrice($arFields2['ID']);
+			 			$min_price = $price['PRICE'];
+			 		}
+		 		}
+		 }
+		 $item['PROPERTIES']['ONE_PRIEM']['VALUE'] = round($min_price);
+
+//-----------------------------------------------------------------------------
+?>
+
 	<?
 	$this->AddEditAction($item['ID'], $item['EDIT_LINK'], CIBlock::GetArrayByID($item["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($item['ID'], $item['DELETE_LINK'], CIBlock::GetArrayByID($item["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
@@ -84,7 +109,7 @@ if ($arSection = $rsSections->Fetch()){
 					<div class="spec-vr"><? foreach($NAME_SPECIAL as $SPEC){ echo $SPEC;$chet++; if(count($NAME_SPECIAL)!=$chet) echo ", ";}?></div>
 					<?if(!empty($item['PROPERTIES']['STAZH']['VALUE'])):?><div class="staz-vr">Стаж <?=$item['PROPERTIES']['STAZH']['VALUE']?></div><?endif;?>
 					<?if(!empty($item['PROPERTIES']['CATEGORY']['VALUE'])):?><div class="category-vr"><?=$item['PROPERTIES']['CATEGORY']['VALUE']?></div><?endif;?>
-					<?if(!empty($item['PROPERTIES']['ONE_PRIEM']['VALUE'])):?><div class="price_vr">Первичный прием <?=$item['PROPERTIES']['ONE_PRIEM']['VALUE']?></div><?endif;?>
+					<?if(!empty($item['PROPERTIES']['ONE_PRIEM']['VALUE'])):?><div class="price_vr">Первичный прием <?=$item['PROPERTIES']['ONE_PRIEM']['VALUE']?> ₽</div><?endif;?>
 				</div>
 				<div class="save_vr">
 						<a class = "save-btn-vr" href="<?=$uri?>/<?=$item['CODE']?>/">Записаться</a> <? // Формируется ссылка на детальную страницу специалистов?>
