@@ -14710,3 +14710,14 @@ img{
 		opacity: 1;
 	}
 }
+#spravkaifns{
+	display: none;
+}
+
+#spravkaifns .jq-select-multiple{
+
+}
+.jq-select-multiple ul{
+	height: 60px !important;
+	width:  100%;
+}
