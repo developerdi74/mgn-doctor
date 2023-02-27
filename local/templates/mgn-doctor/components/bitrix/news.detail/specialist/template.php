@@ -310,7 +310,7 @@ while($arDataT=$TimeData->Fetch()){
 									<ul>
 										<li>можно через форму онлайн-записи</li>
 										<li>позвонив в контакт-центр <a href="tel:83519581111">8-3519-581-111</a></li>
-										<li>через <a href="https://ok.ru/semeinyidoctor74"><img src="<?=SITE_TEMPLATE_PATH?>/img/OK_logo.svg" alt="" width="30" height="30"></a>  <a href="https://vk.com/semeinyi_doctor74"><img src="<?=SITE_TEMPLATE_PATH?>/img/VK_Compact_Logo.svg" alt="" width="30" height="30"></a></li>
+										<li>через <a href="https://ok.ru/semeinyidoctor74" rel="nofollow"><img src="<?=SITE_TEMPLATE_PATH?>/img/OK_logo.svg" alt="" width="30" height="30"></a>  <a href="https://vk.com/semeinyi_doctor74" rel="nofollow"><img src="<?=SITE_TEMPLATE_PATH?>/img/VK_Compact_Logo.svg" alt="" width="30" height="30"></a></li>
 										<li>написав в чат (на сайте справа внизу)</li>
 									</ul>
 								</div>

@@ -59,8 +59,8 @@
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"SET_STATUS_404" => "Y",
-		"SHOW_404" => "N",
-		"MESSAGE_404" => ""
+		"SHOW_404" => "Y",
+		"MESSAGE_404" => "ЦЦЦ"
 	),
 	false
 );?>
