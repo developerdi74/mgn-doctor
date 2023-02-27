@@ -31,5 +31,12 @@ $aMenuLinks = array(
 		array(),
 		array("img" => "online consultation.svg"),
 		""
-	)
+	),
+	// array(
+	// 	"Готовность справки для ИФНС",
+	// 	"#spravkaifns",
+	// 	array(),
+	// 	array("img" => "online consultation.svg","data" => "#spravkaifns"),
+	// 	""
+	// )
 );
