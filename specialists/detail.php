@@ -60,7 +60,7 @@
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"SET_STATUS_404" => "Y",
 		"SHOW_404" => "Y",
-		"MESSAGE_404" => "ЦЦЦ"
+		"MESSAGE_404" => ""
 	),
 	false
 );?>
