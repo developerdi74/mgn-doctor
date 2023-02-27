@@ -18,17 +18,17 @@ if ($arSection = $rsSections->Fetch()){
 //Проверка на какой мы странице если детская то установить детский заголовок
 //
 		$uri = "/specialists";
-		$section_code = explode("/",$_SERVER['REQUEST_URI']);
-		$title = $IPROPERTY['SECTION_META_TITLE'];
-		if($title_detskii && $section_code[1] == 'detskie-vrachi'){
-			$header = $title_detskii;
-			$title = $title_detskii." | Семейный доктор в Магнитогорске";
-		}
-		if($section_code[1]=="detskie-vrachi"){
-			$uri = "/detskie-vrachi";
-		}else{
-			$uri = "/specialists";
-		}
+		// $section_code = explode("/",$_SERVER['REQUEST_URI']);
+		// $title = $IPROPERTY['SECTION_META_TITLE'];
+		// if($title_detskii && $section_code[1] == 'detskie-vrachi'){
+		// 	$header = $title_detskii;
+		// 	$title = $title_detskii." | Семейный доктор в Магнитогорске";
+		// }
+		// if($section_code[1]=="detskie-vrachi"){
+		// 	$uri = "/detskie-vrachi";
+		// }else{
+		// 	$uri = "/specialists";
+		// }
 //-----------------------------------------------------------------------------
 
 

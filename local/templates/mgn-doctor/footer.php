@@ -411,6 +411,41 @@
 			], false); ?>
 	</div>
 </div>
+<?/*
+<div id="spravkaifns" class="popup popup-small appointment-call">
+	<div class="popup__content popup-content">
+					<? $APPLICATION->IncludeComponent(
+	"bitrix:form.result.new", 
+	"template", 
+	array(
+		"COMPONENT_TEMPLATE" => "template",
+		"WEB_FORM_ID" => "8",
+		"IGNORE_CUSTOM_TEMPLATE" => "N",
+		"USE_EXTENDED_ERRORS" => "Y",
+		"SEF_MODE" => "N",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "3600",
+		"LIST_URL" => "",
+		"EDIT_URL" => "",
+		"SUCCESS_URL" => $_SERVER["SCRIPT_URL"]."?success=1",
+		"CHAIN_ITEM_TEXT" => "",
+		"CHAIN_ITEM_LINK" => "",
+		"AJAX_MODE" => "Y",
+		"AJAX_OPTION_SHADOW" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"AJAX_OPTION_HISTORY" => "N",
+		"VARIABLE_ALIASES" => array(
+			"WEB_FORM_ID" => "WEB_FORM_ID",
+			"RESULT_ID" => "RESULT_ID",
+		)
+	),
+	false
+); ?>
+		</div>
+	</div>
+	 */?>
+</div>
 
 <!-- POPUP ORDER CALL -->
 <div style="display: none;" id="mail-doctor" class="popup popup-small popoup-form popoup-call">
