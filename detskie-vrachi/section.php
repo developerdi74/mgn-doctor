@@ -110,8 +110,16 @@ $APPLICATION->SetTitle("Врачи в медицинском центре “С�
 	),
 	false
 );?>
-<?else: // вызов деталки если раздела не существует
-
+<?else:
+CHTTP::SetStatus("404 Not Found");
+@define("ERROR_404","Y");
+if ($APPLICATION->RestartWorkarea())
+{
+	require(\Bitrix\Main\Application::getDocumentRoot() . "/404.php");
+	die();
+}
+// вызов деталки если раздела не существует
+/*
 $APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
 	"specialist",
@@ -178,7 +186,7 @@ $APPLICATION->IncludeComponent(
 	),
 	false
 );
-
+*/
 	endif;
 endif;
 ?>
