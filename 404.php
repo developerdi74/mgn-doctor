@@ -19,3 +19,6 @@ $APPLICATION->SetTitle("Страница не найдена");
    </div>
  </section>
 </div>
+<?
+require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');
+?>
