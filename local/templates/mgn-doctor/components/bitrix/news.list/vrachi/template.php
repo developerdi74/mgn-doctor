@@ -1,11 +1,11 @@
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-//Получение SEO раздела
-$rsSections = CIBlockSection::GetList(array(),array('IBLOCK_ID' => 25, '=CODE' => SECTION_CODE), false, Array("UF_DETI"));
-if ($arSection = $rsSections->Fetch()){
-	$sec_id = $arSection["ID"];
-	$title_detskii=$arSection['UF_DETI'];
-}
+		//Получение SEO раздела
+		$rsSections = CIBlockSection::GetList(array(),array('IBLOCK_ID' => 25, '=CODE' => $arParams['SECT_CODE_PARAM']), false, Array("UF_DETI"));
+		if ($arSection = $rsSections->Fetch()){
+			$sec_id = $arSection["ID"];
+			$title_detskii=$arSection['UF_DETI'];
+		}
 
 		$ipropValues = new \Bitrix\Iblock\InheritedProperty\SectionValues(25,$sec_id);
 		$IPROPERTY  = $ipropValues->getValues();
@@ -41,10 +41,10 @@ if ($arSection = $rsSections->Fetch()){
 		<h1 class="page-title specialists-inner__title all-our-specialists__title"><?=$header?></h1>
 	</div>
 	<div class='section_vrachi'>
+
 		<!-- Сортировка сюда-->
+
 	<?foreach($arResult['ITEMS'] as $item):?>
-
-
 <?
 		// получение свойств специализации
 		$NAME_SPECIAL=null;
@@ -68,7 +68,6 @@ if ($arSection = $rsSections->Fetch()){
 		 }
 		 $chet = 0;
 ?>
-
 <?
 //-----------------------------------------------------------------------------
 
@@ -92,7 +91,6 @@ if ($arSection = $rsSections->Fetch()){
 
 //-----------------------------------------------------------------------------
 ?>
-
 	<?
 	$this->AddEditAction($item['ID'], $item['EDIT_LINK'], CIBlock::GetArrayByID($item["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($item['ID'], $item['DELETE_LINK'], CIBlock::GetArrayByID($item["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
