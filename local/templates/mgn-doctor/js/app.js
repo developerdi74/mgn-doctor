@@ -61,10 +61,13 @@ $(document).ready(function(){
 		date = $(this).data("date");
 		price = Math.round( $('select[name=SERVICE] option:selected').data("price") );
 		clinic =  'Клиника: ' + $('select[name=CLINIC] option:selected').text() + '\n';
-		serv = 'Услуга: ' + $('select[name=SERVICE] option:selected').text() + ' ' + price + 'р. \n';
+
+		add_clnc = $.trim($('.specialist-info__place').text());
+		clinic = add_clnc + '\n';
+		//serv = 'Услуга: ' + $('select[name=SERVICE] option:selected').text() + ' ' + price + 'р. \n';
 		time = 'Желаемая дата и время: ' + date + ', ' + $(this).text()+ '\n';;
 		text = 'Врач: '+ item.find('.specialists-item__name').text()+ '\n';;
-		str = text + clinic + serv + time;
+		str = text + time;
 		str.replace(/ +/g, ' ').trim();
 		$('textarea[name="form_textarea_24"]').val(str);
 	});

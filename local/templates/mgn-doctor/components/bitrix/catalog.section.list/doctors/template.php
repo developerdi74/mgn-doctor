@@ -30,7 +30,7 @@ $this->setFrameMode(true);?>
 						if($count = $res->fetch()){
 							$activeElements[] = $count;
 						}
-						if(count($activeElements)==none){
+						if(count($activeElements)==null){ //Изменено при переходе с none
 							continue;
 						}
 
