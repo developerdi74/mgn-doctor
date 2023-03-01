@@ -3,7 +3,7 @@
 namespace wk00FF;
 use \Bitrix\Main\EventManager;
 class FormValidatorNullString{
-	function getDescription(){
+	public static function getDescription(){
 		return [
 			'NAME'           =>'null_string',						// идентификатор
 			'DESCRIPTION'    =>'Нулевая строка',					// наименование
@@ -14,16 +14,16 @@ class FormValidatorNullString{
 			'HANDLER'        =>[__CLASS__, 'doValidate'],			// валидатор
 		];
 	}
-	function getSettings(){
+	public static function getSettings(){
 		return [];
 	}
-	function toDB($arParams){
+	public static function toDB($arParams){
 		return serialize($arParams);
 	}
-	function fromDB($strParams){
+	public static function fromDB($strParams){
 		return unserialize($strParams);
 	}
-	function doValidate($arParams, $arQuestion, $arAnswers, $arValues){
+	public static function doValidate($arParams, $arQuestion, $arAnswers, $arValues){
 		global $APPLICATION;
 		foreach($arValues as $value){
 			if(strlen(trim($value))>0){
