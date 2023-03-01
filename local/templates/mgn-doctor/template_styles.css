@@ -116,6 +116,11 @@
 	.b24-widget-button-visible{
 		display: none !important;
 	}
+	.nav-tabs-specialists .nav-item .nav-link{
+		font-size: 14px;
+		padding-left: 4px;
+		padding-right: 4px;
+	}
 }
 
 /*
