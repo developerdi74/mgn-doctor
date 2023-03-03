@@ -44,9 +44,11 @@ div.news-list img.preview_picture
 }
 	.pop_flex{
 		display: flex !important;
+		justify-content: space-between;
 	}
 	.pop_flex>.item{
 		margin-right: 20px !important;
+		width: 100%;
 	}
 	.pop_flex .direction-item-img:before{
 	}

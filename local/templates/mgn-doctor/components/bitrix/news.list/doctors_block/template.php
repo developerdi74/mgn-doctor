@@ -134,7 +134,6 @@ $this->setFrameMode(true);
 
   </div>
   <div class="row row-team-swiper"> 
-
     <div class="our-team__col our-team__col-table">
       <div class="our-team-directions filter-group">
 
@@ -155,12 +154,21 @@ $this->setFrameMode(true);
 
           <? foreach ($arResult["ITEMS"] as $arSectItem) : ?>
             <? foreach ($arSectItem['ELEMENTS'] as $arItem) : ?>
-
               <div class="swiper-slide">
                 <div class="item our-team__item specialists-item">
                   <div class="specialists-item__top">
                     <div class="specialists-item__img">
-                      <img src="<?= $arItem['PREVIEW_PICTURE']['SRC']; ?>" alt="" class="specialists-item__photo">
+                      <picture>
+                        <?//prnt($arItem["PREVIEW_PICTURE"]);?>
+                         <?if($arItem["PREVIEW_PICTURE"]["SRC_AVIF"]):?>
+                            <source srcset="<?=$arItem["PREVIEW_PICTURE"]["SRC_AVIF"]?>" type="image/avif">
+                         <?endif;?>
+                         <?if($arItem["PREVIEW_PICTURE"]["SRC_WEBP"]):?>
+                            <source srcset="<?=$arItem["PREVIEW_PICTURE"]["SRC_WEBP"]?>" type="image/webp">
+                         <?endif;?>
+                            <source srcset="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" type="image/png">
+                            <img src="" height = "<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>">
+                      </picture>
                     </div>
                     <div class="specialists-item__status">
                       <span class="active-status"></span>

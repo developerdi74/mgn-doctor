@@ -22,8 +22,17 @@ $this->setFrameMode(true);?>
 						<div class="item our-team__item specialists-item">
 							<div class="specialists-item__top">
 								<div class="specialists-item__img">
-									<img src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" alt="" class="specialists-item__photo">
-								</div>
+									<picture>
+			                         <?if($arItem["PREVIEW_PICTURE"]["SRC_AVIF"]):?>
+			                            <source srcset="<?=$arItem["PREVIEW_PICTURE"]["SRC_AVIF"]?>" type="image/avif">
+			                         <?endif;?>
+			                         <?if($arItem["PREVIEW_PICTURE"]["SRC_WEBP"]):?>
+			                            <source srcset="<?=$arItem["PREVIEW_PICTURE"]["SRC_WEBP"]?>" type="image/webp">
+			                         <?endif;?>
+			                            <source srcset="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" type="image/webp">
+			                            <img src="" height = "<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" class="specialists-item__photo">
+			                      </picture>
+			                  	</div>
 								<div class="specialists-item__status">
 									<span class="active-status"></span>
 								</div>

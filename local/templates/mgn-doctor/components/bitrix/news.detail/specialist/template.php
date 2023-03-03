@@ -52,7 +52,15 @@ $name = $arResult["NAME"];
 						<div class="item our-team__item specialists-item ">
 							<div class="specialists-item__top specialist-info__top">
 								<div class="specialists-item__img specialist-info__img">
-									<img src="<?=$arResult["PREVIEW_PICTURE"]["SRC"]?>" alt="" class="specialists-item__photo">
+									<picture>
+									   <?if($arResult["PREVIEW_PICTURE"]["SRC_AVIF"]):?>
+									   		<source srcset="<?=$arResult["PREVIEW_PICTURE"]["SRC_AVIF"]?>" type="image/avif">
+									   <?endif;?>
+									   <?if($arResult["PREVIEW_PICTURE"]["SRC_WEBP"]):?>
+									   		<source srcset="<?=$arResult["PREVIEW_PICTURE"]["SRC_WEBP"]?>" type="image/webp">
+									   <?endif;?>
+									   <img src="<?=$arResult["PREVIEW_PICTURE"]["SRC"]?>" height = "<?=$arResult["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$arResult["PREVIEW_PICTURE"]["WIDTH"]?>" alt="<?=$arResult["PREVIEW_PICTURE"]["ALT"]?>"  class="specialists-item__photo">
+									</picture>
 								</div>
 								<div class="specialists-item__status">
 									<?if($arTime[0]['time']!=''){?>

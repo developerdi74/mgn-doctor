@@ -99,7 +99,17 @@
 		<div class='row_vr'  id="<?=$this->GetEditAreaId($item['ID']);?>">
 			<div class="cnt_vr">
 				<div class="img_vr">
-					<a href = "<?=$uri?>/<?=$item['CODE']?>/"><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>" alt=""></a>
+					<a href = "<?=$uri?>/<?=$item['CODE']?>/">
+						<picture>
+						   <?if($item["PREVIEW_PICTURE"]["SRC_AVIF"]):?>
+						   		<source srcset="<?=$item["PREVIEW_PICTURE"]["SRC_AVIF"]?>" type="image/avif">
+						   <?endif;?>
+						   <?if($item["PREVIEW_PICTURE"]["SRC_WEBP"]):?>
+						   		<source srcset="<?=$item["PREVIEW_PICTURE"]["SRC_WEBP"]?>" type="image/webp">
+						   <?endif;?>
+						   <img src="<?=$item["PREVIEW_PICTURE"]["SRC"]?>" height = "<?=$item["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$item["PREVIEW_PICTURE"]["WIDTH"]?>" alt="<?=$item["PREVIEW_PICTURE"]["ALT"]?>">
+						</picture>
+					</a>
 				</div>
 				<div class="descrip_vr">
 					<div class="name-vr"><h2><a href = "<?=$uri?>/<?=$item['CODE']?>/"><?=$item['NAME']?></a></h2></div>

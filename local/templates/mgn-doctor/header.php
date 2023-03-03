@@ -26,39 +26,25 @@
   <!-- libraries -->
   <?
   Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.min.js');
-  Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/bootstrap.bundle.min.js');
-  Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/bootstrap.min.js');
-
-  //Asset::getInstance()->addJs('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js');
-
+  //Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/bootstrap.bundle.min.js');
+  Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/bootstrap.min.js'); //сыпется в деталке переключение вкладок
   Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/owl.carousel.min.js');
   Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.fancybox.min.js');
   Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.maskedinput.min.js');
   Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.formstyler.min.js');
-
   Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/swiper.min.js');
-
   Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/app.js');
-  //Asset::getInstance()->addJs('https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js');
-  
-//  Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.lazyload.min.js');
   ?>
   <!-- CSS стили -->
   <?
   Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/bootstrap.min.css');
-
   Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/owl.carousel.min.css');
-  Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/owl.theme.default.min.css');
-
-  Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.formstyler.css');
-  Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.formstyler.theme.css');
-
+  //Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/owl.theme.default.min.css');
+  //Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.formstyler.css');
+  // Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.formstyler.theme.css');
   Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.fancybox.min.css');
-
-  Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/swiper.min.css');
-
-//  Asset::getInstance()->addCss(SITE_TEMPLATE_PATH.'/css/adaptive.css');
-  Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/animate.min.css');
+  //Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/swiper.min.css');
+  //Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/animate.min.css');
   ?>
 
 <!--<script data-skip-moving=true type="text/javascript">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src='https://vk.com/js/api/openapi.js?169',t.onload=function(){VK.Retargeting.Init("VK-RTRG-1497894-3oCL8"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script>-->
