@@ -44,8 +44,8 @@ if( strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' )!== false || strpos( $_SERVER
    }
    //prnt($arItem["PREVIEW_PICTURE"]);
 ?>
-					<div class="item" <?if($_SESSION['isMobile']!==true):?>style="background-image:url('<?=$arItem["PREVIEW_PICTURE"][$src] ?>');"<?endif;?>>
-						<div class="main-slider__item--mobile" <?if($_SESSION['isMobile']===true):?>
+					<div class="item" <?if($_SESSION['isMobile']!=true):?>style="background-image:url('<?=$arItem["PREVIEW_PICTURE"][$src] ?>');"<?endif;?>>
+						<div class="main-slider__item--mobile" <?if($_SESSION['isMobile']==true):?>
 							style="background-image:url('<?= $arItem["DETAIL_PICTURE"][$src2] ?>');"<?endif;?>>
 							<div class="owl-text-overlay">
 								<div class="main-slider__inner">
