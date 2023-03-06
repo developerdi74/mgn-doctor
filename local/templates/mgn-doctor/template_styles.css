@@ -8,6 +8,7 @@
 				 url('fonts/Mont-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style:  normal;
+	font-display: swap;
 }
 
 @font-face{
@@ -20,6 +21,7 @@
 				 url('fonts/Mont-Bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style:  normal;
+	font-display: swap;
 }
 
 @font-face{
@@ -32,6 +34,7 @@
 				 url('fonts/Mont-Black.ttf') format('truetype');
 	font-weight: 900;
 	font-style:  normal;
+	font-display: swap;
 }
 
 @font-face{
@@ -44,6 +47,7 @@
 				 url('fonts/Mont-Heavy.ttf') format('truetype');
 	font-weight: 800;
 	font-style:  normal;
+	font-display: swap;
 }
 
 @font-face{
@@ -56,6 +60,7 @@
 				 url('Mont-Thin.ttf') format('truetype');
 	font-weight: 100;
 	font-style:  normal;
+	font-display: swap;
 }
 
 
@@ -11431,7 +11436,7 @@ input:-webkit-autofill,
 	}
 
 	.our-team{
-		background-image: url(/local/templates/mgn-doctor/img/our-docs-bg-mob.png);
+		background-image: url(/local/templates/mgn-doctor/img/our-docs-bg-mob.webp);
 	}
 
 	.health-calc .mobile-row{
@@ -14725,11 +14730,4 @@ img{
 .jq-select-multiple ul{
 	height: 60px !important;
 	width:  100%;
-}
-@font-face {
-  font-family: 'Pacifico';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format('woff2');
-  font-display: swap;
 }
