@@ -42,7 +42,9 @@ $this->setFrameMode(true);
 
         <div class="item popular-services__item">
           <div class="services__item services-item">
+            <?if($arItem['PREVIEW_PICTURE']['SRC']):?>
             <img src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" alt=""  >
+            <?endif;?>
           </div>
           <h4 class="services-item__title"><?= $arItem['NAME'] ?></h4>
           <div class="line line-lred"></div>
