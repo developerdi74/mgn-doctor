@@ -103,7 +103,7 @@ $APPLICATION->ShowPanel();?>
 	<!--  MOBILE MENU   -->
 	<div class="mobile-menu menu-expanded burger-menu" id="mobile-menu">
 		<div class="burger-menu__logo">
-			<a class="burger-menu__logo-link" href="/index.html"><img src="<?=SITE_TEMPLATE_PATH?>/img/main_logo.svg" alt="" class="logo"></a>
+			<a class="burger-menu__logo-link" href="/index.html"><img src="<?=SITE_TEMPLATE_PATH?>/img/main_logo.svg" height="41" width="125" alt="" class="logo"></a>
 		</div>
 		<div class="burger-menu__login">
 
@@ -236,7 +236,7 @@ $APPLICATION->ShowPanel();?>
 			<div class="container">
 				<div class="row justify-content-between">
 					<div class="header__bottom-left">
-						<a class="navbar-brand" href="/"><img src="<?=SITE_TEMPLATE_PATH?>/img/main_logo.svg" alt="" class="logo"></a>
+						<a class="navbar-brand" href="/"><img src="<?=SITE_TEMPLATE_PATH?>/img/main_logo.svg" height="49" width="149" alt="" class="logo"></a>
 						<?$APPLICATION->IncludeComponent("bitrix:menu", "menu", [
 							"COMPONENT_TEMPLATE"   =>"menu",
 							"ROOT_MENU_TYPE"       =>"top",
