@@ -9648,6 +9648,7 @@ input:-webkit-autofill,
 
 @media screen and (min-width: 600px){
 	.main-slider__item--mobile{
+		background-image: none !important;
 		height:           100%;
 		width:            100%;
 	}
