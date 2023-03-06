@@ -19,8 +19,8 @@ $this->setFrameMode(true);
 
 			<div class="container  main-slider-container__nav">
 				<div class="slider__nav navigation main-slider__nav">
-					<div class="slider__nav-prev"><img src="<?= SITE_TEMPLATE_PATH ?>/img/arrow-prev.svg" height = "11" width = "20" alt="prev"></div>
-					<div class="slider__nav-next"><img src="<?= SITE_TEMPLATE_PATH ?>/img/arrow-next.svg" height = "11" width = "20" alt="next"></div>
+					<div class="slider__nav-prev"><img src="<?= SITE_TEMPLATE_PATH ?>/img/arrow-prev.svg" height = "20" width = "11" alt="prev"></div>
+					<div class="slider__nav-next"><img src="<?= SITE_TEMPLATE_PATH ?>/img/arrow-next.svg" height = "20" width = "11" alt="next"></div>
 				</div>
 			</div>
 
