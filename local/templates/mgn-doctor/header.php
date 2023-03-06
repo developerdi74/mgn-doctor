@@ -34,6 +34,7 @@
   Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.formstyler.min.js');
   Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/swiper.min.js');
   Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/app.js');
+  Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.lazyload.min.js');
   ?>
   <!-- CSS стили -->
   <?

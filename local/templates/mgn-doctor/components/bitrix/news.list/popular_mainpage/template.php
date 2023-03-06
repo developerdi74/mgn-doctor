@@ -30,7 +30,7 @@ $this->setFrameMode(true);
 								   <?if($item["PREVIEW_PICTURE"]["SRC_WEBP"]):?>
 								   		<source srcset="<?=$item["PREVIEW_PICTURE"]["SRC_WEBP"]?>" type="image/webp">
 								   <?endif;?>
-								   <img src="<?=$item["PREVIEW_PICTURE"]["SRC"]?>" height = "<?=$item["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$item["PREVIEW_PICTURE"]["WIDTH"]?>" alt="<?=$item["PREVIEW_PICTURE"]["ALT"]?>">
+								   <img src="<?=$item["PREVIEW_PICTURE"]["SRC"]?>" loading="lazy" height = "<?=$item["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$item["PREVIEW_PICTURE"]["WIDTH"]?>" alt="<?=$item["PREVIEW_PICTURE"]["ALT"]?>" >
 								</picture>
 						<h5 class="direction-item__title"><?=$item['NAME']?></h5>
 						<a href="<?=$item['PROPERTIES']['LINK_ITEM']['VALUE']?>" class="direction-item__link--hidden"></a>

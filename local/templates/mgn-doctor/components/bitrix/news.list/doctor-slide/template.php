@@ -30,7 +30,7 @@ $this->setFrameMode(true);?>
 			                            <source srcset="<?=$arItem["PREVIEW_PICTURE"]["SRC_WEBP"]?>" type="image/webp">
 			                         <?endif;?>
 			                            <source srcset="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" type="image/webp">
-			                            <img src="" height = "<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" class="specialists-item__photo">
+			                            <img src="" loading="lazy" height = "<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" class="specialists-item__photo">
 			                      </picture>
 			                  	</div>
 								<div class="specialists-item__status">

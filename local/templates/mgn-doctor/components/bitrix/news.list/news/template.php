@@ -24,8 +24,7 @@ $this->setFrameMode(true);?>
 					     <?if($arItem["PREVIEW_PICTURE"]["SRC_WEBP"]):?>
 					        <source srcset="<?=$arItem["PREVIEW_PICTURE"]["SRC_WEBP"]?>" type="image/webp">
 					     <?endif;?>
-					        <source srcset="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" type="image/webp">
-					        <img src="" height = "<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>">
+					        <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" loading="lazy" height = "<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>">
 					</picture>
 				</div>
 				<div class="item-news__content">
