@@ -30,8 +30,23 @@ $this->setFrameMode(true);
 					$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 					$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 					?>
-					<div class="item" style="background-image:url('<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>');">
-						<div class="main-slider__item--mobile" style="background-image:url('<?= $arItem["DETAIL_PICTURE"]["SRC"] ?>');">
+<?php
+   $src = "SRC";
+   $src2 = "SRC";
+   $webp = false;
+if( strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' )!== false || strpos( $_SERVER['HTTP_USER_AGENT'], ' Chrome/' )!== false ) {
+   $webp = true;}
+   if($arItem["PREVIEW_PICTURE"]["SRC_WEBP"] && $webp == true){
+   	$src = "SRC_WEBP";
+   }
+   if($arItem["DETAIL_PICTURE"]["SRC_WEBP"] && $webp == true){
+   	$src2 = "SRC_WEBP";
+   }
+   //prnt($arItem["PREVIEW_PICTURE"]);
+?>
+					<div class="item" <?if($_SESSION['isMobile']!==true):?>style="background-image:url('<?=$arItem["PREVIEW_PICTURE"][$src] ?>');"<?endif;?>>
+						<div class="main-slider__item--mobile" <?if($_SESSION['isMobile']===true):?>
+							style="background-image:url('<?= $arItem["DETAIL_PICTURE"][$src2] ?>');"<?endif;?>>
 							<div class="owl-text-overlay">
 								<div class="main-slider__inner">
 									<h2 class="main-slider__title title-slider">

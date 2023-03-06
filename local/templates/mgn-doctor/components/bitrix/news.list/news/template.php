@@ -17,7 +17,16 @@ $this->setFrameMode(true);?>
 		<div class="col-md-4 col-sm-6 col-xs-12 news__item">
 			<div class="item-news">
 				<div class="item-news__img">
-					<img src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" alt="">
+					<picture>
+					     <?if($arItem["PREVIEW_PICTURE"]["SRC_AVIF"]):?>
+					        <source srcset="<?=$arItem["PREVIEW_PICTURE"]["SRC_AVIF"]?>" type="image/avif">
+					     <?endif;?>
+					     <?if($arItem["PREVIEW_PICTURE"]["SRC_WEBP"]):?>
+					        <source srcset="<?=$arItem["PREVIEW_PICTURE"]["SRC_WEBP"]?>" type="image/webp">
+					     <?endif;?>
+					        <source srcset="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" type="image/webp">
+					        <img src="" height = "<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>">
+					</picture>
 				</div>
 				<div class="item-news__content">
 					<h4 class="item-news__title"><?=$arItem['NAME']?></h4>

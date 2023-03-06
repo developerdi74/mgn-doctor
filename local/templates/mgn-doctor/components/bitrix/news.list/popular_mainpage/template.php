@@ -23,7 +23,15 @@ $this->setFrameMode(true);
 			<?foreach($arResult['ITEMS'] as $item):?>
 				<div class="item main-directions__item" >
 					<div class="direction-item-img">
-						<img src="<?=$item['PREVIEW_PICTURE']['SRC']?>" alt="<?=$item["PREVIEW_PICTURE"]["ALT"]?>">
+								<picture>
+								   <?if($item["PREVIEW_PICTURE"]["SRC_AVIF"]):?>
+								   		<source srcset="<?=$item["PREVIEW_PICTURE"]["SRC_AVIF"]?>" type="image/avif">
+								   <?endif;?>
+								   <?if($item["PREVIEW_PICTURE"]["SRC_WEBP"]):?>
+								   		<source srcset="<?=$item["PREVIEW_PICTURE"]["SRC_WEBP"]?>" type="image/webp">
+								   <?endif;?>
+								   <img src="<?=$item["PREVIEW_PICTURE"]["SRC"]?>" height = "<?=$item["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$item["PREVIEW_PICTURE"]["WIDTH"]?>" alt="<?=$item["PREVIEW_PICTURE"]["ALT"]?>">
+								</picture>
 						<h5 class="direction-item__title"><?=$item['NAME']?></h5>
 						<a href="<?=$item['PROPERTIES']['LINK_ITEM']['VALUE']?>" class="direction-item__link--hidden"></a>
 					</div>
