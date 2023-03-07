@@ -56,7 +56,7 @@ while ($arData = $rsData->Fetch()) {
       <div class="item our-team__item specialists-item col-md-4 col-sm-6 col-xs-12 all-specialists__item">
         <div class="specialists-item__top">
           <div class="specialists-item__img">
-            <img src="<?= $arItem['PREVIEW_PICTURE']['SRC']; ?>" alt="" class="specialists-item__photo">
+            <img src="<?= $arItem['PREVIEW_PICTURE']['SRC']; ?>" height = "<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>" alt="" class="specialists-item__photo">
           </div>
           <div class="specialists-item__status">
             <? if ($arTime[0]['time'] != '') : ?>

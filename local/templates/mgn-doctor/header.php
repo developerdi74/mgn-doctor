@@ -123,7 +123,7 @@ $APPLICATION->ShowPanel();?>
 	<!--  MOBILE MENU   -->
 	<div class="mobile-menu menu-expanded burger-menu" id="mobile-menu">
 		<div class="burger-menu__logo">
-			<a class="burger-menu__logo-link" href="/index.html"><img src="<?=SITE_TEMPLATE_PATH?>/img/main_logo.svg" height="41" width="125" alt="" class="logo"></a>
+			<a class="burger-menu__logo-link" href="/"><img src="<?=SITE_TEMPLATE_PATH?>/img/main_logo.svg" height="41" width="125" alt="" class="logo"></a>
 		</div>
 		<div class="burger-menu__login">
 

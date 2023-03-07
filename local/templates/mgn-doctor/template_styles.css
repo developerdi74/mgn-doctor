@@ -323,11 +323,13 @@ h6{
 }
 
 a{
+	color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;/*
 	-webkit-transition: .3s;
 	-o-transition:      .3s;
-	transition:         .3s;
+	transition:         .3s;*/
 }
-
 a:hover,
 a:focus,
 a:active{
@@ -2082,11 +2084,6 @@ nav.menu{
 	-webkit-transition: .3s;
 	-o-transition:      .3s;
 	transition:         .3s;
-}
-
-.direction-item-img img{
-	width:  100%;
-	height: auto;
 }
 
 .main-directions__title{
@@ -14724,10 +14721,13 @@ img{
 	display: none;
 }
 
-#spravkaifns .jq-select-multiple{
-
-}
 .jq-select-multiple ul{
 	height: 60px !important;
 	width:  100%;
+}
+
+.main-directions .owl-carousel{
+	display: block;
+	overflow: hidden;
+	max-height: 280px;
 }
