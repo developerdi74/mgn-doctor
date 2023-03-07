@@ -204,8 +204,8 @@ $APPLICATION->SetTitle("Семейный доктор в Магнитогорс�
 		<div class="main-directions__right">
 			<a href="#order-appointment" data-fancybox="" data-src="#order-appointment" class="btn btn-green btn-sign-up">Записаться</a>
 			<div class="slider__nav main-directions__nav navigation">
-				<div class="slider__nav-prev"><img src="<?=SITE_TEMPLATE_PATH?>/img/arrow-prev.svg" alt="prev"></div>
-				<div class="slider__nav-next"><img src="<?=SITE_TEMPLATE_PATH?>/img/arrow-next.svg" alt="next"></div>
+				<div class="slider__nav-prev"><img src="<?=SITE_TEMPLATE_PATH?>/img/arrow-prev.svg" height="11" width="20" alt="prev"></div>
+				<div class="slider__nav-next"><img src="<?=SITE_TEMPLATE_PATH?>/img/arrow-next.svg" height="11" width="20" alt="next"></div>
 			</div>
 		</div>
 	</div>
@@ -546,8 +546,8 @@ $APPLICATION->SetTitle("Семейный доктор в Магнитогорс�
 				<a href="/news/" class="btn btn-grey-tr news__btn">Все новости</a>
 			</div>
 			<div class="slider__nav some-news__nav navigation">
-				<div class="slider__nav-prev"><img src="<?=SITE_TEMPLATE_PATH?>/img/arrow-prev.svg" alt="prev"></div>
-				<div class="slider__nav-next"><img src="<?=SITE_TEMPLATE_PATH?>/img/arrow-next.svg" alt="next"></div>
+				<div class="slider__nav-prev"><img src="<?=SITE_TEMPLATE_PATH?>/img/arrow-prev.svg" height="11" width="20" alt="prev"></div>
+				<div class="slider__nav-next"><img src="<?=SITE_TEMPLATE_PATH?>/img/arrow-next.svg" height="11" width="20" alt="next"></div>
 			</div>
 		</div>
 	</div>
