@@ -48,7 +48,7 @@ $this->setFrameMode(true);
 		</div>
 	</div>
 	<div class="single-arcticle__img">
-		<img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="">
+		<img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" height = "<?=$arResult["DETAIL_PICTURE"]["HEIGHT"]?>" width = "<?=$arResult["DETAIL_PICTURE"]["WIDTH"]?>" alt="">
 	</div>
 	<div class="single-arcticle__content">
 		<? echo $arResult["DETAIL_TEXT"]; ?>

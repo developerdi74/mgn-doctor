@@ -52,7 +52,7 @@ $name = $arResult["NAME"];
 						<div class="item our-team__item specialists-item ">
 							<div class="specialists-item__top specialist-info__top">
 								<div class="specialists-item__img specialist-info__img">
-									<img src="<?=$arResult["PREVIEW_PICTURE"]["SRC"]?>" alt="" class="specialists-item__photo">
+									<img src="<?=$arResult["PREVIEW_PICTURE"]["SRC"]?>" height = "<?=$arResult["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$arResult["PREVIEW_PICTURE"]["WIDTH"]?>" alt="" class="specialists-item__photo">
 								</div>
 								<div class="specialists-item__status">
 									<?if($arTime[0]['time']!=''){?>

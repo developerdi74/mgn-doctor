@@ -26,7 +26,7 @@ $this->setFrameMode(true);?>
 					<div class="tab-pane fade show active  " id="spec_education">
 						<div class="tab-contacts-wrapper">
 							<div class="contacts__img">
-								<img src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" alt="">
+								<img src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" height = "<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>" alt="">
 							</div>
 							<div class="contacts__details contacts-details">
 								<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="contacts-details__place"><?=$arItem["DISPLAY_PROPERTIES"]["ADDRESS"]["VALUE"];?></a>

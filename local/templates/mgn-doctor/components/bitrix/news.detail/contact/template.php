@@ -51,7 +51,7 @@ $this->setFrameMode(true);
 				<div class="tab-pane fade show active  " id="spec_education">
 					<div class="tab-contacts-wrapper">
 						<div class="contacts__img">
-							<img src="<?=$arResult['PREVIEW_PICTURE']['SRC'];?>" alt="">
+							<img src="<?=$arResult['PREVIEW_PICTURE']['SRC'];?>" height = "<?=$arResult["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$arResult["PREVIEW_PICTURE"]["WIDTH"]?>" alt="">
 						</div>
 						<div class="contacts__details contacts-details">
 							<h4 class="contacts-details__place"><?=$arResult["DISPLAY_PROPERTIES"]["ADDRESS"]["VALUE"];?></h4>

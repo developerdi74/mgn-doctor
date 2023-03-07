@@ -42,7 +42,7 @@ $this->setFrameMode(true);
 						<div class="col-md-3 item-news all-news__item allnews-item allnews-item__video ">
 							<div class="item-news__img allnews-item__img item__video" style="background-image: url(<?=$arItem["PREVIEW_PICTURE"]["SRC"];?>); ">
 								<a class="various fancybox  fancybox-video item__video--frame" href="<?=$arItem["DISPLAY_PROPERTIES"]["VIDEO"]["VALUE"];?>">
-									<img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"];?>" alt="">
+									<img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"];?>" height = "<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>" alt="">
 								</a>
 							</div>
 							<div class="item-news__content allnews-item__content">
