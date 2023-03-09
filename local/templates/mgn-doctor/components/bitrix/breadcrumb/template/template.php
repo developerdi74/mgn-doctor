@@ -94,9 +94,10 @@ for($index=0; $index<$itemSize; $index++){
 	}
 	else{
 		$strReturn.='
-			<div class="bx-breadcrumb-item">
+			<div class="bx-breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 				'.$arrow.'
-				<span>'.$title.'</span>
+				<span itemprop="item">'.$title.'</span>
+				<meta itemprop="position" content="'.($index+1).'" />
 			</div>';
 	}
 }

@@ -46,7 +46,7 @@ $arUrlRewrite=array (
     'PATH' => '/about/index.php',
     'SORT' => 100,
   ),
-  8 => 
+  15 => 
   array (
     'CONDITION' => '#^/about/faq/#',
     'RULE' => '',

@@ -1,7 +1,9 @@
 <?require($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 $APPLICATION->SetTitle("Семейный доктор в Магнитогорске");
 //$element_code=$_REQUEST["ELEMENT_CODE"]?$_REQUEST["ELEMENT_CODE"]:'klinika-na-zhukova';
-if($element_code=$_REQUEST["ELEMENT_CODE"]){
+$el=explode("?", $_REQUEST["ELEMENT_CODE"]);
+
+if($element_code=$el[0]){
 	if(!($elementID=getElementIDByCode_($element_code))){
 		if(!defined("ERROR_404")) define("ERROR_404", "Y");
 		\CHTTP::setStatus("404 Not Found");
@@ -101,70 +103,71 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		<div id="page" class="site page-dark-grey">
 			<!-- CONTACTS  -->
 			<? $APPLICATION->IncludeComponent(
-				"bitrix:news.detail",
-				"contact",
-				array(
-					"COMPONENT_TEMPLATE" => "contact",
-					"IBLOCK_TYPE" => "mgn_doctor_content",
-					"IBLOCK_ID" => "28",
-					"ELEMENT_ID" => $elementID,
-					"ELEMENT_CODE" => "",
-					"CHECK_DATES" => "Y",
-					"FIELD_CODE" => array(
-						0 => "PREVIEW_PICTURE",
-						1 => "",
-					),
-					"PROPERTY_CODE" => array(
-						0 => "ADDRESS",
-						1 => "DOCTOR",
-						2 => "E_MAIL",
-						3 => "PHONE",
-						4 => "OPENING_HOURS",
-						5 => "PHOTO",
-						6 => "",
-					),
-					"IBLOCK_URL" => "",
-					"DETAIL_URL" => "",
-					"AJAX_MODE" => "N",
-					"AJAX_OPTION_JUMP" => "N",
-					"AJAX_OPTION_STYLE" => "Y",
-					"AJAX_OPTION_HISTORY" => "N",
-					"AJAX_OPTION_ADDITIONAL" => "",
-					"CACHE_TYPE" => "A",
-					"CACHE_TIME" => "36000000",
-					"CACHE_GROUPS" => "Y",
-					"SET_TITLE" => "Y",
-					"SET_CANONICAL_URL" => "N",
-					"SET_BROWSER_TITLE" => "Y",
-					"BROWSER_TITLE" => "Y",
-					"SET_META_KEYWORDS" => "Y",
-					"META_KEYWORDS" => "-",
-					"SET_META_DESCRIPTION" => "Y",
-					"META_DESCRIPTION" => "-",
-					"SET_LAST_MODIFIED" => "N",
-					"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
-					"ADD_SECTIONS_CHAIN" => "Y",
-					"ADD_ELEMENT_CHAIN" => "Y",
-					"ACTIVE_DATE_FORMAT" => "d.m.Y",
-					"USE_PERMISSIONS" => "N",
-					"STRICT_SECTION_CHECK" => "N",
-					"DISPLAY_DATE" => "Y",
-					"DISPLAY_NAME" => "Y",
-					"DISPLAY_PICTURE" => "Y",
-					"DISPLAY_PREVIEW_TEXT" => "Y",
-					"USE_SHARE" => "N",
-					"PAGER_TEMPLATE" => ".default",
-					"DISPLAY_TOP_PAGER" => "N",
-					"DISPLAY_BOTTOM_PAGER" => "Y",
-					"PAGER_TITLE" => "Страница",
-					"PAGER_SHOW_ALL" => "N",
-					"PAGER_BASE_LINK_ENABLE" => "N",
-					"SET_STATUS_404" => "Y",
-					"SHOW_404" => "Y",
-					"MESSAGE_404" => ""
-				),
-				false
-			);?>
+	"bitrix:news.detail", 
+	"contact", 
+	array(
+		"COMPONENT_TEMPLATE" => "contact",
+		"IBLOCK_TYPE" => "mgn_doctor_content",
+		"IBLOCK_ID" => "28",
+		"ELEMENT_ID" => $elementID,
+		"ELEMENT_CODE" => "",
+		"CHECK_DATES" => "Y",
+		"FIELD_CODE" => array(
+			0 => "PREVIEW_PICTURE",
+			1 => "",
+		),
+		"PROPERTY_CODE" => array(
+			0 => "ADDRESS",
+			1 => "DOCTOR",
+			2 => "E_MAIL",
+			3 => "PHONE",
+			4 => "OPENING_HOURS",
+			5 => "PHOTO",
+			6 => "",
+		),
+		"IBLOCK_URL" => "",
+		"DETAIL_URL" => "",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "36000000",
+		"CACHE_GROUPS" => "Y",
+		"SET_TITLE" => "Y",
+		"SET_CANONICAL_URL" => "N",
+		"SET_BROWSER_TITLE" => "Y",
+		"BROWSER_TITLE" => "-",
+		"SET_META_KEYWORDS" => "Y",
+		"META_KEYWORDS" => "-",
+		"SET_META_DESCRIPTION" => "Y",
+		"META_DESCRIPTION" => "-",
+		"SET_LAST_MODIFIED" => "N",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"ADD_ELEMENT_CHAIN" => "Y",
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"USE_PERMISSIONS" => "N",
+		"STRICT_SECTION_CHECK" => "N",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"USE_SHARE" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"DISPLAY_TOP_PAGER" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"PAGER_TITLE" => "Страница",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"SET_STATUS_404" => "Y",
+		"SHOW_404" => "Y",
+		"MESSAGE_404" => "",
+		"FILE_404" => ""
+	),
+	false
+);?>
 
 			<section class="contacts how-to-get" id="how-to-get">
 				<div class="container hget__container">
@@ -215,6 +218,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		$ipropValues = new \Bitrix\Iblock\InheritedProperty\ElementValues(28,$arItem['ID']);
 		$IPROPERTY = $ipropValues->getValues();
 
+$APPLICATION->AddChainItem("Порядок выдачи больничных листков", "/about/poryadok-vydachi-bolnichnykh-listkov/");
 		$APPLICATION->SetTitle($IPROPERTY['ELEMENT_META_TITLE']);
 		$APPLICATION->SetPageProperty("keywords", $IPROPERTY['ELEMENT_META_KEYWORDS']);
 		$APPLICATION->SetPageProperty("description", $IPROPERTY['ELEMENT_META_DESCRIPTION']);
@@ -264,7 +268,7 @@ $APPLICATION->IncludeComponent(
 		"SET_META_KEYWORDS" => "N",
 		"SET_META_DESCRIPTION" => "N",
 		"SET_LAST_MODIFIED" => "N",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"PARENT_SECTION" => "",
