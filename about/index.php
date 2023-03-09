@@ -11,6 +11,7 @@ if($element_code=$el[0]){
 		die();
 	}
 }
+		$APPLICATION->AddChainItem("О нас", "/about/");
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 //$APPLICATION->SetPageProperty("title", "Семейный доктор в Магнитогорске - Адреса и телефоны медицинских центров");
 ?>
