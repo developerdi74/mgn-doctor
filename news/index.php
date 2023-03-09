@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Новости");
+$APPLICATION->AddChainItem("Новости", "/news/");
 ?>
 <?
 	//Редирект на 404 при несуществуещем каталоге блока Новости
