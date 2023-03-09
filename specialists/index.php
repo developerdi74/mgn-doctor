@@ -2,6 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Врачи в медицинском центре “Семейный доктор”");
 
+$APPLICATION->AddChainItem("Специалисты", "/specialists/");
 //file_put_contents("appnew.txt",$_SERVER);
 ?><section class="specialists-inner all-our-specialists">
 <div class="container">
