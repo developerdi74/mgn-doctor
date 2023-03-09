@@ -47,4 +47,12 @@ function load_owl_detail(){
 	$(".timesheet-nav .slider__nav-prev").click(function () {
 		timesheet.trigger("prev.owl.carousel");
 	});
+
+
+	$(".timesheet .timesheet__time-block").each(function(){
+			if($(this).find('a').length == 0){
+				$(this).html("<div class='timesheet__text'>В этот день приема нет</div>");
+			}
+		});
+
 }
