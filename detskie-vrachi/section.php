@@ -106,7 +106,8 @@ $APPLICATION->SetTitle("Врачи в медицинском центре “С�
 		"STRICT_SECTION_CHECK" => "N",
 		"COMPONENT_TEMPLATE" => "vrachi",
 		"COMPOSITE_FRAME_MODE" => "A",
-		"COMPOSITE_FRAME_TYPE" => "AUTO"
+		"COMPOSITE_FRAME_TYPE" => "AUTO",
+		"SECT_CODE_PARAM" => $section_code[2],
 	),
 	false
 );?>
