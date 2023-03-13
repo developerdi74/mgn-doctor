@@ -608,7 +608,8 @@ a:active{
 }
 
 .timesheet__time a{
-	color: var(--green-color)
+	color: var(--green-color);
+	font-weight: 600;
 }
 
 .timesheet-nav{
