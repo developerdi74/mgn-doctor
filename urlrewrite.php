@@ -31,7 +31,7 @@ $arUrlRewrite=array (
     'PATH' => '/about/faq/index.php',
     'SORT' => 100,
   ),
-  14 => 
+  17 => 
   array (
     'CONDITION' => '#^/service/([^/]+?)/\\??(.*)#',
     'RULE' => 'SECTION_CODE=$1&$2',
