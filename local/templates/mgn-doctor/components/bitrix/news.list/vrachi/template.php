@@ -22,7 +22,7 @@
 		$title = $IPROPERTY['SECTION_META_TITLE'];
 		if($title_detskii && $section_code[1] == 'detskie-vrachi'){
 			$header = $title_detskii;
-			$title = $title_detskii." | Семейный доктор в Магнитогорске";
+			$title = $title_detskii." в Магнитогорске | Семейный доктор";
 		}
 		// if($section_code[1]=="detskie-vrachi"){
 		// 	$uri = "/detskie-vrachi";
