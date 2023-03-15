@@ -89,6 +89,29 @@ $name = $arResult["NAME"];
 							</div>
 							<div class="specialists-item__content specialist-info__content">
 								<h1 class="specialists-item__title specialists-item__name"><?=$arResult["NAME"]?></h1>
+
+									<?if(isset($arResult['DISPLAY_PROPERTIES']['AGE']['VALUE_ENUM_ID'])):?>
+									<?
+										$priem = 0;
+										if(in_array("111", $arResult['DISPLAY_PROPERTIES']['AGE']['VALUE_ENUM_ID'])!==false){
+											$priem++;
+											$text_who="Принимает только взрослых";
+										}
+										if(in_array("110", $arResult['DISPLAY_PROPERTIES']['AGE']['VALUE_ENUM_ID'])!==false){
+											$text_who="Принимает только детей";
+											$priem++;
+										}
+										if($priem == 2){
+											$text_who="Принимает взрослых и детей";
+										}
+
+										if(isset($text_who)){?>
+											<div class="specialists-experience">
+												<div class="specialists-item__position specialist-info__position text_who_is"><?=$text_who;?></div>
+											</div>
+										<?}?>
+									<?endif;?>
+
 								<?if(is_array($arResult['DISPLAY_PROPERTIES']['SPECIALIZATION']['DISPLAY_VALUE'])){
 									foreach($arResult['DISPLAY_PROPERTIES']['SPECIALIZATION']['DISPLAY_VALUE'] as $arValue){?>
 										<div class="specialists-experience">

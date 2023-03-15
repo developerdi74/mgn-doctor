@@ -14732,3 +14732,7 @@ img{
 	overflow: hidden;
 	max-height: 280px;
 }
+
+.specialists-experience .text_who_is{
+    text-decoration: none;
+ }

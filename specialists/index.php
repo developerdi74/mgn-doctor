@@ -12,14 +12,19 @@ $APPLICATION->AddChainItem("Специалисты", "/specialists/");
 	<div class="row page-row-middle all-specialists">
  		<button class="btn btn-spec-flt active<?//echo ($_GET["age"]==111) ? 'active': '';?>">Взрослые</button><a href="/detskie-vrachi/"><button class="btn btn-spec-flt">Детские</button></a>
 	</div>
-	<?if($_GET['age']==111){
+	<?/*if($_GET['age']==111){
 		define("AGE",array(110,111));
 			// define("AGE",$_GET['age']);
 			// $arrFilterVrachi = array("PROPERTY" => array("AGE"=>AGE));
 			// $sect_url = "?age=".AGE;
 	}else{
 		define("AGE",array(110,111));
-	}
+	}*/
+
+	//Фильтр для отображения врачей для взрослых
+	define("AGE",111);
+	$arrFilterVrachi = array("PROPERTY" => array("AGE"=>AGE));
+
     file_put_contents('appnew.txt', 'Ваш превосходный текст');
 	?>
  <?$APPLICATION->IncludeComponent(

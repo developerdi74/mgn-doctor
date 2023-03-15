@@ -8,13 +8,15 @@ $APPLICATION->SetTitle("Врачи в медицинском центре “С�
 	<?
 		$section_code = explode("/",$_SERVER['REQUEST_URI']);
 
-		$arrFilterVrachi = array("SECTION_CODE" => $section_code[2],); //Фильтр для отображения только врачей в выбранном разделе
+		define("AGE",111);
+		$arrFilterVrachi = array("SECTION_CODE" => $section_code[2], "PROPERTY" => array("AGE"=>AGE)); //Фильтр для отображения только врачей в выбранном разделе
 
 		if(isset($section_code[4])){ LocalRedirect("/404.php", "404 Not Found");}
 
 		$code = $section_code[2];
 
 		$APPLICATION->AddChainItem("Специалисты", "/specialists/");
+
 	?>
 <section class="specialists-inner all-our-specialists">
 	<div class="container">
