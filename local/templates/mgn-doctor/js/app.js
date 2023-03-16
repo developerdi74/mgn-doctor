@@ -1711,3 +1711,14 @@ function calendarInit(){
 		});
 	});
 }
+
+//yandex цели в мобильном нижнем меню
+$('.mobile_box__flex .call').click(function(){
+	ym(87764265,'reachGoal','MobileMenu_Tel');
+});
+$('.mobile_box__flex .write').click(function(){
+	ym(87764265,'reachGoal','MobileMenu_Chat');
+});
+$('.mobile_box__flex .to-order').click(function(){
+	ym(87764265,'reachGoal','MobileMenu_Tel');
+});
