@@ -1720,5 +1720,5 @@ $('.mobile_box__flex .write').click(function(){
 	ym(87764265,'reachGoal','MobileMenu_Chat');
 });
 $('.mobile_box__flex .to-order').click(function(){
-	ym(87764265,'reachGoal','MobileMenu_Tel');
+	ym(87764265,'reachGoal','MobileMenu_Form');
 });
