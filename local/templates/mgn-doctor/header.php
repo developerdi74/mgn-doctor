@@ -176,9 +176,6 @@ $APPLICATION->ShowPanel();?>
 					"MENU_THEME"           =>"site"
 				], false);?>
 		</div>
-		<div class="burger-menu__btn">
-			<a href="#order-call" data-fancybox="" data-src="#order-call" class="btn mobile-menu__btn">Записаться на приём</a>
-		</div>
 	</div>
 	<div class="close-menu mobile-menu__close">
 		<div class="bar burger-menu__icon"></div>
