@@ -6880,7 +6880,24 @@ blockquote p{
 	color:          #2c3e50;
 	margin:         16px 0;
 }
+.documents h3{
+	font-weight:    600;
+	font-size:      15px;
+	line-height:    18px;
+	letter-spacing: 0.06px;
+	color:          #2c3e50;
+	margin:         16px 0;
+	width: 100%;
+}
 
+.documents h3 a{
+	font-weight:    600;
+	font-size:      15px;
+	line-height:    18px;
+	letter-spacing: 0.06px;
+	color:          #2c3e50;
+	margin:         16px 0;
+}
 /*             COMMENTS               */
 #wpdcom .wpd-comment-header .wpd-comment-author,
 #wpdcom .wpd-comment-header .wpd-comment-author a{
