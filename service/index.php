@@ -562,7 +562,7 @@ $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 											<a href="/service/rentgen/" class="services-item">Рентгенологические исследования</a>
 										</div>
 										<div class="row">
-											<a href="/service/funktsionalnaya-diagnostika/" class="services-item">Функциональная диагностика</a>
+											<a href="/service/funkcionalnaya-diagnostika/" class="services-item">Функциональная диагностика</a>
 										</div>
 										<div class="row">
 											<a href="/service/endoskopiya/" class="services-item">Эндоскопия</a>
@@ -729,7 +729,7 @@ $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 							<a href="/service/rentgen/" class="services-item">Рентгенологические исследования</a>
 						</div>
 						<div class="row">
-							<a href="/service/funktsionalnaya-diagnostika/" class="services-item">Функциональная диагностика</a>
+							<a href="/service/funkcionalnaya-diagnostika/" class="services-item">Функциональная диагностика</a>
 						</div>
 						<div class="row">
 							<a href="/service/endoskopiya/" class="services-item">Эндоскопия</a>
