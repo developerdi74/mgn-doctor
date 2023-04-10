@@ -27,7 +27,6 @@ if($clinic=='') $clinic=$arResult['PROPERTIES']['CLINIC']["VALUE_XML_ID"][0];
 $name = $arResult["NAME"];
 
 ?>
-
 <? //console($arResult);
 //$noCalendar=$noCalendarFlag=false;
 //foreach($arResult['PROPERTIES']['CLINIC']['VALUE'] as $clinic){
