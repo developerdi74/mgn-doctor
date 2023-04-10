@@ -35,7 +35,7 @@ $APPLICATION->SetTitle("Задайте вопрос");
       <div class="specialists-statistics specialists__statistics">
         <div class="row">
           <div class="col-md-3 specialists-statistics__item">
-            <div class="specialists-statistics__item-num num-count"><?=count($arResult["ITEMS"]);?></div>
+            <div class="specialists-statistics__item-num num-count"><?if(is_array($arResult["ITEMS"])) echo count($arResult["ITEMS"]);?></div>
             <div class="specialists-statistics__item-title">Врача<br> всего</div>
           </div>
           <div class="col-md-3 specialists-statistics__item">
