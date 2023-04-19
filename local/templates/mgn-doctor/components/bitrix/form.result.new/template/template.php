@@ -5,11 +5,11 @@
 <?}?>
 <?if($_GET['success']==1){ //после успешного выполнения перезагрузка страницы для отображения записи принятых данных?>
 	<h4 class="popup__title"><?=$arResult["FORM_TITLE"]?></h4>
-	<div class="popup__subtitle" style = "display:block">Ваши данные приняты. Для подтверждения записи ожидайте звонка оператора.</div>
+	<div class="popup__subtitle" style = "display:block">Ваши данные приняты. Для подтверждения записи ожидайте звонка оператора. <br><b>Без подтверждения оператора по телефону запись не действительна!</b></div>
 <?}else{?>
 <?$arResult["FORM_NOTE"]?>
 <h4 class="popup__title"><?=$arResult["FORM_TITLE"]?></h4>
-<div class="popup__subtitle">Ваши данные приняты. Для подтверждения записи ожидайте звонка оператора.</div>
+<div class="popup__subtitle">Ваши данные приняты. Для подтверждения записи ожидайте звонка оператора. <br><b>Без подтверждения оператора по телефону запись не действительна!</b></div>
 <div class="popup__form">
 	<?=$arResult["FORM_HEADER"]?>
 	<?foreach($arResult["QUESTIONS"] as $FIELD_SID=>$arQuestion){
