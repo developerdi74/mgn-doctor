@@ -184,10 +184,11 @@
 		<div class="container">
 			<div class="footer__social__row">
 				<div class="footer__social__item">
-					<h6 class="footer__social-title">Наше приложение</h6>
+					<h6 class="footer__social-title">Установите наше приложение</h6>
 					<div class="footer__app">
 						<a href="https://apps.apple.com/ru/app/семейный-доктор-магнитогорск/id1529553109" rel= "nofollow" target="_blank"><img src="<?=SITE_TEMPLATE_PATH?>/img/appstore.svg" alt="" width="114" height="36"></a>
 						<a href="https://play.google.com/store/apps/details?id=me.ondoc.custom.mgndoctor" rel= "nofollow" target="_blank"><img src="<?=SITE_TEMPLATE_PATH?>/img/googleplay.svg" alt="" width="114" height="36"></a>
+						<a name="download_app"></a>
 					</div>
 				</div>
 				<div class="footer__social__item">
