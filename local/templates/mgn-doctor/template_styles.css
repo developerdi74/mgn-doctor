@@ -14753,3 +14753,8 @@ img{
 .specialists-experience .text_who_is{
     text-decoration: none;
  }
+
+body .b24-widget-button-position-bottom-right{    
+    right: 45px;
+    bottom: 100px;
+}
