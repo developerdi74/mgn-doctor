@@ -810,7 +810,29 @@
   <div id="top"></div>
   <!-- BTN TO TOP END -->
 
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "name": "Семейный доктор в Магнитогорске",
+  "url": "https://mgn-doctor.ru/",
+  "logo": "https://mgn-doctor.ru/local/templates/mgn-doctor/img/main_logo.svg",
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+7 (3519) 581-111",
+    "contactType": "customer service",
+    "areaServed": "RU",
+    "availableLanguage": "Russian"
+  },{
+    "@type": "ContactPoint",
+    "telephone": "+7 (3519) 581-400",
+    "contactType": "customer service",
+    "areaServed": "RU",
+    "availableLanguage": "Russian"
+  }],
+  "sameAs": "https://www.youtube.com/channel/UCG8W6mXOqUS_2GAbTt5ZWwg"
+}
+</script>
 
 <script type="text/javascript">
 var fired = false;
