@@ -40,8 +40,34 @@ $name = $arResult["NAME"];
 //		$noCalendarFlag=true;
 //		console('не сработало');
 //	}
-//}
-?>
+//}?>
+<!-- Микроразметка --->
+<script type='application/ld+json'> 
+{
+  "@context": "http://www.schema.org",
+  "@type": "Physician",
+  "name": "<?=$arResult["NAME"]?>",
+  "url": "<?="https://mgn-doctor.ru".$arResult["DETAIL_PAGE_URL"]?>",
+  "logo": "<?="https://mgn-doctor.ru".$arResult["PREVIEW_PICTURE"]['SRC']?>",
+  "image": "https://mgn-doctor.ru/local/templates/mgn-doctor/img/main_logo.svg",
+  "description": "<?if(is_array($arResult['DISPLAY_PROPERTIES']['SPECIALIZATION']['DISPLAY_VALUE'])){
+ 		foreach($arResult['DISPLAY_PROPERTIES']['SPECIALIZATION']['DISPLAY_VALUE'] as $arValue){ echo $arValue." "; }}
+ 		else{ echo $arResult['DISPLAY_PROPERTIES']['SPECIALIZATION']['DISPLAY_VALUE']; }
+	?>",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "<?=$arResult["PROPERTIES"]["CLINIC"]["VALUE"][0]?>",
+    "addressLocality": "Магнитогорск",
+    "addressCountry": "Россия"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+7 (3519) 581-111",
+    "contactType": "customer service"
+  }
+}
+ </script>
+<!-- Микроразметка --->
 	<!-- ONE SPECIALISTS  -->
 	<section class="specialist-inner specialist-info">
 		<div class="container">
@@ -438,323 +464,3 @@ $name = $arResult["NAME"];
 		</div>
 	</section>
 	<!-- TABS INFO END БЛЯ -->
-
-<? /*
-<!-- OTHER SPECIALISTS  -->
-<section class="our-team    other-specialists" id="other-specialists">
-  <div class="container">
-    <div class="row justify-content-between row-vmiddle">
-      <h2 class="other-specialists__title">ДРУГИЕ СПЕЦИАЛИСТЫ</h2>
-      <div class="slider__nav our-team__nav navigation">
-        <div class="slider__nav-prev"><img src="../img/arrow-prev.svg" alt="prev"></div>
-        <div class="slider__nav-next"><img src="../img/arrow-next.svg" alt="next"></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="owl-carousel owl-theme our-team__owl other-specialists__slider" id="our-team__owl">
-
-
-        <div class="item our-team__item specialists-item">
-          <div class="specialists-item__top">
-            <div class="specialists-item__img">
-              <img src="../img/specialists-item.png" alt="" class="specialists-item__photo">
-            </div>
-            <div class="specialists-item__status">
-              <span class="active-status"></span>
-            </div>
-            <div class="specialists-item__specialty">
-              <div class="specialists-item__specialty--item specialists-item__specialty--adult">
-                <img src="../img/adult-doc.png" alt="">
-                <div class="specialist-tooltip">взрослый врач</div>
-              </div>
-              <div class="specialists-item__specialty--item specialists-item__specialty--children">
-                <img src="../img/children-doc.png" alt="">
-                <div class="specialist-tooltip">детский врач</div>
-              </div>
-            </div>
-          </div>
-          <div class="specialists-item__content">
-            <h4 class="specialists-item__title">Аникеев Вадим Алексеевич</h4>
-            <div class="specialists-item__position">кардиолог</div>
-            <div class="specialists-item__position">врач функциональной диагностики</div>
-            <div class="specialists-item__place">
-              <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 0.0078125C2.0142 0.0078125 0 1.95819 0 4.37406C0 8.55131 4.5 13.9991 4.5 13.9991C4.5 13.9991 9 8.55044 9 4.37406C9 1.95906 6.9858 0.0078125 4.5 0.0078125ZM4.5 6.78994C3.1572 6.78994 2.07 5.73206 2.07 4.42744C2.07 3.12281 3.1572 2.06494 4.5 2.06494C5.841 2.06494 6.9291 3.12281 6.9291 4.42744C6.9291 5.73206 5.841 6.78994 4.5 6.78994Z" fill="#75A72D"></path>
-              </svg>
-              Клиника ул. Жукова, д.11
-            </div>
-            <div class="specialists-item__admission">
-              <div class="specialists-item__admission--time">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M16 2H15V4H12V2H6V4H3V2H2C0.899 2 0 2.9 0 4V16C0 17.1 0.899 18 2 18H16C17.1 18 18 17.1 18 16V4C18 2.9 17.1 2 16 2ZM16 16H2V8H16V16ZM5.5 0H3.5V3.5H5.5V0ZM14.5 0H12.5V3.5H14.5V0Z" fill="#75A72D"></path>
-                </svg>
-                <div class="specialists-item__admission--title">Приём</div>
-                <a href="" class="specialists-item__admission--link">05.08 в 14:55</a>
-              </div>
-            </div>
-            <div class="specialists-item__btn">
-              <a href="/page-specialist.html" class="btn btn-grey-tr our-team__btn">Записаться</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="item our-team__item specialists-item">
-          <div class="specialists-item__top">
-            <div class="specialists-item__img">
-              <img src="../img/specialists-item.png" alt="" class="specialists-item__photo">
-            </div>
-            <div class="specialists-item__status">
-              <span class="active-status"></span>
-            </div>
-            <div class="specialists-item__specialty">
-              <div class="specialists-item__specialty--item specialists-item__specialty--adult">
-                <img src="../img/adult-doc.png" alt="">
-                <div class="specialist-tooltip">взрослый врач</div>
-              </div>
-              <div class="specialists-item__specialty--item specialists-item__specialty--children">
-                <img src="../img/children-doc.png" alt="">
-                <div class="specialist-tooltip">детский врач</div>
-              </div>
-            </div>
-          </div>
-          <div class="specialists-item__content">
-            <h4 class="specialists-item__title">Аникеев Вадим Алексеевич</h4>
-            <div class="specialists-item__position">кардиолог</div>
-            <div class="specialists-item__position">врач функциональной диагностики</div>
-            <div class="specialists-item__place">
-              <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 0.0078125C2.0142 0.0078125 0 1.95819 0 4.37406C0 8.55131 4.5 13.9991 4.5 13.9991C4.5 13.9991 9 8.55044 9 4.37406C9 1.95906 6.9858 0.0078125 4.5 0.0078125ZM4.5 6.78994C3.1572 6.78994 2.07 5.73206 2.07 4.42744C2.07 3.12281 3.1572 2.06494 4.5 2.06494C5.841 2.06494 6.9291 3.12281 6.9291 4.42744C6.9291 5.73206 5.841 6.78994 4.5 6.78994Z" fill="#75A72D"></path>
-              </svg>
-              Клиника ул. Жукова, д.11
-            </div>
-            <div class="specialists-item__admission">
-              <div class="specialists-item__admission--time">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M16 2H15V4H12V2H6V4H3V2H2C0.899 2 0 2.9 0 4V16C0 17.1 0.899 18 2 18H16C17.1 18 18 17.1 18 16V4C18 2.9 17.1 2 16 2ZM16 16H2V8H16V16ZM5.5 0H3.5V3.5H5.5V0ZM14.5 0H12.5V3.5H14.5V0Z" fill="#75A72D"></path>
-                </svg>
-                <div class="specialists-item__admission--title">Приём</div>
-                <a href="" class="specialists-item__admission--link">05.08 в 14:55</a>
-              </div>
-            </div>
-            <div class="specialists-item__btn">
-              <a href="/page-specialist.html" class="btn btn-grey-tr our-team__btn">Записаться</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="item our-team__item specialists-item">
-          <div class="specialists-item__top">
-            <div class="specialists-item__img">
-              <img src="../img/specialists-item.png" alt="" class="specialists-item__photo">
-            </div>
-            <div class="specialists-item__status">
-              <span class="no-active-status"></span>
-            </div>
-            <div class="specialists-item__specialty">
-              <div class="specialists-item__specialty--item specialists-item__specialty--adult">
-                <img src="../img/adult-doc.png" alt="">
-                <div class="specialist-tooltip">взрослый врач</div>
-              </div>
-              <div class="specialists-item__specialty--item specialists-item__specialty--children">
-                <img src="../img/children-doc.png" alt="">
-                <div class="specialist-tooltip">детский врач</div>
-              </div>
-            </div>
-          </div>
-          <div class="specialists-item__content">
-            <h4 class="specialists-item__title">Аникеев Вадим Алексеевич</h4>
-            <div class="specialists-item__position">кардиолог</div>
-            <div class="specialists-item__position">врач функциональной диагностики</div>
-            <div class="specialists-item__place">
-              <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 0.0078125C2.0142 0.0078125 0 1.95819 0 4.37406C0 8.55131 4.5 13.9991 4.5 13.9991C4.5 13.9991 9 8.55044 9 4.37406C9 1.95906 6.9858 0.0078125 4.5 0.0078125ZM4.5 6.78994C3.1572 6.78994 2.07 5.73206 2.07 4.42744C2.07 3.12281 3.1572 2.06494 4.5 2.06494C5.841 2.06494 6.9291 3.12281 6.9291 4.42744C6.9291 5.73206 5.841 6.78994 4.5 6.78994Z" fill="#75A72D"></path>
-              </svg>
-              Клиника ул. Жукова, д.11
-            </div>
-            <div class="specialists-item__admission">
-              <div class="specialists-item__admission--time">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M16 2H15V4H12V2H6V4H3V2H2C0.899 2 0 2.9 0 4V16C0 17.1 0.899 18 2 18H16C17.1 18 18 17.1 18 16V4C18 2.9 17.1 2 16 2ZM16 16H2V8H16V16ZM5.5 0H3.5V3.5H5.5V0ZM14.5 0H12.5V3.5H14.5V0Z" fill="#75A72D"></path>
-                </svg>
-                <div class="specialists-item__admission--title">Приём</div>
-                <a href="" class="specialists-item__admission--link">05.08 в 14:55</a>
-              </div>
-            </div>
-            <div class="specialists-item__btn">
-              <a href="/page-specialist.html" class="btn btn-grey-tr our-team__btn">Записаться</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="item our-team__item specialists-item">
-          <div class="specialists-item__top">
-            <div class="specialists-item__img">
-              <img src="../img/specialists-item.png" alt="" class="specialists-item__photo">
-            </div>
-            <div class="specialists-item__status">
-              <span class="active-status"></span>
-            </div>
-            <div class="specialists-item__specialty">
-              <div class="specialists-item__specialty--item specialists-item__specialty--children">
-                <img src="../img/children-doc.png" alt="">
-                <div class="specialist-tooltip">детский врач</div>
-              </div>
-            </div>
-          </div>
-          <div class="specialists-item__content">
-            <h4 class="specialists-item__title">Аникеев Вадим Алексеевич</h4>
-            <div class="specialists-item__position">кардиолог</div>
-            <div class="specialists-item__position">врач функциональной диагностики</div>
-            <div class="specialists-item__place">
-              <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 0.0078125C2.0142 0.0078125 0 1.95819 0 4.37406C0 8.55131 4.5 13.9991 4.5 13.9991C4.5 13.9991 9 8.55044 9 4.37406C9 1.95906 6.9858 0.0078125 4.5 0.0078125ZM4.5 6.78994C3.1572 6.78994 2.07 5.73206 2.07 4.42744C2.07 3.12281 3.1572 2.06494 4.5 2.06494C5.841 2.06494 6.9291 3.12281 6.9291 4.42744C6.9291 5.73206 5.841 6.78994 4.5 6.78994Z" fill="#75A72D"></path>
-              </svg>
-              Клиника ул. Жукова, д.11
-            </div>
-            <div class="specialists-item__admission">
-              <div class="specialists-item__admission--time">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M16 2H15V4H12V2H6V4H3V2H2C0.899 2 0 2.9 0 4V16C0 17.1 0.899 18 2 18H16C17.1 18 18 17.1 18 16V4C18 2.9 17.1 2 16 2ZM16 16H2V8H16V16ZM5.5 0H3.5V3.5H5.5V0ZM14.5 0H12.5V3.5H14.5V0Z" fill="#75A72D"></path>
-                </svg>
-                <div class="specialists-item__admission--title">Приём</div>
-                <a href="" class="specialists-item__admission--link">05.08 в 14:55</a>
-              </div>
-            </div>
-            <div class="specialists-item__btn">
-              <a href="/page-specialist.html" class="btn btn-grey-tr our-team__btn">Записаться</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="item our-team__item specialists-item">
-          <div class="specialists-item__top">
-            <div class="specialists-item__img">
-              <img src="../img/specialists-item.png" alt="" class="specialists-item__photo">
-            </div>
-            <div class="specialists-item__status">
-              <span class="no-active-status"></span>
-            </div>
-            <div class="specialists-item__specialty">
-              <div class="specialists-item__specialty--item specialists-item__specialty--adult">
-                <img src="../img/adult-doc.png" alt="">
-                <div class="specialist-tooltip">взрослый врач</div>
-              </div>
-              <div class="specialists-item__specialty--item specialists-item__specialty--children">
-                <img src="../img/children-doc.png" alt="">
-                <div class="specialist-tooltip">детский врач</div>
-              </div>
-            </div>
-          </div>
-          <div class="specialists-item__content">
-            <h4 class="specialists-item__title">Аникеев Вадим Алексеевич</h4>
-            <div class="specialists-item__position">кардиолог</div>
-            <div class="specialists-item__position">врач функциональной диагностики</div>
-            <div class="specialists-item__place">
-              <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 0.0078125C2.0142 0.0078125 0 1.95819 0 4.37406C0 8.55131 4.5 13.9991 4.5 13.9991C4.5 13.9991 9 8.55044 9 4.37406C9 1.95906 6.9858 0.0078125 4.5 0.0078125ZM4.5 6.78994C3.1572 6.78994 2.07 5.73206 2.07 4.42744C2.07 3.12281 3.1572 2.06494 4.5 2.06494C5.841 2.06494 6.9291 3.12281 6.9291 4.42744C6.9291 5.73206 5.841 6.78994 4.5 6.78994Z" fill="#75A72D"></path>
-              </svg>
-              Клиника ул. Жукова, д.11
-            </div>
-            <div class="specialists-item__admission">
-              <div class="specialists-item__admission--time">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M16 2H15V4H12V2H6V4H3V2H2C0.899 2 0 2.9 0 4V16C0 17.1 0.899 18 2 18H16C17.1 18 18 17.1 18 16V4C18 2.9 17.1 2 16 2ZM16 16H2V8H16V16ZM5.5 0H3.5V3.5H5.5V0ZM14.5 0H12.5V3.5H14.5V0Z" fill="#75A72D"></path>
-                </svg>
-                <div class="specialists-item__admission--title">Приём</div>
-                <a href="" class="specialists-item__admission--link">05.08 в 14:55</a>
-              </div>
-            </div>
-            <div class="specialists-item__btn">
-              <a href="/page-specialist.html" class="btn btn-grey-tr our-team__btn">Записаться</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-<!-- OTHER SPECIALISTS END -->
-*/ ?>
-
-<? /*
-<div class="news-detail">
-	<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arResult["DETAIL_PICTURE"])):?>
-<img class="detail_picture" border="0" src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>"
-    width="<?=$arResult["DETAIL_PICTURE"]["WIDTH"]?>" height="<?=$arResult["DETAIL_PICTURE"]["HEIGHT"]?>"
-    alt="<?=$arResult["DETAIL_PICTURE"]["ALT"]?>" title="<?=$arResult["DETAIL_PICTURE"]["TITLE"]?>" />
-<?endif?>
-<?if($arParams["DISPLAY_DATE"]!="N" && $arResult["DISPLAY_ACTIVE_FROM"]):?>
-<span class="news-date-time"><?=$arResult["DISPLAY_ACTIVE_FROM"]?></span>
-<?endif;?>
-<?if($arParams["DISPLAY_NAME"]!="N" && $arResult["NAME"]):?>
-<h3><?=$arResult["NAME"]?></h3>
-<?endif;?>
-<?if($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && $arResult["FIELDS"]["PREVIEW_TEXT"]):?>
-<p><?=$arResult["FIELDS"]["PREVIEW_TEXT"];unset($arResult["FIELDS"]["PREVIEW_TEXT"]);?></p>
-<?endif;?>
-<?if($arResult["NAV_RESULT"]):?>
-<?if($arParams["DISPLAY_TOP_PAGER"]):?><?=$arResult["NAV_STRING"]?><br />
-<?endif;?>
-<?echo $arResult["NAV_TEXT"];?>
-<?if($arParams["DISPLAY_BOTTOM_PAGER"]):?><br /><?=$arResult["NAV_STRING"]?>
-<?endif;?>
-<?elseif($arResult["DETAIL_TEXT"] <> ''):?>
-<?echo $arResult["DETAIL_TEXT"];?>
-<?else:?>
-<?echo $arResult["PREVIEW_TEXT"];?>
-<?endif?>
-<div style="clear:both"></div>
-<br />
-<?foreach($arResult["FIELDS"] as $code=>$value):
-		if ('PREVIEW_PICTURE' == $code || 'DETAIL_PICTURE' == $code)
-		{
-			?><?=GetMessage("IBLOCK_FIELD_".$code)?>:&nbsp;
-<?
-			if (!empty($value) && is_array($value))
-			{
-				?><img border="0" src="<?=$value["SRC"]?>" width="<?=$value["WIDTH"]?>" height="<?=$value["HEIGHT"]?>">
-<?
-			}
-		}
-		else
-		{
-			?><?=GetMessage("IBLOCK_FIELD_".$code)?>:&nbsp;<?=$value;?>
-<?
-		}
-		?><br />
-<?endforeach;
-	foreach($arResult["DISPLAY_PROPERTIES"] as $pid=>$arProperty):?>
-
-<?=$arProperty["NAME"]?>:&nbsp;
-<?if(is_array($arProperty["DISPLAY_VALUE"])):?>
-<?=implode("&nbsp;/&nbsp;", $arProperty["DISPLAY_VALUE"]);?>
-<?else:?>
-<?=$arProperty["DISPLAY_VALUE"];?>
-<?endif?>
-<br />
-<?endforeach;
-	if(array_key_exists("USE_SHARE", $arParams) && $arParams["USE_SHARE"] == "Y")
-	{
-		?>
-<div class="news-detail-share">
-    <noindex>
-        <?
-			$APPLICATION->IncludeComponent("bitrix:main.share", "", array(
-					"HANDLERS" => $arParams["SHARE_HANDLERS"],
-					"PAGE_URL" => $arResult["~DETAIL_PAGE_URL"],
-					"PAGE_TITLE" => $arResult["~NAME"],
-					"SHORTEN_URL_LOGIN" => $arParams["SHARE_SHORTEN_URL_LOGIN"],
-					"SHORTEN_URL_KEY" => $arParams["SHARE_SHORTEN_URL_KEY"],
-					"HIDE" => $arParams["SHARE_HIDE"],
-				),
-				$component,
-				array("HIDE_ICONS" => "Y")
-			);
-			?>
-    </noindex>
-</div>
-<?
-	}
-
-</div>	*/ ?>
