@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Врачи в медицинском центре “Семейный доктор”");
+$APPLICATION->SetTitle("Детские врачи в медицинском центре “Семейный доктор”");
 
 $APPLICATION->AddChainItem("Детские врачи", "/detskie-vrachi/");
 ?><section class="specialists-inner all-our-specialists">
