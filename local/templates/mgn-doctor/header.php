@@ -46,7 +46,7 @@
   <!-- libraries -->
   <?
   Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.min.js');
-  //Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/bootstrap.bundle.min.js');
+  Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/bootstrap.bundle.min.js');
   Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/bootstrap.min.js'); //сыпется в деталке переключение вкладок
   Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/owl.carousel.min.js');
   Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.fancybox.min.js');
@@ -60,12 +60,12 @@
   <?
   Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/bootstrap.min.css');
   Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/owl.carousel.min.css');
-  //Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/owl.theme.default.min.css');
-  //Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.formstyler.css');
-  // Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.formstyler.theme.css');
+  Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/owl.theme.default.min.css');
+  Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.formstyler.css');
+   Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.formstyler.theme.css');
   Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.fancybox.min.css');
-  //Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/swiper.min.css');
-  //Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/animate.min.css');
+  Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/swiper.min.css');
+  Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/animate.min.css');
   ?>
 
 <!--<script data-skip-moving=true type="text/javascript">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src='https://vk.com/js/api/openapi.js?169',t.onload=function(){VK.Retargeting.Init("VK-RTRG-1497894-3oCL8"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script>-->

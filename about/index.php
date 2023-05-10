@@ -11,8 +11,8 @@ if($element_code=$el[0]){
 		die();
 	}
 }
-		$APPLICATION->AddChainItem("О нас", "/about/");
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+		$APPLICATION->AddChainItem("О нас", "/about/");	
 //$APPLICATION->SetPageProperty("title", "Семейный доктор в Магнитогорске - Адреса и телефоны медицинских центров");
 ?>
 <div id="page" class="site page-dark-grey">
@@ -219,7 +219,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		$ipropValues = new \Bitrix\Iblock\InheritedProperty\ElementValues(28,$arItem['ID']);
 		$IPROPERTY = $ipropValues->getValues();
 
-$APPLICATION->AddChainItem("Порядок выдачи больничных листков", "/about/poryadok-vydachi-bolnichnykh-listkov/");
+		$APPLICATION->AddChainItem($arItem['NAME'], "/about");
 		$APPLICATION->SetTitle($IPROPERTY['ELEMENT_META_TITLE']);
 		$APPLICATION->SetPageProperty("keywords", $IPROPERTY['ELEMENT_META_KEYWORDS']);
 		$APPLICATION->SetPageProperty("description", $IPROPERTY['ELEMENT_META_DESCRIPTION']);
