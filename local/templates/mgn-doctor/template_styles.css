@@ -8846,7 +8846,7 @@ button.swiper-pagination-bullet{
 	border-bottom:    0.5px solid #bac0c5;
 }
 
-.nav-tabs-documents .active .nav-link{
+.nav-tabs-documents .active .nav-link, .nav-tabs-documents .nav-item .active{
 	background-color: transparent;
 	color:            white;
 	border:           none;

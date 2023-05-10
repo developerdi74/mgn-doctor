@@ -32,7 +32,7 @@ $this->setFrameMode(true);
 	);?>
 <?endif?>
 
-<?/* if($arParams["USE_FILTER"]=="Y"):?>
+<? /* if($arParams["USE_FILTER"]=="Y"):?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.filter",
 	"bootstrap_v4",

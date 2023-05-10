@@ -128,7 +128,7 @@ $APPLICATION->AddChainItem("Новости", "/news/");
 		"STRICT_SECTION_CHECK" => "Y",
 		"TEMPLATE_THEME" => "site",
 		"USE_CATEGORIES" => "N",
-		"USE_FILTER" => "Y",
+		"USE_FILTER" => "N",
 		"USE_PERMISSIONS" => "N",
 		"USE_RATING" => "N",
 		"USE_REVIEW" => "N",

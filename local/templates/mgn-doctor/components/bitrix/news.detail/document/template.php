@@ -24,8 +24,8 @@ $tab = ($_REQUEST['TAB'] == '') ? 1 : $_REQUEST['TAB'];
 			<div class="documents-col documents__navi">
 				<h1 class="documents__title">ДОКУМЕНТЫ</h1>
 				<ul class="nav nav-tabs nav-tabs-documents" id="tabs-documents">
-					<li class="nav-item <? if ($tab == '1') echo "active" ?>">
-						<a class="nav-link" href="#documents-1">Договор</a>
+					<li class="nav-item">
+						<a class="nav-link <? if ($tab == '1') echo "active" ?>" href="#documents-1">Договор</a>
 					</li>
 					<li class="nav-item <? if ($tab == '2') echo "active" ?>">
 						<a class="nav-link" href="#documents-2">Доверенность</a>
