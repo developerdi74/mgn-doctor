@@ -183,8 +183,8 @@ $name = $arResult["NAME"];
 						<?if(!empty($arResult['PROPERTIES']['ONDOC_KEY']["VALUE"]) && $arResult['PROPERTIES']['ONDOC_KEY']["VALUE"]!=0):?>
 							<script defer data-skip-moving=true src="https://booking.mgn-doctor.ru/w.js?doctor=<?=$arResult['PROPERTIES']['ONDOC_KEY']["VALUE"]?>&clinic=15278&consultationType=visit">
 							</script>
+						<!--- Скрипт подключения виджета ОНДОК --->
 						<?else:?>
-
 						<?if($noCalendarFlag==true && $noCalendar==false){ //отключено расписание ?>
 							<div class="specialist-info__schedule specialist-schedule">
 								<h2 class="specialist-schedule__title">Расписание</h2>
