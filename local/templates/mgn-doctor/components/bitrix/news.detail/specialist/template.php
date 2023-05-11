@@ -41,7 +41,7 @@ $name = $arResult["NAME"];
 //		console('не сработало');
 //	}
 //}?>
-<!-- Микроразметка --->
+<!-- Микроразметка ---><div>
 <script type='application/ld+json'> 
 {
   "@context": "http://www.schema.org",
@@ -178,7 +178,14 @@ $name = $arResult["NAME"];
 						</div>
 					</div>
 					<div class="specialist-info__right">
-						<?if($noCalendarFlag==true && $noCalendar==false){?>
+						<!--- Скрипт подключения виджета ОНДОК --->
+						<?//print_r($arResult['PROPERTIES']['ONDOC_KEY'])?>
+						<?if(!empty($arResult['PROPERTIES']['ONDOC_KEY']["VALUE"]) && $arResult['PROPERTIES']['ONDOC_KEY']["VALUE"]!=0):?>
+							<script defer data-skip-moving=true src="https://booking.mgn-doctor.ru/w.js?doctor=<?=$arResult['PROPERTIES']['ONDOC_KEY']["VALUE"]?>&clinic=15278&consultationType=visit">
+							</script>
+						<?else:?>
+
+						<?if($noCalendarFlag==true && $noCalendar==false){ //отключено расписание ?>
 							<div class="specialist-info__schedule specialist-schedule">
 								<h2 class="specialist-schedule__title">Расписание</h2>
 								<div class="specialist-schedule__items">
@@ -224,6 +231,7 @@ $name = $arResult["NAME"];
  							<span><br>Загрузка расписания...</span></div>
 						</div>
 						<!-- встроенный плагин расписания end -->
+						<?endif; //Если есть ID из ОНДОК то новое если нет то старое расписание?>
 					</div>
 				</div>
 			</form>
