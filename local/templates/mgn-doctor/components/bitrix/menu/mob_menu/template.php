@@ -2,8 +2,6 @@
 
 <? if (!empty($arResult)) : ?>
 
-
-
   <nav class="burger-menu__nav">
     <ul>
       <?
@@ -28,7 +26,7 @@
                 <div class="mm-6column">
                   <ul>
           <? else : ?>
-                    <li><span><img src="<?= SITE_TEMPLATE_PATH ?>/img/<?= $arItem["PARAMS"]["img"] ?>" alt="меню"></span><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a></li>
+                    <li><span><img src="<?= SITE_TEMPLATE_PATH ?>/img/<?= $arItem["PARAMS"]["img"] ?>" alt="меню"></span><a <?if($arItem["PARAMS"]["data"]!='')echo 'data-fancybox=""'?> data-src="<?=$arItem["PARAMS"]["data"]?>"  href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a></li>
           <? endif ?>
 
         <? else : ?>
@@ -36,7 +34,7 @@
                     <? if ($arItem["DEPTH_LEVEL"] == 1) : ?>
                       <li class="drop-down"><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a></li>
                     <? else : ?>
-                      <li><span><img src="<?= SITE_TEMPLATE_PATH ?>/img/<?= $arItem["PARAMS"]["img"] ?>" alt="меню"></span><a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a></li>
+                      <li><span><img src="<?= SITE_TEMPLATE_PATH ?>/img/<?= $arItem["PARAMS"]["img"] ?>" alt="меню"></span><a <?if($arItem["PARAMS"]["data"]!='')echo 'data-fancybox=""'?> data-src="<?=$arItem["PARAMS"]["data"]?>"  href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a></li>
                     <? endif ?>
 
           <? else : ?>
