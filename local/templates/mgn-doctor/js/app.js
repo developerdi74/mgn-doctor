@@ -136,7 +136,7 @@ $(document).ready(function(){
 
 		$.ajax({
 			method: "POST",
-			url: "/specialists/reviewsAjax.php",
+			url: "/include/reviewsAjax.php",
 			data: $(this).serialize(),
 			success: function (data) {
 				console.log( data );
@@ -1722,3 +1722,34 @@ $('.mobile_box__flex .write').click(function(){
 $('.mobile_box__flex .to-order').click(function(){
 	ym(87764265,'reachGoal','MobileMenu_Form');
 });
+
+
+//Закрытие звезд при оценке
+$('.star').on("click", function(){
+	d = $(this).val();
+	
+	$(".star").each(function(i,el){
+
+			$(this).removeClass('starfull');
+
+		if($(this).val()<=d)
+			$(this).addClass('starfull');
+
+	});
+});
+
+$('.star').hover(function(){
+	d = $(this).val();
+	$(".star").each(function(i,el){
+
+			$(this).removeClass('starfull');
+
+		if($(this).val()<=d)
+			$(this).addClass('starfull');
+
+	});
+});
+//Открытие виджета ОНДОК
+$('.open_ondocwidjet').on('click', function(){
+	$('.ondoc-s-btn').click();
+})

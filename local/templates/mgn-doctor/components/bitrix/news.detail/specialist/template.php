@@ -90,7 +90,8 @@ $name = $arResult["NAME"];
 										<span class="no-active-status"></span>
 									<?}?>
 								</div>
-								<div class="specialists-item__specialty">
+<?/*?>
+								<div class="specialists-item__specialty d-none">
 									<?if(isset($arResult['DISPLAY_PROPERTIES']['AGE']['VALUE_ENUM_ID'])):?>
 									<?if(in_array("111", $arResult['DISPLAY_PROPERTIES']['AGE']['VALUE_ENUM_ID'])!==false){?>
 										<div class="specialists-item__specialty--item specialists-item__specialty--adult">
@@ -111,6 +112,7 @@ $name = $arResult["NAME"];
 									<?}?>
 									<?endif;?>
 								</div>
+<?*/?>
 							</div>
 							<div class="specialists-item__content specialist-info__content">
 								<h1 class="specialists-item__title specialists-item__name"><?=$arResult["NAME"]?></h1>
@@ -162,6 +164,36 @@ $name = $arResult["NAME"];
 										Центр: <?=$arResult['DISPLAY_PROPERTIES']['CLINIC']['DISPLAY_VALUE'];?>
 									<?}?>
 								</div>
+
+								<?if($arResult['RAITING']>1):?>
+								<div class='rating mt-2 static_rating'>
+										<div class="star_rew">
+											<? 	$star = floor($arResult['RAITING']);
+														$half=0;
+												if(($arResult['RAITING']-$star)<=0.5 && ($arResult['RAITING']-$star)!=0){
+														$half=1;
+												}else{
+													 if(($arResult['RAITING']-$star)!=0){
+															$star++;
+													 }
+												}
+											?>
+											<label> Рейтинг врача: <?=$arResult['RAITING']?>/5
+												<div>
+													<? for($i=1; $i<=5; $i++):?>
+													<span class='star d-inline-block <? 
+													if($i<=$star){
+														echo "starfull";
+													}elseif($half==1){
+														echo "starhalf"; $half=0; 
+													}?>' value = <?=$i?>></span>
+													<?endfor;?>
+												</div>
+											</label>
+										</div>
+								</div>
+								<?endif;?>
+
 								<?if($noCalendarFlag==true && $noCalendar==false){?>
 									<div class="specialists-item__btn">
 										<input type="hidden" value="<?=$arResult['ID']?>" name="DOCTOR">
@@ -183,8 +215,8 @@ $name = $arResult["NAME"];
 						<?if(!empty($arResult['PROPERTIES']['ONDOC_KEY']["VALUE"]) && $arResult['PROPERTIES']['ONDOC_KEY']["VALUE"]!=0):?>
 							<script defer data-skip-moving=true src="https://booking.mgn-doctor.ru/w.js?doctor=<?=$arResult['PROPERTIES']['ONDOC_KEY']["VALUE"]?>&clinic=15278&consultationType=visit">
 							</script>
-						<!--- Скрипт подключения виджета ОНДОК --->
 						<?else:?>
+
 						<?if($noCalendarFlag==true && $noCalendar==false){ //отключено расписание ?>
 							<div class="specialist-info__schedule specialist-schedule">
 								<h2 class="specialist-schedule__title">Расписание</h2>
@@ -293,13 +325,35 @@ $name = $arResult["NAME"];
 												</span>
 											</label>
 										</div>
+
 										<div class="review-form__item">
-											<label> Эл.почта*
+											<label> Контактный телефон *
 												<span class="form-control-wrap contact-tel">
-													<input type="email" placeholder="name@example.ru" class="form-email" name="contact-email" value="" required="">
+													<input type="tel" name="contact-tel" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel contact-input" aria-required="true" aria-invalid="false" placeholder='+7 (___) ___-__-__' required="">
 												</span>
 											</label>
 										</div>
+
+<!-- 										<div class="review-form__item">
+											<label> Эл.почта
+												<span class="form-control-wrap contact-tel">
+													<input type="email" placeholder="name@example.ru" class="form-email" name="contact-email" value="">
+												</span>
+											</label>
+										</div> -->
+
+
+											<div class="popup-item star_rew review-form__item">
+												<label> Ваша оценка специалиста
+													<div>
+														<input type="radio" name="star" class='star' value = 1>
+														<input type="radio" name="star" class='star' value = 2>
+														<input type="radio" name="star" class='star' value = 3>
+														<input type="radio" name="star" class='star' value = 4>
+														<input type="radio" name="star" class='star' value = 5>
+													</div>
+												</label>
+											</div>
 										<div class="review-form__item">
 											<label> Ваш отзыв*
 												<span class="form-control-wrap contact-tel">
@@ -327,22 +381,23 @@ $name = $arResult["NAME"];
 								<div id="reviews" class="woocommerce-Reviews">
 									<div id="comments">
 										<ol class="commentlist">
-											<?$arSelect=["ID", "NAME", "IBLOCK_ID", "DATE_CREATE", "PREVIEW_TEXT"];
-											$arFilter=["IBLOCK_ID"=>"30", "ACTIVE"=>"Y", "PROPERTY_SPECIALIST"=>$arResult["ID"]];
-											$res=CIblockElement::GetList(["DATE_CREATE"=>"DESC"], $arFilter, false, $arPages, $arSelect);
-											while($ob=$res->GetNextElement()){
-												$arFields=$ob->GetFields();?>
+											<? foreach ($arResult['REWIEVS']  as $rewievs) { ?>
 												<li class="review byuser comment-author-falewik796 even thread-even depth-1" id="li-comment-46">
 													<div id="comment-46" class="comment_container">
 														<div class="comment-text">
 															<p class="meta">
-																<strong class="woocommerce-review__author review__author"><?=$arFields["NAME"]?></strong>
+																<strong class="woocommerce-review__author review__author"><?=$rewievs["NAME"]?></strong>
 																<span class="woocommerce-review__dash"></span>
-																<time class="woocommerce-review__published-date" datetime="2020-07-29T21:26:23+03:00"><?=ConvertDateTime($arFields["DATE_CREATE"], "DD.MM.YYYY", "ru");?></time>
+																<time class="woocommerce-review__published-date" datetime="2020-07-29T21:26:23+03:00"><?=ConvertDateTime($rewievs["DATE_CREATE"], "DD.MM.YYYY");?></time>
 															</p>
 															<div class="description">
-																<p><?=$arFields["PREVIEW_TEXT"]?></p>
+																<p><?=$rewievs["PREVIEW_TEXT"]?></p>
 															</div>
+															<br>
+															<div class="description">
+																<p>Оценка: <?=$rewievs['PROPERTY_RAITING_VALUE'];?></p>
+															</div>
+															
 														</div>
 													</div>
 												</li>
