@@ -20,7 +20,7 @@ if(!empty($_POST["contact-textarea"])){
 	$text=$_POST["contact-textarea"];
 }
 if(!empty($_POST["contact-textarea-doctors"])){
-	$docText=$_POST["contact-textarea-doctors"];
+	$text=$_POST["contact-textarea-doctors"];
 }
 $clinic=$_POST["clinic"];
 
