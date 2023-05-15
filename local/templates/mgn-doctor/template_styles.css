@@ -8731,7 +8731,9 @@ button.swiper-pagination-bullet{
 .popup input{
 	width: 100%;
 }
-
+.popup input['radio']{
+	width: auto;
+}
 .popup input[type=checkbox]{
 	width:     16px;
 	min-width: 16px;
@@ -14757,4 +14759,44 @@ img{
 body .b24-widget-button-position-bottom-right{    
     right: 45px;
     bottom: 100px;
+}
+.star_rew .star:before,
+.star_rew .star:after{
+	content: none;
+}
+.star_rew .star{
+	width: fit-content;
+    -webkit-appearance: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    background: url(/local/templates/mgn-doctor/img/starempt.svg) center no-repeat;
+    background-position: 0;
+    overflow: hidden;
+    background-size: 100%;
+    transition: 0.5s;
+}
+.popup-item .star:hover{
+    background-image: url(/local/templates/mgn-doctor/img/starfull.svg);
+}
+.star_rew .starfull{
+    background-image: url(/local/templates/mgn-doctor/img/starfull.svg);	
+}
+.star_rew .starhalf{
+    background-image: url(/local/templates/mgn-doctor/img/starhalf.svg);
+    transform: scale(-1, 1);
+}
+.jq-selectbox__dropdown ul{
+	max-height: 300px;
+	overflow: scroll;
+}
+.itemBox button{
+	width: 100%;
+    height: 40px;
+    color: #fff;
+    background-color: #454c57;
+}
+.itemBox button:hover{
+    background-color: #fff;
+    color: #000;
 }

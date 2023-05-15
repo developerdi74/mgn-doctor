@@ -15,6 +15,27 @@ foreach ($arResult["ITEMS"] as $i => $arItem) {
 		}
 
 	}
+
+    $arSelect = Array("ID", "NAME", "IBLOCK_ID", "DATE_CREATE", "PREVIEW_TEXT","PROPERTY_RAITING");
+    $arFilter = Array(
+        "IBLOCK_ID"=>30, 
+        "ACTIVE_DATE"=>"Y", 
+        "ACTIVE"=>"Y",
+        'PROPERTY_SPECIALIST'=>$arItem['ID']
+    );
+    $raiting = 0;
+    $cntRew=0;
+    $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>150), $arSelect);
+    while($ob = $res->GetNextElement())
+    {
+        $rewievs[] = $ob->GetFields();
+        $raiting += $ob->fields['PROPERTY_RAITING_VALUE'];
+        $cntRew++;
+    }
+    if($cntRew>0){
+	    $arResult["ITEMS"][$i]['REWIEVS'] = $rewievs;
+	    $arResult["ITEMS"][$i]['RAITING'] = round($raiting/$cntRew,1);
+	}
 }
 
 ?>
