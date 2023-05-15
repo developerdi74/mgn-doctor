@@ -120,6 +120,37 @@
 					<?if(!empty($item['PROPERTIES']['ONE_PRIEM']['VALUE'])):?><div class="price_vr">Первичный прием <?=$item['PROPERTIES']['ONE_PRIEM']['VALUE']?> ₽</div><?endif;?>
 				</div>
 				<div class="save_vr">
+					<div class='rating static_rating'>
+						<?if($item['RAITING']>1):?>
+						<div class='rating'>
+								<div class="star_rew">
+									<? 	$star = floor($item['RAITING']);
+												$half=0;
+										if(($item['RAITING']-$star)<=0.5 && ($item['RAITING']-$star)!=0){
+												$half=1;
+										}else{
+											 if(($item['RAITING']-$star)!=0){
+													$star++;
+											 }
+										}
+									?>
+									<label class='text-right mr-5'> Рейтинг врача: <b><?=$item['RAITING']?>/5</b>
+										<div class='text-right'>
+											<? for($i=1; $i<=5; $i++):?>
+											<span class='mr-0 d-inline-block ml-2 star <? 
+											if($i<=$star){
+												echo "starfull";
+											}elseif($half==1){
+												echo "starhalf"; $half=0; 
+											}?>' value = <?=$i?>>
+											</span>
+											<?endfor;?>
+										</div>
+									</label>
+								</div>
+						</div>
+						<?endif;?>
+					</div>
 						<a class = "save-btn-vr" href="<?=$uri?>/<?=$item['CODE']?>/">Записаться</a> <? // Формируется ссылка на детальную страницу специалистов?>
 				</div>
 			</div>
