@@ -48,7 +48,7 @@ $this->setFrameMode(true);?>
 								</div>
 							</div>
 							<div class="specialists-item__content">
-								<a href="/page-specialist.html" class="specialists-item__link-hidden"></a>
+								<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="specialists-item__link-hidden"></a>
 								<h4 class="specialists-item__title"><?=$arItem["NAME"]?></h4>
 								<?if(is_array($arItem['DISPLAY_PROPERTIES']['SPECIALIZATION']['DISPLAY_VALUE'])){
 									foreach($arItem['DISPLAY_PROPERTIES']['SPECIALIZATION']['DISPLAY_VALUE'] as $arValue){?>
