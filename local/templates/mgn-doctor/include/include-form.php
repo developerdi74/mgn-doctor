@@ -197,7 +197,7 @@
 			return false;
 	});
 
-	$('.slide-check').on('click', function(){
+	$('.slide-check').on('click touchend', function(){
 		$('.slide-rewiev').each(function(i,val){
 			$(this).addClass('d-none');
 		});
@@ -216,11 +216,8 @@
 		}
 			$("#slide-check-"+check).addClass('active-check');
 			$('#slide-rewiev-'+slide).removeClass('d-none');
+		return false;
 	});
-
-	$('.jq-selectbox').on('touchend', function(){
-		console.log(1);
-	})
 //Переключение вкладок в отзывах конец
   </script>
   
