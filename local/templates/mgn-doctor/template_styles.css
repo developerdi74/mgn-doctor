@@ -126,6 +126,9 @@
 		padding-left: 4px;
 		padding-right: 4px;
 	}
+	.jq-selectbox select, .jq-select-multiple select{
+		z-index: 999999;
+	}
 }
 
 /*

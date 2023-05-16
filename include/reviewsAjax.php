@@ -45,7 +45,7 @@ $message=wordwrap($message, 70, "\r\n");
 $headers='MIME-Version: 1.0'."\r\n";
 $headers.='Content-type: text/html; charset=UTF-8'."\r\n";
 $headers=iconv('UTF-8', 'windows-1251', $headers);
-//mail($to, $subject, $message, $headers);
+mail($to, $subject, $message, $headers);
 
 
 
@@ -59,6 +59,11 @@ if(strlen($clinic)>0){
 	if($clinic=="Еще не был в клинике") $ENUM_ID=121;
 	$PROP[214]=["VALUE"=>$ENUM_ID];
 }
+
+
+$type=($score>0) ? "clinic": "docs";
+
+sendTelegram($name, $tel, $text, $clinic);
 
 $PROP["PHONE"]=$tel;
 
@@ -76,3 +81,31 @@ $arLoadProductArray=[
 if($PRODUCT_ID=$el->Add($arLoadProductArray)) echo "New ID: ".$PRODUCT_ID;
 else
 	echo "Error: ".$el->LAST_ERROR;
+
+
+function sendTelegram($name=0,$tel=0,$message=0,$clinic=0){
+
+	  $token = "6080201894:AAGdKExw1H0jxifd7P4i17oWy6U7AyDdzBo";
+	  $chat_id = "-1001672635509";
+
+	  $arr = array(
+	    'Новый отзыв с сайта' => 'mgn-doctor.ru',
+	    'Имя клиента: ' => $name,
+	    'Телефон: ' => $tel,
+	    'Текст отзыва: ' => $message,
+	    'Адрес клиники: ' => $clinic,
+	    'Дата отзыва: ' => date('Y-M-d h:i:s'),
+	  );
+
+	  foreach($arr as $key => $value) {
+	    $txt .= "<b>".$key."</b> ".$value."%0A";
+	  };
+
+	  $url = "https://api.telegram.org/bot".$token."/sendMessage?chat_id=".$chat_id."&parse_mode=html&text=".$txt;
+
+	    if( $curl = curl_init() ) {
+	      curl_setopt($curl, CURLOPT_URL, $url);
+	      $out = curl_exec($curl);
+	      curl_close($curl);
+	    }
+}
