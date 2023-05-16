@@ -193,6 +193,7 @@
 		}
 			$("#slide-check-"+check).addClass('active-check');
 			$('#slide-rewiev-'+slide).removeClass('d-none');
+			$('select').styler();
 			return false;
 	});
 
@@ -217,6 +218,9 @@
 			$('#slide-rewiev-'+slide).removeClass('d-none');
 	});
 
+	$('.jq-selectbox').on('touchend', function(){
+		console.log(1);
+	})
 //Переключение вкладок в отзывах конец
   </script>
   
