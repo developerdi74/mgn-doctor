@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="/local/templates/mgn-doctor/css/bootstrap.min.css">
 	<script type="text/javascript" src='/local/templates/mgn-doctor/js/jquery.min.js'></script>
 	<script type="text/javascript" src='/local/templates/mgn-doctor/js/jquery.maskedinput.min.js'></script>
+	<link rel="icon" href="https://mgn-doctor.ru/favicon.svg" type="image/svg+xml">
 </head>
 	<body>
 	<div class="container">
