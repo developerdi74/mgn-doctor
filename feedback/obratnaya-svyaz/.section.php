@@ -1,6 +1,6 @@
 <?
 $sSectionName = "Обратная связь";
-$arDirProperties = Array(
+$arDirProperties = array(
 
 );
 ?>
