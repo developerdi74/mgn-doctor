@@ -33,7 +33,8 @@ $this->setFrameMode(true);
 			<div class=''>Оценки:</div>
 			<div class=''> - <?=$arItem["DISPLAY_PROPERTIES"]['SERVICE']["NAME"]?> - <b><?=$arItem["DISPLAY_PROPERTIES"]['SERVICE']["DISPLAY_VALUE"]?></b>/5;</div>
 			<div class=''> - <?=$arItem["DISPLAY_PROPERTIES"]['DOC']["NAME"]?> - <b><?=$arItem["DISPLAY_PROPERTIES"]['DOC']["DISPLAY_VALUE"]?></b>/5;</div>
-			<div class=''> - <?=$arItem["DISPLAY_PROPERTIES"]['ALL']["NAME"]?> - <b><?=$arItem["DISPLAY_PROPERTIES"]['ALL']["DISPLAY_VALUE"]?></b>/5;</div>
+			<div class=''> - <?=$arItem["DISPLAY_PROPERTIES"]['ALL']["NAME"]?> - <b><?=$arItem["DISPLAY_PROPERTIES"]['ALL']["DISPLAY_VALUE"]?></b>/5;</div>			
+			<div class=''>Метка: <b><?=($arItem["DETAIL_TEXT"])? $arItem["DETAIL_TEXT"] : "Без метки";?></b></div>
 		</div>
 	</div>
 <?endforeach;?>
