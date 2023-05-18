@@ -67,7 +67,8 @@ $this->setFrameMode(true);
 									<? echo '<a href="mailto:'.$arResult["DISPLAY_PROPERTIES"]["E_MAIL"]["VALUE"].'" class="mail email-gtag contacts-info__email">'.$arResult["DISPLAY_PROPERTIES"]["E_MAIL"]["VALUE"].'</a>'; ?>
 								</div>
 								<div class="contacts-info__item">
-									<a href="#order-appointment" data-fancybox="" data-src="#order-appointment" class="btn btn-lred contacts-info__btn">Записаться на приём</a>
+									<a class="btn btn-grey header__btn open_ondocwidjet btn-lred contacts-info__btn">Записаться на приём</a>
+									<!-- <a href="#order-appointment" data-fancybox="" data-src="#order-appointment" class="btn btn-lred contacts-info__btn">Записаться на приём</a> -->
 									<?if($arResult["ID"]=='727'){?>
 										<a href="/specialists/raspisanie-vrachey/?CLINIC=1" class="btn btn-grey contacts-info__btn">Расписание</a>
 									<?}?>
