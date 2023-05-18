@@ -317,7 +317,8 @@
 					</a>
 				</div>
 				<div class="home-footer-navi__item">
-					<a href="#order-appointment" data-fancybox="" data-src="#order-appointment" class="btn btn-green home-footer-navi__btn">
+					<a class="btn btn-green open_ondocwidjet home-footer-navi__btn">
+					<!-- <a href="#order-appointment" data-fancybox="" data-src="#order-appointment" class="btn btn-green open_ondocwidjet home-footer-navi__btn"> -->
 						<svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M11.8648 3.88725L8.17255 0.137344C8.08637 0.0497812 7.96874 0 7.84615 0H1.38462C0.621139 0 0 0.630844 0 1.40625V14.5938C0 15.3692 0.621139 16 1.38462 16H10.6154C11.3789 16 12 15.3692 12 14.5938V4.21875C12 4.09094 11.9472 3.97091 11.8648 3.88725ZM8.30769 1.60041L10.4242 3.75H8.76923C8.51474 3.75 8.30769 3.53972 8.30769 3.28125V1.60041ZM1.38462 15.0625H10.6154C10.8699 15.0625 11.0769 14.8522 11.0769 14.5938V4.6875H8.76923C8.00575 4.6875 7.38462 4.05666 7.38462 3.28125V0.9375H1.38462C1.13012 0.9375 0.923077 1.14778 0.923077 1.40625V14.5938C0.923077 14.8522 1.13012 15.0625 1.38462 15.0625Z" fill="white"/>
 							<path d="M8.76953 6.625H3.23107C2.97618 6.625 2.76953 6.83487 2.76953 7.09375C2.76953 7.35263 2.97618 7.5625 3.23107 7.5625H8.76953C9.02442 7.5625 9.23107 7.35263 9.23107 7.09375C9.23107 6.83487 9.02442 6.625 8.76953 6.625Z" fill="white"/>
