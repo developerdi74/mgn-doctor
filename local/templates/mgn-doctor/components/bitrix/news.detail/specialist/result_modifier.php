@@ -22,10 +22,12 @@
     $cntRew=0;
     $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>150), $arSelect);
     while($ob = $res->GetNextElement())
-    {
+    {   
         $rewievs[] = $ob->GetFields();
-        $raiting += $ob->fields['PROPERTY_RAITING_VALUE'];
-        $cntRew++;
+        if($ob->fields['PROPERTY_RAITING_VALUE']>0){
+            $raiting += $ob->fields['PROPERTY_RAITING_VALUE'];        
+            $cntRew++;
+        }
     }
     if($cntRew>0){
         $arResult['REWIEVS'] = $rewievs;
