@@ -1725,10 +1725,10 @@ $('.mobile_box__flex .to-order').click(function(){
 
 
 //Закрытие звезд при оценке
-$('.star').on("click", function(){
+$('.form .star').on("click", function(){
 	d = $(this).val();
 	
-	$(".star").each(function(i,el){
+	$(".form  .star").each(function(i,el){
 
 			$(this).removeClass('starfull');
 
@@ -1738,9 +1738,9 @@ $('.star').on("click", function(){
 	});
 });
 
-$('.star').hover(function(){
+$('.form  .star').hover(function(){
 	d = $(this).val();
-	$(".star").each(function(i,el){
+	$(".form  .star").each(function(i,el){
 
 			$(this).removeClass('starfull');
 
