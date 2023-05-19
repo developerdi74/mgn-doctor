@@ -60,3 +60,6 @@ blockquote {
     opacity: 0.4 !important;
     pointer-events: none;
 }
+.covGse{
+    background-color: #000 !important;
+}

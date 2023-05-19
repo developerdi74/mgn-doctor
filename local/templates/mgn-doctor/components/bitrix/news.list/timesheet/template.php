@@ -100,15 +100,15 @@ $dates[] =  date("Y-m-d", strtotime('sunday this week', strtotime($date)));
       <div class="schedule__photo">
       <h6>График работы медицинского центра</h6>
         <? if ($_REQUEST["CLINIC"] == "1" || $_REQUEST["CLINIC"] == ""): ?>
-          <img src="/upload/iblock/d87/ugbf9aj92t9q0xyb3fgkdbrcaxonv9kr.jpg" alt="">
+          <img width = 375 height = 229 src="/upload/iblock/d87/ugbf9aj92t9q0xyb3fgkdbrcaxonv9kr.jpg" alt="">
         <? endif;?>
 
         <? if ($_REQUEST["CLINIC"] == "2"): ?>
-          <img src="/upload/iblock/a0f/m13qsnvu19pn51ahn8i7xix5mujgw7ro.jpg" alt="">
+          <img width = 375 height = 229 src="/upload/iblock/a0f/m13qsnvu19pn51ahn8i7xix5mujgw7ro.jpg" alt="">
         <? endif;?>
 
         <? if ($_REQUEST["CLINIC"] == "3"): ?>
-          <img src="/upload/iblock/3ba/yjq6z8rb92aflvwmqmo3539jddhq5u5v.jpg" alt="">
+          <img width = 375 height = 229 src="/upload/iblock/3ba/yjq6z8rb92aflvwmqmo3539jddhq5u5v.jpg" alt="">
         <? endif;?>
 
         </br></br>
