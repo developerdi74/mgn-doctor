@@ -29,8 +29,10 @@ foreach ($arResult["ITEMS"] as $i => $arItem) {
     while($ob = $res->GetNextElement())
     {
         $rewievs[] = $ob->GetFields();
-        $raiting += $ob->fields['PROPERTY_RAITING_VALUE'];
-        $cntRew++;
+        if($ob->fields['PROPERTY_RAITING_VALUE']>0 && $ob->fields['PROPERTY_RAITING_VALUE']<6){
+	        $raiting += $ob->fields['PROPERTY_RAITING_VALUE'];
+	        $cntRew++;
+	    }
     }
     if($cntRew>0){
 	    $arResult["ITEMS"][$i]['REWIEVS'] = $rewievs;
