@@ -24,7 +24,7 @@
     while($ob = $res->GetNextElement())
     {   
         $rewievs[] = $ob->GetFields();
-        if($ob->fields['PROPERTY_RAITING_VALUE']>0){
+        if($ob->fields['PROPERTY_RAITING_VALUE']>0 && $ob->fields['PROPERTY_RAITING_VALUE']<6){
             $raiting += $ob->fields['PROPERTY_RAITING_VALUE'];        
             $cntRew++;
         }
