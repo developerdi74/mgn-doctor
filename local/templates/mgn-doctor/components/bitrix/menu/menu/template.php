@@ -25,7 +25,7 @@
                 <div class="mm-6column">
                   <ul>
                   <? else : ?>
-                    <li><span><img src="<?= SITE_TEMPLATE_PATH ?>/img/<?= $arItem["PARAMS"]["img"] ?>" alt="меню"></span>
+                    <li><span><img src="<?= SITE_TEMPLATE_PATH ?>/img/<?= $arItem["PARAMS"]["img"] ?>" alt="меню" height=24 width=22></span>
 						<a href=" <?= $arItem["LINK"] ?>" <?=$target?>><?= $arItem["TEXT"] ?></a></li>
                   <? endif ?>
 
@@ -37,7 +37,7 @@
                       <li class="drop-down 22"><a href="<?= $arItem["LINK"] ?>" <?=$target?>><?= $arItem["TEXT"] ?></a></li>
                     <? else : ?>
                       <li>
-						  <span><img src="<?= SITE_TEMPLATE_PATH ?>/img/<?= $arItem["PARAMS"]["img"] ?>" alt="меню"></span>
+						  <span><img src="<?= SITE_TEMPLATE_PATH ?>/img/<?= $arItem["PARAMS"]["img"] ?>" alt="меню" height=24 width=22></span>
 						  <a <?if($arItem["PARAMS"]["data"]!='')echo 'data-fancybox=""'?> data-src="<?=$arItem["PARAMS"]["data"]?>" href="<?=$arItem["LINK"]?>" <?=$target?>><?= $arItem["TEXT"] ?></a>
 					  </li>
                     <? endif; ?>
@@ -48,7 +48,7 @@
                       <li class="drop-down 33"><a href="<?= $arItem["LINK"] ?>" <?=$target?>><?= $arItem["TEXT"] ?></a></li>
                     <? else : ?>
                       <li>
-						  <span><img src="<?= SITE_TEMPLATE_PATH ?>/img/<?= $arItem["PARAMS"]["img"] ?>" alt="меню"></span>
+						  <span><img src="<?= SITE_TEMPLATE_PATH ?>/img/<?= $arItem["PARAMS"]["img"] ?>" alt="меню" height=24 width=22></span>
 						  <a href="<?= $arItem["LINK"] ?>" <?=$target?>><?= $arItem["TEXT"] ?></a>
 					  </li>
                     <? endif; ?>
