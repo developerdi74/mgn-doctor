@@ -1,7 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetPageProperty("title", "");
-$APPLICATION->SetTitle("");
+$APPLICATION->SetTitle("Документы | Семейный доктор в Магнитогорске");
 ?><div id="page" class="site page-dark-grey">
 
 
