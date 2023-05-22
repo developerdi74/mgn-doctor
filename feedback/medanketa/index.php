@@ -208,10 +208,21 @@
 					Напоминаем, что при первичном обращении в клинику Семейный доктор с ребенком необходимо  иметь свидетельство о рождении ребенка (или паспорт с 14 лет), Ваш паспорт.<br> 
 					Если Вы на прием отправляете ребенка с бабушкой или дедушкой, то необходимо предоставить доверенность на представление интересов ребенка при обращении за медицинской помощью.<br>
 					Образец доверенности : <a href="https://mgn-doctor.ru/upload/iblock/e91/9ip04z9vfrf1hlf520ji2rbl279oimhx.pdf">ООО МЦ Семейный доктор (ул. Доменщиков, 8 а)</a><br>
-					Образец доверенности : <a href="https://mgn-doctor.ru/upload/iblock/497/cws65tmnues731twq2bzl9oleg1p9yjo.pdf">ООО Семейный доктор (ул. Жукова, 11 и ул. 50 лет Магнитки, 35.1)</a><br>
+					Образец доверенности : <a href="https://mgn-doctor.ru/upload/iblock/497/cws65tmnues731twq2bzl9oleg1p9yjo.pdf">ООО Семейный доктор (ул. Жукова, 11 и ул. 50 лет Магнитки, 35.1)</a>
+				</p>
+				</div>
+			</div>	
+
+			<div class="row">
+				<div class="col-12">
+				<p>
+					<a href="https://mgn-doctor.ru/documents/#documents-2">Доверенность</a> и <a href="https://mgn-doctor.ru/documents/#documents-4">cогласие</a> необходимо самостоятельно распечатать и заполнить в случае, если Вы не планируете приходить вместе с ребёнком.<br>
+					Ссылки для ознакомления: <a href="https://mgn-doctor.ru/documents/">Договор</a>,
+					<a href="https://mgn-doctor.ru/documents/#documents-2">Доверенность</a>,
+					<a href="https://mgn-doctor.ru/documents/#documents-4">Согласие родителей</a>.
+				</p>
 
 					<br>С заботой, Семейный доктор!
-				</p>
 				</div>
 			</div>	
 

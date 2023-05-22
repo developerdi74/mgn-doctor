@@ -349,4 +349,16 @@ $tab = ($_REQUEST['TAB'] == '') ? 1 : $_REQUEST['TAB'];
 			</div>
 		</div>
 </section>
+<script type="text/javascript">
+	$(window).on('load', function(){
+		var tabLink = window.location.hash;
+		if(tabLink){
+			$('.nav-link').each(function(){
+				if($(this).attr('href') == tabLink){
+					$(this).click();
+				}
+			});			
+		}
+	})
+</script>
 <!-- CERTIFICATES END  -->
