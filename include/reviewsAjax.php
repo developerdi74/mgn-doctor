@@ -63,7 +63,7 @@ if(strlen($clinic)>0){
 
 $type=($score>0) ? "clinic": "docs";
 
-sendTelegram($name, $tel, $text, $clinic);
+sendTelegram($name, $tel, $text, $clinic, $specialists, $score);
 
 $PROP["PHONE"]=$tel;
 
@@ -83,7 +83,7 @@ else
 	echo "Error: ".$el->LAST_ERROR;
 
 
-function sendTelegram($name=0,$tel=0,$message=0,$clinic=0){
+function sendTelegram($name=0,$tel=0,$message=0,$clinic=0, $specialists=0, $score=0){
 
 	  $token = "6080201894:AAGdKExw1H0jxifd7P4i17oWy6U7AyDdzBo";
 	  $chat_id = "-1001672635509";
@@ -93,10 +93,14 @@ function sendTelegram($name=0,$tel=0,$message=0,$clinic=0){
 	    'Имя клиента: ' => $name,
 	    'Телефон: ' => $tel,
 	    'Текст отзыва: ' => $message,
-	    'Адрес клиники: ' => $clinic,
 	    'Дата отзыва: ' => date('Y-M-d h:i:s'),
 	  );
-
+	  if($clinic != "Еще не был в клинике" ){
+	     $arr['Адрес клиники: '] = $clinic;
+	  }else{
+	  	$arr['Отзыв на врача с ID: '] = $specialists;
+	  	$arr['Оценка: '] = $score;
+	  }
 	  foreach($arr as $key => $value) {
 	    $txt .= "<b>".$key."</b> ".$value."%0A";
 	  };
