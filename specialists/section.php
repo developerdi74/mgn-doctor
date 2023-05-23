@@ -2,8 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("description", "Все врачи аллергологи в Семейном докторе. Первичный прием аллерголога от 1100 рублей.  Высококвалифицированные врачи. Удобная онлайн-запись. Большой выбор услуг");
 $APPLICATION->SetPageProperty("keywords", "аллерголог, аллерголог магнитогорск");
-$APPLICATION->SetPageProperty("title", "Врачи аллергологи в Магнитогорске | Семейный доктор");
-$APPLICATION->SetTitle("Врачи в медицинском центре “Семейный доктор”");
+$APPLICATION->SetPageProperty("title", "Врачи в Магнитогорске | Семейный доктор");
 ?>
 	<?
 		$section_code = explode("/",$_SERVER['REQUEST_URI']);
