@@ -1,6 +1,7 @@
 <?require_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 CHTTP::SetStatus('404 Not Found');
 $APPLICATION->SetPageProperty("title", "Страница не найдена");
+$APPLICATION->AddChainItem("404", "/404.php");
 ?>
 <div id="page" class="site ">
  <section class="error-404 testing">
