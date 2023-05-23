@@ -2,8 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("description", "Все врачи аллергологи в Семейном докторе. Первичный прием аллерголога от 1100 рублей.  Высококвалифицированные врачи. Удобная онлайн-запись. Большой выбор услуг");
 $APPLICATION->SetPageProperty("keywords", "аллерголог, аллерголог магнитогорск");
-$APPLICATION->SetPageProperty("title", "Врачи аллергологи в Магнитогорске | Семейный доктор");
-$APPLICATION->SetTitle("Врачи в медицинском центре “Семейный доктор”");
+$APPLICATION->SetPageProperty("title", "Врачи в Магнитогорске | Семейный доктор");
 ?>
 	<?
 	$age=110;
@@ -71,7 +70,7 @@ $APPLICATION->SetTitle("Врачи в медицинском центре “С�
 		"IBLOCK_TYPE" => "mgn_doctor_service",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"INCLUDE_SUBSECTIONS" => "Y",
-		"MESSAGE_404" => "",
+		"MESSAGE_404" => "Страница не найдена",
 		"NEWS_COUNT" => "35",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
@@ -96,9 +95,9 @@ $APPLICATION->SetTitle("Врачи в медицинском центре “С�
 		"SET_LAST_MODIFIED" => "N",
 		"SET_META_DESCRIPTION" => "Y",
 		"SET_META_KEYWORDS" => "Y",
-		"SET_STATUS_404" => "N",
+		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
-		"SHOW_404" => "N",
+		"SHOW_404" => "Y",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
@@ -110,12 +109,14 @@ $APPLICATION->SetTitle("Врачи в медицинском центре “С�
 		"SECT_CODE_PARAM" => $section_code[2],
 	),
 	false
-);?>
+);
+$APPLICATION->SetTitle("Страница не найдена");?>
 <?else:
 CHTTP::SetStatus("404 Not Found");
 @define("ERROR_404","Y");
 if ($APPLICATION->RestartWorkarea())
 {
+$APPLICATION->SetTitle("Страница не найдена");
 	require(\Bitrix\Main\Application::getDocumentRoot() . "/404.php");
 	die();
 }
