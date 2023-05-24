@@ -98,7 +98,7 @@ if(isset($arResult['ITEM'])){
 	?>
 
 
-	<a class="testing service-order product-item-container<?=(isset($arResult['SCALABLE']) && $arResult['SCALABLE'] === 'Y' ? ' product-item-scalable-card' : '')?> open_ondocwidjet" id="<?=$areaId?>" data-entity="item">
+	<a class="testing service-order product-item-container<?=(isset($arResult['SCALABLE']) && $arResult['SCALABLE'] === 'Y' ? ' product-item-scalable-card' : '')?>" id="<?=$areaId?>" data-entity="item">
 		<!-- <a href="#order-appointment" data-fancybox="" data-src="#order-appointment" class="testing service-order product-item-container<?=(isset($arResult['SCALABLE']) && $arResult['SCALABLE'] === 'Y' ? ' product-item-scalable-card' : '')?> " id="<?=$areaId?>" data-entity="item"> -->
 		<?
 		$documentRoot = Main\Application::getDocumentRoot();
@@ -284,8 +284,8 @@ if(isset($arResult['ITEM'])){
 	unset($item, $actualItem, $minOffer, $itemIds, $jsParams);
 }
 ?>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $('.open_ondocwidjet').on('click', function(){
 	$('.ondoc-s-btn').click();
 })
-</script>
+</script> -->
