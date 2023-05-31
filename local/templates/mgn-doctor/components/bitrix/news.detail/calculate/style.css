@@ -11,3 +11,77 @@ div.news-detail img.detail_picture
 {
 	color:#486DAA;
 }
+.bottle_container{
+	height: 450px;
+    width: 225px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.imgbottle{
+	position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+}
+.imgwater{
+	z-index: 2;
+    position: absolute;
+    right: 14px;
+    bottom: -450;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s;
+}
+.form-range{
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 5px;
+}
+.gender button{
+    min-width: auto;
+    padding: 5px 15px;
+    height: auto; 
+    line-height: inherit;
+    border-radius: 5px;
+}    
+.span-cnt{
+    flex-wrap: nowrap;
+    justify-content: space-between;    
+    position: absolute;
+    bottom: -5px;
+    width: 90%;
+}
+.min_text{
+    font-size: 16px;
+}
+.form-label{
+    margin: 0px;
+}
+.label_text{
+    font-size: 11px;
+    color: #7e7e7e;
+}
+.index_weight_input{
+    font-weight: 900;
+    text-align: center;
+    font-size: 36px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px){
+    .water_input{
+        text-align: center;
+    }
+}

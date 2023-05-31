@@ -16,37 +16,17 @@ $this->setFrameMode(true);
   <div class="row justify-content-between row-vmiddle">
       <h2 class="section-title main-directions__title">Популярные направления</h2>
    </div>
-
-<?//if($_SESSION['isMobile']===true):?>
-	  <div class="row">
-		  <div class="owl-carousel owl-theme main-directions__owl" id="main-directions__owl">
+	<div class='row'>
+		<div class="owl-carousel owl-theme" id="popular_slider_owl">
 			<?foreach($arResult['ITEMS'] as $item):?>
-				<div class="item main-directions__item" >
-					<div class="direction-item-img">
-								<picture>
-								   <?if($item["PREVIEW_PICTURE"]["SRC_AVIF"]):?>
-								   		<source srcset="<?=$item["PREVIEW_PICTURE"]["SRC_AVIF"]?>" type="image/avif">
-								   <?endif;?>
-								   <?if($item["PREVIEW_PICTURE"]["SRC_WEBP"]):?>
-								   		<source srcset="<?=$item["PREVIEW_PICTURE"]["SRC_WEBP"]?>" type="image/webp">
-								   <?endif;?>
-								   <img src="<?=$item["PREVIEW_PICTURE"]["SRC"]?>" loading="lazy" height = "<?=$item["PREVIEW_PICTURE"]["HEIGHT"]?>" width = "<?=$item["PREVIEW_PICTURE"]["WIDTH"]?>" alt="<?=$item["PREVIEW_PICTURE"]["ALT"]?>" >
-								</picture>
-						<h5 class="direction-item__title"><?=$item['NAME']?></h5>
-						<a href="<?=$item['PROPERTIES']['LINK_ITEM']['VALUE']?>" class="direction-item__link--hidden"></a>
-					</div>
-				</div>
+				 <div class="slide" style="background-image: url('<?if($item["PREVIEW_PICTURE"]["SRC_AVIF"]){
+				 		echo $item["PREVIEW_PICTURE"]["SRC_AVIF"];
+				 	}else if($item["PREVIEW_PICTURE"]["SRC_WEBP"]){
+						echo $item["PREVIEW_PICTURE"]["SRC_WEBP"];
+				 	}?>')">
+				 	<h5 class="popular_slider_title"><?=$item['NAME']?></h5>
+				 	<a href="<?=$item['PROPERTIES']['LINK_ITEM']['VALUE']?>" class=""><div class="dark_fone"></div></a>
+ 		  	</div>
 			<?endforeach;?>
-		  </div>
-	  </div>
-<?/*else:
-	  <div class="row_pop">
-			<?foreach($arResult['ITEMS'] as $item):?>
-				<div class="item_pop" >
-						<img src="<?=$item['PREVIEW_PICTURE']['SRC']?>" alt="<?=$item["PREVIEW_PICTURE"]["ALT"]?>">
-						<h5 class="direction_pop"><?=$item['NAME']?></h5>
-						<a href="<?=$item['PROPERTIES']['LINK_ITEM']['VALUE']?>" class=""></a>
-				</div>
-			<?endforeach;?>
-	  </div>
-endif;*/?>
+		</div>	
+	</div>

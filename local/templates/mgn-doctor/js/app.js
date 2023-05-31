@@ -543,20 +543,6 @@ $(document).ready(function(){
 
 	});
 
-	// HEALTH CALCULATOR
-	var allCalc = $(".health-calc-description__img svg > *");
-
-	allCalc.on("click", function () {
-		let idPath = $(this).attr('id');
-		let currCalcTitle = $(`.health-calc-item[data-hcalc="${idPath}"]`).children('h5').text();
-
-		$('.health-calc-description__info').slideDown();
-		allCalc.removeClass("on");
-		$(this).addClass("on");
-		$('.health-calc-item').removeClass('health-calc-item--active');
-		$(`.health-calc-item[data-hcalc="${idPath}"]`).addClass('health-calc-item--active');
-		$('.health-calc-description__title').text(currCalcTitle);
-	});
 
 	// TEAM HOME DATA FILTER  НАШИ ВРАЧИ
 	var example = new DataFilterJS({
@@ -1073,56 +1059,6 @@ $(document).ready(function(){
 	}
 
 	// MAIN DIRECTIONS
-
-
-	$(window).on('load resize', function () {
-    if ($(this).width() > 1280) {
-      $("#main-directions__owl").trigger('destroy.owl.carousel');
-      $("#main-directions__owl").addClass('pop_flex');
-    } else {
-      $("#main-directions__owl").removeClass('pop_flex');
-		if($('#main-directions__owl').length>0 ){
-			let owlDirections=$("#main-directions__owl");
-			owlDirections.owlCarousel({
-				items:5,
-				lazyLoad:true,
-				loop:true,
-				autoPlay:3000,
-				singleItem:false,
-				speed:900,
-				dots:false,
-				margin:20,
-				nav:false,
-				responsive:{
-					0:{
-						items:1
-					},
-					400:{
-						items:1
-					},
-					600:{
-						items:2
-					},
-					800:{
-						items:3
-					},
-					992:{
-						items:4
-					},
-					1200:{
-						items:5
-					}
-				}
-			});
-			$(".main-directions__nav .slider__nav-next").click(function(){
-				owlDirections.trigger("next.owl.carousel");
-			});
-			$(".main-directions__nav .slider__nav-prev").click(function(){
-				owlDirections.trigger("prev.owl.carousel");
-			});
-		}
-    }
-  })
 
 
 	if ($('#main-directions__owl2').length > 0) {
@@ -1753,3 +1689,22 @@ $('.form  .star').hover(function(){
 $('.open_ondocwidjet').on('click', function(){
 	$('.ondoc-s-btn').click();
 })
+
+$(document).ready(function(){
+  $("#popular_slider_owl").owlCarousel({
+     nav:false,
+     margin: 20,
+     loop: false,
+     mouseDrag: true,
+     mouseDrag: true,
+     dots: false,
+     autoPlay:false,     
+  	 responsive:{
+				0: {items: 1},
+				600: {items: 2},
+				800: {items: 3},
+				1000: {items: 5},
+				1200: {items: 5}
+        }
+  });
+});
