@@ -14,14 +14,23 @@ $this->setFrameMode(true);
 ?>
 
 
-<section class="serviceit-price">
+<section class="">
    <div class="container">
         <div class="row justify-content-between row-vmiddle">
             <h1 class="serviceit-description__title title-wborder"><?=$arResult["NAME"]?></h1>
         </div>
-
-		<?echo $arResult["DETAIL_TEXT"];?>
-
+        <?
+        if($arResult['CODE']=="calc-water"){
+             include "calcs/".$arResult['CODE'].".php";
+        }        
+        if($arResult['CODE']=="calc-index"){
+             include "calcs/".$arResult['CODE'].".php";
+        }        
+        if($arResult['CODE']=="calc-bar"){
+             include "calcs/".$arResult['CODE'].".php";
+        }
+        
+        ?>
 		</div>
 </section>
 
