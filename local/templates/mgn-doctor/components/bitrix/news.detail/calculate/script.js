@@ -27,9 +27,6 @@ function getIndexWeight(weight, height){
     if(height>3){
         height=3;
     }
-
-    console.log(height);
-    console.log(weight);
     index = weight/(height*height);
 
     $('.list-index-info>div').removeClass('bg-danger');
