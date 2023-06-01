@@ -1,10 +1,10 @@
-	var allCalc = $(".health-calc-description__img svg > *");
+	var allCalc = $(".health-calc-description__img svg > circle");
 
 	allCalc.on("click", function () {
 		let idPath = $(this).attr('id');
 		let currCalcTitle = $(`.health-calc-item[data-hcalc="${idPath}"]`).children('h5').text();
 		let textCalc = $(`.health-calc-item[data-hcalc="${idPath}"]`).children('.health-calc-item__text').text();
-
+		console.log(currCalcTitle);
 		$('.health-calc-description__info').slideDown();
 		allCalc.removeClass("on");
 		$(this).addClass("on");
