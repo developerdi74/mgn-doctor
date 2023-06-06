@@ -18,7 +18,7 @@
                 <label for="weight" class="form-label">Вес - <span class='range-span span-range-weight'>40</span> кг.</label>
             </div>
             <div class="col-12 position-relative">
-                <input type="range"  oninput="getWeight(this.value)" class="form-range range-weight" id="weight" min="40" max="140" step="5" value="40">
+                <input type="range"  oninput="getWeight(this.value)" class="form-range range-weight" id="weight" min="40" max="140" step="1" value="40">
                 <div class='d-flex span-cnt'>
                     <span>40</span><span>90</span><span>140</span>
                 </div>
@@ -104,7 +104,8 @@
         if(weight>140){
              weight=140;
          }
-		var proizv = 0.6
+		var proizv = 0.6;
+
 		if(gender==0.03){
 			proizv = 0.4
 		}

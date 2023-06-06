@@ -6,7 +6,6 @@ $APPLICATION->SetPageProperty("title", "Семейный доктор в Маг�
 $APPLICATION->SetTitle("Семейный доктор в Магнитогорске. Официальный сайт");
 ?>
 
-
 <!-- MAIN SLIDER  -->
 <? $APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
