@@ -256,11 +256,21 @@ $name = $arResult["NAME"];
 							</div>
 						<?}?>
 						<?/* встроенный плагин расписания загрузка расписания происходит AJAXом из файла /include/raspisanie.php и script.js в папке шаблона */?>
-						<div class="specialist__schedule specialist-schedule__module ajax-raspisane-load">
-
+						<div class="specialist__schedule specialist-schedule__module ">
+							
+								<div class="no-timesheet">
+									Узнать акуальное расписание данного специалиста и записаться:
+									<ul>
+										<li>можно через форму онлайн-записи</li>
+										<li>позвонив в контакт-центр <a href="tel:83519581111">8-3519-581-111</a></li>
+										<li>через <a href="https://ok.ru/semeinyidoctor74" rel="nofollow"><img src="<?=SITE_TEMPLATE_PATH?>/img/OK_logo.svg" alt="" width="30" height="30"></a>  <a href="https://vk.com/semeinyi_doctor74" rel="nofollow"><img src="<?=SITE_TEMPLATE_PATH?>/img/VK_Compact_Logo.svg" alt="" width="30" height="30"></a></li>
+										<li>написав в чат (на сайте справа внизу)</li>
+									</ul>
+								</div>
+<!-- ajax-raspisane-load
  							<div class="cnt_loader"><div class="loader" style="--b: 5px;--c: green;width: 50px;--n: 6;--g: 20deg"></div>
  							<div style="display: none;" id="data_name_clinic" name="<?=$name?>" clinic="<?=$clinic?>"></div>
- 							<span><br>Загрузка расписания...</span></div>
+ 							<span><br>Загрузка расписания...</span></div> -->
 						</div>
 						<!-- встроенный плагин расписания end -->
 						<?endif; //Если есть ID из ОНДОК то новое если нет то старое расписание?>
@@ -333,14 +343,6 @@ $name = $arResult["NAME"];
 												</span>
 											</label>
 										</div>
-
-<!-- 										<div class="review-form__item">
-											<label> Эл.почта
-												<span class="form-control-wrap contact-tel">
-													<input type="email" placeholder="name@example.ru" class="form-email" name="contact-email" value="">
-												</span>
-											</label>
-										</div> -->
 
 
 											<div class="popup-item star_rew review-form__item">
