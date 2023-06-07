@@ -1,7 +1,7 @@
 $(document).ready(function(){
-	load_main();
+	//load_main();
 });
-
+/*
 function load_main () { //Функция, получающая данные с сервера методом ajax
   $.ajax({
     type: "POST", //Метод передачи параметров на сервер: GET или POST
@@ -55,4 +55,4 @@ function load_owl_detail(){
 			}
 		});
 
-}
+}*/

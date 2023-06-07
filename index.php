@@ -8,8 +8,8 @@ $APPLICATION->SetTitle("Семейный доктор в Магнитогорс�
 
 <!-- MAIN SLIDER  -->
 <? $APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"banner", 
+	"bitrix:news.list",
+	"banner",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -129,8 +129,8 @@ $APPLICATION->SetTitle("Семейный доктор в Магнитогорс�
 
   <!-- Популярные направления -->
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"popular_mainpage", 
+	"bitrix:news.list",
+	"popular_mainpage",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -218,8 +218,8 @@ $APPLICATION->SetTitle("Семейный доктор в Магнитогорс�
 
 
   <? $APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"doctors_block", 
+	"bitrix:news.list",
+	"doctors_block",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -297,8 +297,8 @@ $APPLICATION->SetTitle("Семейный доктор в Магнитогорс�
 <section class="popular-services your-questions mt-80 " id="popular-services">
 
   <? $APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"questions", 
+	"bitrix:news.list",
+	"questions",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -372,8 +372,8 @@ $APPLICATION->SetTitle("Семейный доктор в Магнитогорс�
 <!-- HEALTH CALCULATOR -->
 
 <? $APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"calculator", 
+	"bitrix:news.list",
+	"calculator",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -457,8 +457,8 @@ $APPLICATION->SetTitle("Семейный доктор в Магнитогорс�
     <div class="row ">
 
       <? $APPLICATION->IncludeComponent(
-          "bitrix:news.list", 
-          "news", 
+          "bitrix:news.list",
+          "news",
           array(
             "ACTIVE_DATE_FORMAT" => "d.m.Y",
             "ADD_SECTIONS_CHAIN" => "N",
