@@ -147,7 +147,7 @@ $APPLICATION->AddChainItem("Новости", "/news/");
 		),
 		"FILE_404" => "/404.php",
 		"SEF_URL_TEMPLATES" => array(
-			"news" => "",
+			"news" => "/news/",
 			"section" => "#SECTION_CODE#/",
 			"detail" => "#SECTION_CODE#/#ELEMENT_CODE#/",
 		)
