@@ -39,6 +39,14 @@ $arUrlRewrite=array (
     'PATH' => '/service/index.php',
     'SORT' => 100,
   ),
+  18 => 
+  array (
+    'CONDITION' => '#^/calculator/([^/]+?)/#',
+    'RULE' => 'ELEMENT_ID=$1',
+    'ID' => 'bitrix:calculator',
+    'PATH' => '/calculator/detail.php',
+    'SORT' => 100,
+  ),
   6 => 
   array (
     'CONDITION' => '#^/about/([^/]+?)/#',
@@ -62,20 +70,12 @@ $arUrlRewrite=array (
     'PATH' => '/action/index.php',
     'SORT' => 100,
   ),
-  18 => 
+  19 => 
   array (
     'CONDITION' => '#^/news/#',
     'RULE' => '',
     'ID' => 'bitrix:news',
     'PATH' => '/news/index.php',
-    'SORT' => 100,
-  ),
-  18 => 
-  array (
-    'CONDITION' => '#^/calculator/([^/]+?)/#',
-    'RULE' => 'ELEMENT_ID=$1',
-    'ID' => 'bitrix:calculator',
-    'PATH' => '/calculator/detail.php',
     'SORT' => 100,
   ),
 );
