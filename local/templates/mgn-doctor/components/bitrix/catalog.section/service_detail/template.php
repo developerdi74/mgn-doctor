@@ -175,7 +175,12 @@ $ar_result=$db_list->GetNext();
 					<div class="services-prices__text">
 						<p class="page-desc">
 							Если у Вас появились вопросы, наш специалист вам обязательно
-							<a href="#order-call" data-fancybox="" data-src="#order-call">поможет
+<!-- 							<a href="#order-call" data-fancybox="" data-src="#order-call">поможет
+								<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.9 16.2571H16C17.7526 16.2571 18.9 14.59 18.9 12.9286V4.42857C18.9 2.76716 17.7526 1.1 16 1.1H4C2.24611 1.1 1.1 2.76747 1.1 4.42857V12.9286C1.1 14.5897 2.24611 16.2571 4 16.2571H7.65159L11.394 19.6654L12.9 21.0369V19V16.2571Z" stroke="#75A72D" stroke-width="1.8"/>
+								</svg>
+							</a> -->
+							<a href="tel:+7 (3519) 581-111">поможет
 								<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M12.9 16.2571H16C17.7526 16.2571 18.9 14.59 18.9 12.9286V4.42857C18.9 2.76716 17.7526 1.1 16 1.1H4C2.24611 1.1 1.1 2.76747 1.1 4.42857V12.9286C1.1 14.5897 2.24611 16.2571 4 16.2571H7.65159L11.394 19.6654L12.9 21.0369V19V16.2571Z" stroke="#75A72D" stroke-width="1.8"/>
 								</svg>
@@ -340,7 +345,7 @@ $ar_result=$db_list->GetNext();
 						</div>
 					<?}?>
 				</div>
-				<div class="serviceit__form green-form contacts-form">
+			<!-- 	<div class="serviceit__form green-form contacts-form">
 					<div class="green-form__item green-form__item--left">
 						<h5>Позвоните сейчас</h5>
 						<div class="green-form__phones">
@@ -380,7 +385,7 @@ $ar_result=$db_list->GetNext();
 							</div>
 						</form>
 					</div>
-				</div>
+				</div> -->
 			</article>
 			<aside class="aside servdesc__item serviceit__aside">
 				<?$APPLICATION->IncludeComponent("bitrix:news.list", "top-news", [
