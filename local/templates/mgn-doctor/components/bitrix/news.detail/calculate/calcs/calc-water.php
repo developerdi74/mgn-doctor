@@ -1,4 +1,4 @@
-<div class="row mb-4">
+<div class="row mb-4" >
     <div class="col-12">
         <h1><?=$arResult["TITLE"]?></h1>
     </div>
