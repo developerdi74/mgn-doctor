@@ -1640,7 +1640,7 @@ $(document).ready(function(){
   $("#popular_slider_owl").owlCarousel({
      nav:false,
      margin: 20,
-     loop: false,
+     loop: true,
      mouseDrag: true,
      mouseDrag: true,
      dots: false,
@@ -1653,4 +1653,25 @@ $(document).ready(function(){
 				1200: {items: 5}
         }
   });
+
+    $("#popular-services__owl").owlCarousel({
+     nav:false,
+     margin: 20,
+     loop: true,
+     mouseDrag: true,
+     mouseDrag: true,
+     dots: false,
+     autoPlay:false,     
+  	 responsive:{
+				0: {items: 1},
+        }
+  });
+
+	$(".your-questions__top .slider__nav-next").click(function () {
+		 $("#popular-services__owl").trigger("next.owl.carousel");
+	});
+	$(".your-questions__top .slider__nav-prev").click(function () {
+		 $("#popular-services__owl").trigger("prev.owl.carousel");
+	});
+
 });
