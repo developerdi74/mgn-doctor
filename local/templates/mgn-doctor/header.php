@@ -61,7 +61,7 @@
   Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/bootstrap.min.css');
   Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/owl.carousel.min.css');
   //Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/owl.theme.default.min.css');
-  //Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.fancybox.min.css');
+  Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.fancybox.min.css');
   Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/swiper.min.css');
  // Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/animate.min.css');
   Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/jquery.formstyler.css');
