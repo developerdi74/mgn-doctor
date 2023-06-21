@@ -158,11 +158,20 @@
 				</div>
 				<h5 class="footer-item__title" style="font-size: 12px;">
 					<br>
-					Корпоративный отдел, Отдел персонала, Бухгалтерия, Сотрудничество и рекламы, Отдел закупок
+					Корпоративный отдел(профосмотры)
 				</h5>
 				<div class="footer__phone">
 					<div class="phone phone-gtag footer_phone">+7 (3519) 58-14-44</div>
 				</div>
+
+				<h5 class="footer-item__title" style="font-size: 12px;">
+					<br>
+					Отдел персонала, Бухгалтерия, Сотрудничество и рекламы, Отдел закупок
+				</h5>
+				<div class="footer__phone">
+					<div class="phone phone-gtag footer_phone">+7 (3519) 58-10-00</div>
+				</div>
+
 				<?if($_SESSION['isMobile']!=true){?>
 					<br>
 				<?}?>

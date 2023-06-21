@@ -64,7 +64,7 @@ $this->setFrameMode(true);
 	<?if($_SESSION['isMobile']===true){?>
 		<div class="row mobile-row">
 			<div class="your-questions__right your-questions__right--mobile">
-				<a href="#ask-question" data-fancybox="" data-src="#ask-question" class="btn btn-grey-tr btn-ask-question">Задать вопрос</a>
+				<a href="#ask-question-modal" data-fancybox="" data-src="#ask-question-modal" class="btn btn-grey-tr btn-ask-question">Задать вопрос</a>
 				<div class="slider__nav your-questions__nav popular-services__nav navigation">
 					<div class="slider__nav-prev"><img src="<?=SITE_TEMPLATE_PATH?>/img/arrow-prev.svg" height = "11" width = "20" alt="prev"></div>
 					<div class="slider__nav-next"><img src="<?=SITE_TEMPLATE_PATH?>/img/arrow-next.svg" height = "11" width = "20" alt="next"></div>
