@@ -1,6 +1,6 @@
-/*@import "https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;900&display=swap";*/
+@import "https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;900&display=swap";
 
-@font-face {
+/*@font-face {
 font-family: 'Fira Sans';
 src: url("fonts/firasans/FiraSans-Light.ttf") format("truetype"); 
 font-weight:300;
@@ -34,7 +34,7 @@ src: url("fonts/firasans/FiraSans-Bold.ttf") format("truetype");
 font-weight:700;
 font-style:normal;
 font-display:swap
-}
+}*/
 
 @font-face {
 font-family:'Mont';
