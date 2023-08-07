@@ -406,7 +406,7 @@
 				"USE_EXTENDED_ERRORS"   =>"Y",
 				"SEF_MODE"              =>"N",
 				"CACHE_TYPE"            =>"A",
-				"CACHE_TIME"            =>"3600",
+				"CACHE_TIME"            =>"360000",
 				"LIST_URL"              =>"",
 				"EDIT_URL"              =>"",
 				"SUCCESS_URL"           =>$_SERVER['SCRIPT_URL']."?success=1",
@@ -428,8 +428,8 @@
 <div id="spravkaifns" class="popup popup-small appointment-call">
 	<div class="popup__content popup-content">
 					<? $APPLICATION->IncludeComponent(
-	"bitrix:form.result.new", 
-	"template", 
+	"bitrix:form.result.new",
+	"template",
 	array(
 		"COMPONENT_TEMPLATE" => "template",
 		"WEB_FORM_ID" => "8",
@@ -725,7 +725,7 @@
 				"SEF_MODE"              =>"N",
 				"AJAX_MODE"             =>"Y",
 				"CACHE_TYPE"            =>"A",
-				"CACHE_TIME"            =>"3600",
+				"CACHE_TIME"            =>"3600000",
 				"LIST_URL"              =>"",
 				"EDIT_URL"              =>"",
 				"SUCCESS_URL"           =>"",
@@ -770,7 +770,7 @@
 }
 </script>
 
-<script type="text/javascript">
+<script type="text/javascript" defer>
 var fired = false;
 
 window.addEventListener('scroll', () => {

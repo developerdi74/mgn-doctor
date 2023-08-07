@@ -164,8 +164,8 @@ $APPLICATION->ShowPanel();?>
 			<?$APPLICATION->IncludeComponent("bitrix:menu", "mob_menu", [
 					"COMPONENT_TEMPLATE"   =>"menu",
 					"ROOT_MENU_TYPE"       =>"top",
-					"MENU_CACHE_TYPE"      =>"N",
-					"MENU_CACHE_TIME"      =>"3600",
+					"MENU_CACHE_TYPE"      =>"Y",
+					"MENU_CACHE_TIME"      =>"3600000",
 					"MENU_CACHE_USE_GROUPS"=>"Y",
 					"MENU_CACHE_GET_VARS"  =>[],
 					"MAX_LEVEL"            =>"2",
@@ -257,8 +257,8 @@ $APPLICATION->ShowPanel();?>
 						<?$APPLICATION->IncludeComponent("bitrix:menu", "menu", [
 							"COMPONENT_TEMPLATE"   =>"menu",
 							"ROOT_MENU_TYPE"       =>"top",
-							"MENU_CACHE_TYPE"      =>"N",
-							"MENU_CACHE_TIME"      =>"3600",
+							"MENU_CACHE_TYPE"      =>"Y",
+							"MENU_CACHE_TIME"      =>"3600000",
 							"MENU_CACHE_USE_GROUPS"=>"Y",
 							"MENU_CACHE_GET_VARS"  =>[],
 							"MAX_LEVEL"            =>"2",
