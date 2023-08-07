@@ -160,7 +160,6 @@ foreach ($planningArray['days'] as $allDay){
         <div>Время</div>
         <? foreach ($planningArray['days'] as $i => $day):?>
             <select name="selected_date" class="w-100 selected_date <?=($i!=0)?'d-none':''?>" selected-date="<?=$day['date_rec']?>">
-                <option class="doctor_day" select-date="" value="0" selected?>Выберите время</option>
                 <? foreach ($day['time_rec'] as $time):?>
                     <option class="doctor_day" select-time="<?=$time?>" value="<?=$day['date_rec']." ".$time?>" <?=($i==0)?'':''?>>
                         <?=$time?>
@@ -234,7 +233,7 @@ foreach ($planningArray['days'] as $allDay){
                 </div>
             </div>
         </div>
-        <button type="button" data-fancybox-close="" class="fancybox-button fancybox-close-small" title="Close"><svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg></button>
+        <button type="button" data-fancybox-close="" class="fancybox-button fancybox-close-small" title="Close"><svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg></button>
     </div>
 
 </div>
