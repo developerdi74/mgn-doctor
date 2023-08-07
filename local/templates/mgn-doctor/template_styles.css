@@ -13892,7 +13892,89 @@ background-color:#454c57
 .itemBox button:hover {
 background-color:#fff;
 color:#000
-}/*
-.owl-carousel .owl-item img{
-	margin: 0 auto !important;
-}*/
+}
+
+.label_date_access{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 45px;
+    color: #2C3E50;
+    line-height: normal;
+}
+.access-date{
+    position: relative;
+}
+.date_access_list{
+    font-size: 14px;
+    color: #606060;
+    letter-spacing: .75px;
+}
+.section_vrachi .star_rew .star{
+    width: 30px;
+    height: 30px;
+}
+.cnt_loader{
+    text-align: center;
+}
+
+
+.loader_mini,
+.loader_mini:before,
+.loader_mini:after {
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation: load7 1.8s infinite ease-in-out;
+    animation: load7 1.8s infinite ease-in-out;
+}
+.loader_mini {
+    color: #7ca82b;
+    font-size: 10px;
+    margin: 0px 30px;
+    text-indent: -9999em;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+    position: absolute;
+    top: -20px;
+    left: 0px;
+}
+.loader_mini:before,
+.loader_mini:after {
+    content: '';
+    position: absolute;
+    top: 0;
+}
+.loader_mini:before {
+    left: -2.5em;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+.loader_mini:after {
+    left: 2.5em;
+}
+@-webkit-keyframes load7 {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 2.5em 0 -1.3em;
+    }
+    40% {
+        box-shadow: 0 2.5em 0 0;
+    }
+}
+@keyframes load7 {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 2.5em 0 -1.3em;
+    }
+    40% {
+        box-shadow: 0 2.5em 0 0;
+    }
+}

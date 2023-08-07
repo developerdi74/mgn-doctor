@@ -112,12 +112,29 @@
 					</a>
 				</div>
 				<div class="descrip_vr">
+                    <?
+                    $medecins_id=NULL;
+                    if($item['PROPERTIES']['ONLINE_PLANNING']['VALUE'] != 0):
+                        if(empty($item['PROPERTIES']['MEDIALOG_ID']['VALUE'])){
+                            $explodeName = explode(' ',$item['NAME']);
+                            $medecins_id = getMedecinsID($explodeName[0], $explodeName[1],$explodeName[2], $item['ID']);
+                        }else{
+                            $medecins_id = $item['PROPERTIES']['MEDIALOG_ID']['VALUE'];
+                        }
+                        $medIDs[] = $medecins_id;
+                    endif;
+                    ?>
 					<div class="name-vr"><h2><a href = "<?=$uri?>/<?=$item['CODE']?>/"><?=$item['NAME']?></a></h2></div>
 					<div class="name-cherta-vr"></div>
 					<div class="spec-vr"><? foreach($NAME_SPECIAL as $SPEC){ echo $SPEC;$chet++; if(count($NAME_SPECIAL)!=$chet) echo ", ";}?></div>
 					<?if(!empty($item['PROPERTIES']['STAZH']['VALUE'])):?><div class="staz-vr">Стаж <?=$item['PROPERTIES']['STAZH']['VALUE']?></div><?endif;?>
 					<?if(!empty($item['PROPERTIES']['CATEGORY']['VALUE'])):?><div class="category-vr"><?=$item['PROPERTIES']['CATEGORY']['VALUE']?></div><?endif;?>
 					<?if(!empty($item['PROPERTIES']['ONE_PRIEM']['VALUE'])):?><div class="price_vr">Первичный прием <?=$item['PROPERTIES']['ONE_PRIEM']['VALUE']?> ₽</div><?endif;?>
+                        <div class="access-date mt-2 position-relative" medecins-id="<?=$medecins_id?>">
+                            <?if($item['PROPERTIES']['ONLINE_PLANNING']['VALUE'] != 0):?>
+                                <div class="cnt_loader"><div class="loader_mini" style=""></div></div>
+                            <?endif;?>
+                        </div>
 				</div>
 				<div class="save_vr">
 					<div class='rating static_rating'>
@@ -137,7 +154,7 @@
 									<label class='text-right mr-5'> Рейтинг врача: <b><?=$item['RAITING']?>/5</b>
 										<div class='text-right'>
 											<? for($i=1; $i<=5; $i++):?>
-											<span class='mr-0 d-inline-block ml-2 star <? 
+											<span class='mr-0 d-inline-block star <?
 											if($i<=$star){
 												echo "starfull";
 											}elseif($half==1){
@@ -155,10 +172,48 @@
 				</div>
 			</div>
 		</div>
-
 	<?endforeach;?>
 	</div>
-<?
+<?=$arResult["NAV_STRING"]?>
 
-	//prnt($IPROPERTY);
-?>
+<script async>
+    $(window).on('load', function (){
+        $.ajax({
+            url: '/local/templates/mgn-doctor/components/bitrix/news.list/vrachi/loadDatePlannings.php',
+            method: 'get',
+            dataType: 'json',
+            data: {medecins_ids: <?=json_encode($medIDs)?>},
+            success: function(data){
+                if(data == false){
+                    $('.access-date .cnt_loader').hide();
+                }
+                $.each(data, function (key, value){
+                    if($('[medecins-id = "'+key+'"]').length){
+
+                        html = "<div class='label_date_access'> Ближайшие даты для записи: </div>";
+                        html += "<div class='d-inline-block mr-2 push_date align-top'>";
+                        var days = value.days;
+                        if(days){
+                        days.forEach( function (day,index){
+                            if(index<6){
+                                if(index == 3){
+                                    html += "</div><div class='d-inline-block align-top'>";
+                                }
+                                html += "<div class='date_access_list'>"+day.date_rec+"</div>";
+                                console.log(index);
+                            }
+                        });
+                        html += "</div>";
+                        }else{
+                            html = "<div class='label_date_access'> Запись по телефону.</div>" +
+                                "<div class='list_phone'><a href='tel:73519581111' class=''>+7(3519) 581-111</a></div>";
+                        }
+                        $('[medecins-id = "'+key+'"]').html(html);
+                        $('.access-date .cnt_loader').hide();
+
+                    }
+                });
+            }
+        });
+    });
+</script>

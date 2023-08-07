@@ -44,7 +44,7 @@ $APPLICATION->AddChainItem("Детские врачи", "/detskie-vrachi/");
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "36000000",
 		"CACHE_GROUPS" => "Y",
-		"CACHE_FILTER" => "N",
+		"CACHE_FILTER" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y"
 	),
 	false
