@@ -151,7 +151,7 @@ foreach ($planningArray['days'] as $allDay){
             <option class="doctor_day" select-date="" value="0" selected>Выберите день</option>
             <?foreach ($planningArray['days'] as $i => $day):?>
                 <option class="doctor_day" select-date="<?=$day['date_rec']?>" value="<?=$day['date_rec']?>" <?=($i==0)?'':''?>>
-                    <?=$day['date_rec']?>
+                    <?=date('d.m.Y', strtotime($day['date_rec']))?>
                 </option>
             <? endforeach;?>
         </select>
