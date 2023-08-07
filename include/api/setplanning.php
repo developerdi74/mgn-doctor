@@ -14,10 +14,10 @@ if(!empty($_POST['namemyname'])){
 }
 
 $url = 'http://109.195.215.58/api/planning/';
-
+$dateValidate=date('Y-m-d H:i', strtotime($_POST['date_rec']));
 $post_data = [
     'medecins_id' => $_POST['medecins_id'],
-    'date' => $_POST['date_rec'],
+    'date' => $dateValidate,
     'exam_id' => $_POST['exam_id_form'],
     'phone' => $_POST['phone'],
 ];
