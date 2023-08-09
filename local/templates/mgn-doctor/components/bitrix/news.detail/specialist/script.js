@@ -94,7 +94,7 @@ $(document).ready(function(){
                         $('#confirm_entry_modal .success-hide').hide();
                         $('#confirm_entry_modal .preload_container_popup').hide();
                         $('#confirm_entry_modal .success_message .popup__title').html("Запись невозможна.");
-                        $('#confirm_entry_modal .success_message .popup-item').html("<div class='text-center'>За Вами забронировано уже более 3 дат. <br>Свяжитесь по телефону <a href='tel:+73519581111'>+7 (3519) 581-111</a>, для перезаписи.</div>");
+                        $('#confirm_entry_modal .success_message .popup-item').html("<div class='text-center'>Вы уже записаны к этом врачу. <br>Для смены даты записи свяжитесь по телефону <a href='tel:+73519581111'>+7 (3519) 581-111</a></div>");
                         $('#confirm_entry_modal .success_message').show();
                         return;
                     }

@@ -23,8 +23,8 @@ $post_data = [
     'phone' => $_POST['phone'],
 ];
 
-$check = checkOnlineRecord();
-if($check == false && $USER->GetID()!=6){
+$check = checkOnlineRecord($_POST['medecins_id']);
+if($check == false && $USER->GetID()!=2){
     echo json_encode(['code'=> 102, 'msg'=>'более 3 записей']);
     exit;
 }
@@ -65,7 +65,7 @@ return;
 ?>
 
 <?php
-function checkOnlineRecord(){
+function checkOnlineRecord($medecins_id){
     $ip = $_SERVER['REMOTE_ADDR'];
     $hlbl = 10;
     $entity_data_class = GetEntityDataClass($hlbl);
@@ -74,6 +74,7 @@ function checkOnlineRecord(){
         'order' => array('UF_DATE_RECORD'=>'ASC'),
         'select' => array('*'),
         'filter' => array(
+            'UF_MEDECINS_ID'=> $medecins_id,
             'UF_IP_ADRESS'=>$ip,
             'UF_DATE_CREATE' => date('Y-m-d')
         )
@@ -83,7 +84,7 @@ function checkOnlineRecord(){
         $countRecordToday++;
     }
     //количество записей в день = 3
-    if($countRecordToday >= 3){
+    if($countRecordToday >= 1){
         return false;
     }else{
         return true;
