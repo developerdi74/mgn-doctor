@@ -176,7 +176,7 @@
 	</div>
 <?=$arResult["NAV_STRING"]?>
 
-<script async>
+<script defer>
     $(window).on('load', function (){
         $.ajax({
             url: '/local/templates/mgn-doctor/components/bitrix/news.list/vrachi/loadDatePlannings.php',
@@ -189,7 +189,7 @@
                 }
                 $.each(data, function (key, value){
                     if($('[medecins-id = "'+key+'"]').length){
-
+ 
                         html = "<div class='label_date_access'> Ближайшие даты для записи: </div>";
                         html += "<div class='d-inline-block mr-2 push_date align-top'>";
                         var days = value.days;

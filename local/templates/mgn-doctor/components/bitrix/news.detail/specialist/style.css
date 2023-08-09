@@ -207,3 +207,13 @@ div.news-detail img.detail_picture
         transform: rotate(360deg);
     }
 }
+
+#confirm_entry_modal .success_message label{
+    font-weight: 300;
+    font-size: 18px;
+}
+.success_exam,.success_date,.success_phone{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 5px
+}

@@ -80,8 +80,9 @@ $(document).ready(function(){
                 },
                 success: function(data){
                     if(data.code == '001'){
+                        console.log(data);
                         $('.success_exam').html($(':selected', "#exam_id").text());
-                        $('.success_date').html(date_rec);
+                        $('.success_date').html(data.info.DATE_START);
                         $('.success_phone').html($('#entry_btn').val());
                         $('#confirm_entry_modal .preload_container_popup').hide();
                         $('#confirm_entry_modal .success_message').show();
@@ -104,7 +105,13 @@ $(document).ready(function(){
                         $('#confirm_entry_modal .error_phone').show();
                         return;
                     }
-
+                    if(data.code == '105'){
+                        $('#confirm_entry_modal .success-hide').show();
+                        $('#confirm_entry_modal .preload_container_popup').hide();
+                        $('#confirm_entry_modal .error_message').html('Ошибка записи! Попробуйте выбрать другую дату или время!');
+                        $('#confirm_entry_modal .error_message').show();
+                        return;
+                    }
                     $('#confirm_entry_modal .success-hide').show();
                     $('#confirm_entry_modal .preload_container_popup').hide();
                     $('#confirm_entry_modal .error_message').html('Ошибка! Попробуйте позже!');
@@ -139,20 +146,6 @@ function setDatePlanningCnt(dataTime){
     var text = $(':selected', "#exam_id").text();
     $("#exam_id_name").html(text);
 }
-
-/*
- * Date Format 1.2.3
- * (c) 2007-2009 Steven Levithan <stevenlevithan.com>
- * MIT license
- *
- * Includes enhancements by Scott Trenda <scott.trenda.net>
- * and Kris Kowal <cixar.com/~kris.kowal/>
- *
- * Accepts a date, a mask, or a date and a mask.
- * Returns a formatted version of the given date.
- * The date defaults to the current date/time.
- * The mask defaults to dateFormat.masks.default.
- */
 
 var dateFormat = function () {
     var	token = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZ]|"[^"]*"|'[^']*'/g,

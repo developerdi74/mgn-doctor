@@ -14,6 +14,7 @@ if(!empty($_POST['namemyname'])){
 }
 
 $url = 'http://109.195.215.58/api/planning/';
+
 $dateValidate=date('Y-m-d H:i', strtotime($_POST['date_rec']));
 $post_data = [
     'medecins_id' => $_POST['medecins_id'],
@@ -22,31 +23,39 @@ $post_data = [
     'phone' => $_POST['phone'],
 ];
 
-$check = checkOnCreateOnlineRecord($post_data);
-if($check == false){
+$check = checkOnlineRecord();
+if($check == false && $USER->GetID()!=6){
     echo json_encode(['code'=> 102, 'msg'=>'более 3 записей']);
     exit;
 }
 $headers = [];
 
-$post_data = http_build_query($post_data);
+$post_data_url = http_build_query($post_data);
 
 $curl = curl_init();
-curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($curl, CURLOPT_VERBOSE, 1);
-curl_setopt($curl, CURLOPT_POSTFIELDS, $post_data);
-curl_setopt($curl, CURLOPT_URL, $url);
-curl_setopt($curl, CURLOPT_PORT, '9595');
-curl_setopt($curl, CURLOPT_POST, true); // true - означает, что отправляется POST запрос
-$result = curl_exec($curl);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_VERBOSE, 1);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $post_data_url);
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_PORT, '9595');
+    curl_setopt($curl, CURLOPT_POST, true); // true - означает, что отправляется POST запрос
+    $result = curl_exec($curl);
 curl_close($curl);
-
+$months = array( 1 => 'января' , 'февраля' , 'марта' , 'апреля' , 'мая' , 'июня' , 'июля' , 'августа' , 'сентября' , 'октября' , 'ноября' , 'декабря' );
+$arrayResult = json_decode($result, true);
+if($arrayResult['info']['DATE_START']){
+    $monthRus = $months[date('n', strtotime($arrayResult['info']['DATE_START']))];
+    $arrayResult['info']['DATE_START'] = date('d '.$monthRus.' Y - H:i', strtotime($arrayResult['info']['DATE_START']));
+}
+if($arrayResult['code'] == 001){
+    createOnlineRecord($post_data);
+}
+$result = json_encode($arrayResult);
 echo $result;
 return;
 
 if($check){
-    $array = json_decode($result, true);
     $array['id_record'] = $check;
     $result = json_encode($array);
 }
@@ -56,11 +65,11 @@ return;
 ?>
 
 <?php
-function checkOnCreateOnlineRecord($post_data){
+function checkOnlineRecord(){
     $ip = $_SERVER['REMOTE_ADDR'];
-        $hlbl = 10;
-
+    $hlbl = 10;
     $entity_data_class = GetEntityDataClass($hlbl);
+
     $rsData = $entity_data_class::getList(array(
         'order' => array('UF_DATE_RECORD'=>'ASC'),
         'select' => array('*'),
@@ -76,18 +85,24 @@ function checkOnCreateOnlineRecord($post_data){
     //количество записей в день = 3
     if($countRecordToday >= 3){
         return false;
+    }else{
+        return true;
     }
-        $hlblock = HL\HighloadBlockTable::getById($hlbl)->fetch();
-        $entity = HL\HighloadBlockTable::compileEntity($hlblock);
-        $entity_data_class = $entity->getDataClass();
+}
+function createOnlineRecord($post_data=[]){
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $hlbl = 10;
+    $hlblock = HL\HighloadBlockTable::getById($hlbl)->fetch();
+    $entity = HL\HighloadBlockTable::compileEntity($hlblock);
+    $entity_data_class = $entity->getDataClass();
 // Массив полей для добавления
-    $data = array(
+    $data = [
         "UF_DATE_RECORD"=> $post_data['date'],
         "UF_MEDECINS_ID"=> $post_data['medecins_id'],
         "UF_IP_ADRESS"=>$ip,
         "UF_PHONE" => $post_data['phone'],
         'UF_DATE_CREATE' => date( 'Y-m-d' ),
-    );
+    ];
 
     $result = $entity_data_class::add($data);
     return $result->getId();
