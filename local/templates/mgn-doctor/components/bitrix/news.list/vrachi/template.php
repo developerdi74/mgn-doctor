@@ -177,6 +177,9 @@
 <?=$arResult["NAV_STRING"]?>
 <?php
 $section_url=explode('/', $_SERVER['REQUEST_URI'])[2];
+if($_GET['PAGEN_1']){
+    $section_url=$section_url.'_'.$_GET['PAGEN_1'];
+}
 ?>
 <script defer>
     $(window).on('load', function (){
