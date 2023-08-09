@@ -36,7 +36,7 @@ foreach ($planningArray['days'] as $allDay){
         <div>Выбeрите услугу для записи</div>
         <select name="exam_id" class="w-100" id="exam_id">
             <? foreach ($planningArray['exams'] as $exam){?>
-                <option value="<?=$exam['PL_EXAM_ID']?>"><?=$exam['NAME']?></option>
+                <option value="<?=$exam['PL_EXAM_ID']?>"><?=mb_strtoupper( mb_substr(($exam['NAME']),0,1) ) . mb_substr(($exam['NAME']),1);?></option>
             <?}?>
         </select>
     </div>
