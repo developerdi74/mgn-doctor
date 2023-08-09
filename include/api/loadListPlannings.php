@@ -8,7 +8,7 @@ $cache = Cache::createInstance(); // Служба кеширования
 
 $cachePath = 'sectionListDocs'; // папка, в которой лежит кеш
 $cacheTtl = 2*60*60; // срок годности кеша (в секундах)
-$cacheKey = 'cacheSpecialists-'.$_GET['cache_code'];  // имя кеша
+$cacheKey = 'cacheSpecialists-'.$_GET['cache_code']; // имя кеша
 
 if ($cache->initCache($cacheTtl, $cacheKey, $cachePath))
 {
