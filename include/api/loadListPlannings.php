@@ -34,7 +34,7 @@ echo $vars;
 return;
 /*
 echo json_encode(getPlannings($_GET));
-
+*/
 function getPlannings($medecins_ids){
     $get = http_build_query($medecins_ids);
     if( $curl = curl_init() ) {
