@@ -175,22 +175,25 @@
 	<?endforeach;?>
 	</div>
 <?=$arResult["NAV_STRING"]?>
-
+<?php
+$section_url=explode('/', $_SERVER['REQUEST_URI'])[2];
+?>
 <script defer>
     $(window).on('load', function (){
         $.ajax({
-            url: '/local/templates/mgn-doctor/components/bitrix/news.list/vrachi/loadDatePlannings.php',
+            url: '/include/api/loadListPlannings.php',
             method: 'get',
             dataType: 'json',
-            data: {medecins_ids: <?=json_encode($medIDs)?>},
+            data: {medecins_ids: <?=json_encode($medIDs)?>,
+                    cache_code: "<?=$section_url?>"},
             success: function(data){
                 if(data == false){
                     $('.access-date .cnt_loader').hide();
                 }
                 $.each(data, function (key, value){
                     if($('[medecins-id = "'+key+'"]').length){
- 
-                        html = "<div class='label_date_access'> Ближайшие даты для записи: </div>";
+
+                        html = "<div class='label_date_access'>Ближайшие даты для записи: </div>";
                         html += "<div class='d-inline-block mr-2 push_date align-top'>";
                         var days = value.days;
                         if(days){

@@ -8,7 +8,7 @@ function getMedecinsID($fam,$name1,$name2){
             'name2' => $name2,
         ];
 
-        curl_setopt($curl, CURLOPT_URL, 'http://109.195.215.58/api/doctor/' . http_build_query($data));
+        curl_setopt($curl, CURLOPT_URL, 'http://109.195.215.58/api/v1/doctor/' . http_build_query($data));
         curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
         curl_setopt($curl, CURLOPT_PORT, '9595');
 

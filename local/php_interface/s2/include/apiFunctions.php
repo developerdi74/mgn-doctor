@@ -2,7 +2,7 @@
 function getPlanning($medecins_id){
     if( $curl = curl_init() ) {
 
-        curl_setopt($curl, CURLOPT_URL, 'http://109.195.215.58/api/planning/'.$medecins_id);
+        curl_setopt($curl, CURLOPT_URL, 'http://109.195.215.58/api/v1/planning/'.$medecins_id);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
         curl_setopt($curl, CURLOPT_PORT, '9595');
 
@@ -28,7 +28,7 @@ function getMedecinsID($fam,$name1,$name2,$id){
             'name1' => $name1,
             'name2' => $name2,
         ];
-        $url = "http://109.195.215.58/api/doctor/?" . http_build_query($data);
+        $url = "http://109.195.215.58/api/v1/doctor/?" . http_build_query($data);
         //$url = "http://109.195.215.58/api/doctor/?family=%D0%90%D0%BD%D0%B4%D1%80%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0&name=%D0%A2%D0%B0%D0%BC%D0%B0%D1%80%D0%B0&name2=%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%BD%D0%B0";
         curl_setopt($curl, CURLOPT_URL, $url . http_build_query($data));
         curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
