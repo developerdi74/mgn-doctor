@@ -105,7 +105,7 @@ $APPLICATION->SetPageProperty("title", "Врачи в Магнитогорске
 
 		$APPLICATION->IncludeComponent(
 			"bitrix:news.detail",
-			"specialist",
+			"specialistOnDoc",
 			array(
 				"COMPONENT_TEMPLATE" => "specialist",
 				"IBLOCK_TYPE" => "mgn_doctor_service",
