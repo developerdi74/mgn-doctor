@@ -54,5 +54,5 @@ function getPlannings($medecins_ids){
             return false;
         }
     }
-}*/
+}
 ?>
