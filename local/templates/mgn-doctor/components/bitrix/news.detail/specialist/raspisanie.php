@@ -224,7 +224,7 @@ foreach ($planningArray['days'] as $allDay){
                     <label>Услуга:
                         <div class="success_exam"></div>
                     </label>
-                    <label>Дата и время:
+                    <label>Дата и время записи:
                         <div class="success_date"></div>
                     </label>
                     <label>Ваш номер телефона:
