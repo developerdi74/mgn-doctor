@@ -13,7 +13,7 @@ if(!empty($_POST['namemyname'])){
     exit;
 }
 
-$url = 'http://109.195.215.58/api/planning/';
+$url = 'http://109.195.215.58/api/v1/planning/';
 
 $dateValidate=date('Y-m-d H:i', strtotime($_POST['date_rec']));
 $post_data = [
