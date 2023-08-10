@@ -102,10 +102,10 @@ $APPLICATION->SetPageProperty("title", "Врачи в Магнитогорске
 	);
 
 	else: // вызов деталки если раздела не существует
-
+ 
 		$APPLICATION->IncludeComponent(
-			"bitrix:news.detail",
-			"specialistOnDoc",
+			"bitrix:news.detail", 
+			"specialist",
 			array(
 				"COMPONENT_TEMPLATE" => "specialist",
 				"IBLOCK_TYPE" => "mgn_doctor_service",
