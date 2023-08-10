@@ -23,6 +23,16 @@ $post_data = [
     'comment' => $_POST['comment'],
     'phone' => $_POST['phone'],
 ];
+if(isset($_POST['doc_name'])){
+    $fio = $_POST['doc_name'];
+}else{
+    $fio = NULL;
+}
+if(isset($_POST['doc_spec'])){
+    $spec = $_POST['doc_spec'];
+}else{
+    $spec = NULL;
+}
 
 $check = checkOnlineRecord($_POST['medecins_id']);
 if($check == false && $USER->GetID()!=6){
@@ -49,8 +59,9 @@ if($arrayResult['info']['DATE_START']){
     $monthRus = $months[date('n', strtotime($arrayResult['info']['DATE_START']))];
     $arrayResult['info']['DATE_START'] = date('d '.$monthRus.' Y - H:i', strtotime($arrayResult['info']['DATE_START']));
 }
+
 if($arrayResult['code'] == 001){
-    createOnlineRecord($post_data);
+    createOnlineRecord($post_data, $fio, $spec);
 }
 $result = json_encode($arrayResult);
 echo $result;
@@ -91,7 +102,7 @@ function checkOnlineRecord($medecins_id){
         return true;
     }
 }
-function createOnlineRecord($post_data=[]){
+function createOnlineRecord($post_data=[], $fio=NULL, $spec=NULL){
     $ip = $_SERVER['REMOTE_ADDR'];
     $hlbl = 10;
     $hlblock = HL\HighloadBlockTable::getById($hlbl)->fetch();
@@ -105,6 +116,12 @@ function createOnlineRecord($post_data=[]){
         "UF_PHONE" => $post_data['phone'],
         'UF_DATE_CREATE' => date( 'Y-m-d' ),
     ];
+    if($fio != null){
+        $data["UF_FIO"] = $fio;
+    }
+    if($spec != null){
+        $data["UF_SPEC"] = $spec;
+    }
 
     $result = $entity_data_class::add($data);
     return $result->getId();

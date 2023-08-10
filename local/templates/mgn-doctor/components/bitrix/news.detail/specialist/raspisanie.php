@@ -5,6 +5,7 @@ $arResult = $_GET;
 if(empty($arResult['PROPERTIES']['MEDIALOG_ID']['VALUE'])){
     $explodeName = explode(' ',$arResult['NAME']);
     $medecins_id = getMedecinsID($explodeName[0], $explodeName[1],$explodeName[2], $arResult['ID']);
+
 }else{
     $medecins_id = $arResult['PROPERTIES']['MEDIALOG_ID']['VALUE'];
 }
