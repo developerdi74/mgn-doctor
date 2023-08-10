@@ -65,6 +65,8 @@ $(document).ready(function(){
         var namemyname = $('#namemyname').val();
         var comment = $('#comment').val();
         var medecins_id = $('#medecins_id').val();
+        var doc_name = $('.specialists-item__name').html();
+        var doc_spec = $('.specialist-info__position:eq(1)').html();
 
         if($(this).prop('disabled') === false && phone != false && date_rec.length != 0 && exam_id_form.length != 0){
             $("#confirm_entry_modal .btn-submit").attr('disabled',true);
@@ -79,6 +81,8 @@ $(document).ready(function(){
                     comment: comment,
                     namemyname: namemyname,
                     medecins_id: medecins_id,
+                    doc_name: doc_name,
+                    doc_spec: doc_spec,
                 },
                 success: function(data){
                     if(data.code == '001'){
