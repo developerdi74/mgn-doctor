@@ -1,19 +1,19 @@
 <?
 require ($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
-
 use Bitrix\Main\Loader;
 Loader::includeModule("highloadblock");
 use Bitrix\Highloadblock as HL;
 use Bitrix\Main\Entity;
 use Bitrix\Highloadblock\HighloadBlockTable as HLBT;
 
+$ver = $GLOBALS['API_VERSION'];
 
 
 if(!empty($_POST['namemyname'])){
     exit;
 }
 
-$url = 'http://109.195.215.58/api/v1/planning/';
+$url = 'http://109.195.215.58/api/'.$ver.'/planning/';
 
 $dateValidate=date('Y-m-d H:i', strtotime($_POST['date_rec']));
 $post_data = [
@@ -24,7 +24,7 @@ $post_data = [
 ];
 
 $check = checkOnlineRecord($_POST['medecins_id']);
-if($check == false && $USER->GetID()!=2){
+if($check == false && $USER->GetID()!=6){
     echo json_encode(['code'=> 102, 'msg'=>'более 3 записей']);
     exit;
 }
