@@ -63,6 +63,7 @@ $(document).ready(function(){
         var date_rec = $('#date_rec').val();
         var exam_id_form = $('#exam_id_form').val();
         var namemyname = $('#namemyname').val();
+        var comment = $('#comment').val();
         var medecins_id = $('#medecins_id').val();
 
         if($(this).prop('disabled') === false && phone != false && date_rec.length != 0 && exam_id_form.length != 0){
@@ -75,6 +76,7 @@ $(document).ready(function(){
                     phone: phone,
                     date_rec: date_rec,
                     exam_id_form: exam_id_form,
+                    comment: comment,
                     namemyname: namemyname,
                     medecins_id: medecins_id,
                 },

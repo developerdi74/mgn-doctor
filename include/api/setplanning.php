@@ -20,6 +20,7 @@ $post_data = [
     'medecins_id' => $_POST['medecins_id'],
     'date' => $dateValidate,
     'exam_id' => $_POST['exam_id_form'],
+    'comment' => $_POST['comment'],
     'phone' => $_POST['phone'],
 ];
 
