@@ -209,6 +209,14 @@ foreach ($planningArray['days'] as $allDay){
                         </label>
                     </div>
 
+                    <div class="popup-item">
+                        <label>Ваш комментарий
+                            <span class="form-control-wrap contact-tel">
+                                <input type="text" name="comment" id='comment' placeholder="Напишите вопрос, или другая интересующая информация" value="">
+                            </span>
+                        </label>
+                    </div>
+
                     <input type="submit" value="Записаться" class="btn-submit btn btn-green popup-btn disabled" disabled>
                 </form>
             </div>
