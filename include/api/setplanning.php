@@ -62,6 +62,10 @@ if($arrayResult['info']['DATE_START']){
 
 if($arrayResult['code'] == 001){
     createOnlineRecord($post_data, $fio, $spec);
+}else{
+    $post_data['fio'] = $fio;
+    $post_data['spec'] = $spec;
+    //logPlanning($post_data); неработает
 }
 $result = json_encode($arrayResult);
 echo $result;
@@ -71,9 +75,6 @@ if($check){
     $array['id_record'] = $check;
     $result = json_encode($array);
 }
-
-echo $result;
-return;
 ?>
 
 <?php
