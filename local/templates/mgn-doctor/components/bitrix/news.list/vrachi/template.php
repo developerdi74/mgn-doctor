@@ -1,22 +1,21 @@
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-		//Получение SEO раздела
-		$rsSections = CIBlockSection::GetList(array(),array('IBLOCK_ID' => 25, '=CODE' => $arParams['SECT_CODE_PARAM']), false, Array("UF_DETI"));
-		if ($arSection = $rsSections->Fetch()){
-			$sec_id = $arSection["ID"];
-			$title_detskii=$arSection['UF_DETI'];
-		}
+	//Получение SEO раздела
+	$rsSections = CIBlockSection::GetList(array(),array('IBLOCK_ID' => 25, '=CODE' => $arParams['SECT_CODE_PARAM']), false, Array("UF_DETI"));
+	if ($arSection = $rsSections->Fetch()){
+		$sec_id = $arSection["ID"];
+		$title_detskii=$arSection['UF_DETI'];
+	}
 
-		$ipropValues = new \Bitrix\Iblock\InheritedProperty\SectionValues(25,$sec_id);
-		$IPROPERTY  = $ipropValues->getValues();
-		if(empty($IPROPERTY['SECTION_PAGE_TITLE'])){
-			$header = $arSection["NAME"];
-		}else {
-			$header =  $IPROPERTY['SECTION_PAGE_TITLE'];
-		}
+	$ipropValues = new \Bitrix\Iblock\InheritedProperty\SectionValues(25,$sec_id);
+	$IPROPERTY  = $ipropValues->getValues();
+	if(empty($IPROPERTY['SECTION_PAGE_TITLE'])){
+		$header = $arSection["NAME"];
+	}else {
+		$header =  $IPROPERTY['SECTION_PAGE_TITLE'];
+	}
 //-----------------------------------------------------------------------------
 //Проверка на какой мы странице если детская то установить детский заголовок
-//
 		$uri = "/specialists";
 		$section_code = explode("/",$_SERVER['REQUEST_URI']);
 		$title = $IPROPERTY['SECTION_META_TITLE'];
@@ -24,18 +23,11 @@
 			$header = $title_detskii;
 			$title = $title_detskii." в Магнитогорске | Семейный доктор";
 		}
-		// if($section_code[1]=="detskie-vrachi"){
-		// 	$uri = "/detskie-vrachi";
-		// }else{
-		// 	$uri = "/specialists";
-		// }
 //-----------------------------------------------------------------------------
-
-
 	$APPLICATION->SetPageProperty("title", $title);
 	$APPLICATION->SetPageProperty("description",$IPROPERTY['SECTION_META_DESCRIPTION']);
 	$APPLICATION->SetPageProperty("keywords", $IPROPERTY['SECTION_META_KEYWORDS']);
-	//prnt($IPROPERTY);
+
 ?>
 	<div class="row">
 		<h1 class="page-title specialists-inner__title all-our-specialists__title"><?=$header?></h1>

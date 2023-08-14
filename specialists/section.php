@@ -4,19 +4,19 @@ $APPLICATION->SetPageProperty("description", "Все врачи аллергол
 $APPLICATION->SetPageProperty("keywords", "аллерголог, аллерголог магнитогорск");
 $APPLICATION->SetPageProperty("title", "Врачи в Магнитогорске | Семейный доктор");
 ?>
-	<?
-		$section_code = explode("/",$_SERVER['REQUEST_URI']);
+<?
+	$section_code = explode("/",$_SERVER['REQUEST_URI']);
 
-		define("AGE",111);
-		$arrFilterVrachi = array("SECTION_CODE" => $section_code[2], "PROPERTY" => array("AGE"=>AGE)); //Фильтр для отображения только врачей в выбранном разделе
+	define("AGE",111);
+	$arrFilterVrachi = array("SECTION_CODE" => $section_code[2], "PROPERTY" => array("AGE"=>AGE)); //Фильтр для отображения только врачей в выбранном разделе
 
-		if(isset($section_code[4])){ LocalRedirect("/404.php", "404 Not Found");}
+	if(isset($section_code[4])){ LocalRedirect("/404.php", "404 Not Found");}
 
-		$code = $section_code[2];
+	$code = $section_code[2];
 
-		$APPLICATION->AddChainItem("Специалисты", "/specialists/");
+	$APPLICATION->AddChainItem("Специалисты", "/specialists/");
 
-	?>
+?>
 <section class="specialists-inner all-our-specialists">
 	<div class="container">
 <?
@@ -42,7 +42,7 @@ $APPLICATION->SetPageProperty("title", "Врачи в Магнитогорске
 			"CACHE_FILTER" => "Y",
 			"CACHE_GROUPS" => "Y",
 			"CACHE_TIME" => "36000000",
-			"CACHE_TYPE" => "A",
+			"CACHE_TYPE" => "N",
 			"CHECK_DATES" => "Y",
 			"DETAIL_URL" => "",
 			"DISPLAY_BOTTOM_PAGER" => "Y",
@@ -82,7 +82,7 @@ $APPLICATION->SetPageProperty("title", "Врачи в Магнитогорске
 				5 => "",
 			),
 			"SET_BROWSER_TITLE" => "Y",
-			"SET_LAST_MODIFIED" => "N",
+			"SET_LAST_MODIFIED" => "Y",
 			"SET_META_DESCRIPTION" => "Y",
 			"SET_META_KEYWORDS" => "Y",
 			"SET_STATUS_404" => "Y",

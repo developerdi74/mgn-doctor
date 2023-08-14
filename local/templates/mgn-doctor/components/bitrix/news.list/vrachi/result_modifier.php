@@ -39,5 +39,4 @@ foreach ($arResult["ITEMS"] as $i => $arItem) {
 	    $arResult["ITEMS"][$i]['RAITING'] = round($raiting/$cntRew,1);
 	}
 }
-
 ?>

@@ -6,7 +6,7 @@
  * @var string $templateFolder
  * @var CatalogSectionComponent $component
  */
-
+/*
 global $APPLICATION;
 
 if (isset($templateData['TEMPLATE_THEME']))
@@ -56,4 +56,4 @@ if ($request->isAjaxRequest() && ($request->get('action') === 'showMore' || $req
 		'pagination' => $paginationContainer,
 		'epilogue' => $epilogue,
 	));
-}
+}*/
