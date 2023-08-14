@@ -79,4 +79,11 @@ function getPlannings($medecins_ids){
         }
     }
 }
+//не работает
+function logPlanning($print, $fileName='logapi.txt'){
+    if(isset($print)){
+        $log = date('Y-m-d H:i:s') . print_r($print,true);
+        file_put_contents('/include/api/logapi/'.$fileName, $log . PHP_EOL, FILE_APPEND);
+    }
+}
 ?>
