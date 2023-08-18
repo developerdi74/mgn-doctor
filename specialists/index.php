@@ -25,7 +25,6 @@ $APPLICATION->AddChainItem("Специалисты", "/specialists/");
 	define("AGE",111);
 	$arrFilterVrachi = array("PROPERTY" => array("AGE"=>AGE));
 
-    file_put_contents('appnew.txt', 'Ваш превосходный текст');
 	?>
  <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list",
@@ -54,10 +53,10 @@ $APPLICATION->AddChainItem("Специалисты", "/specialists/");
 		"VIEW_MODE" => "LINE",
 		"SHOW_PARENT_NAME" => "Y",
 		"SECTION_URL" => "/specialists/#CODE#/".$sect_url,
-		"CACHE_TYPE" => "A",
+		"CACHE_TYPE" => "Y",
 		"CACHE_TIME" => "36000000",
 		"CACHE_GROUPS" => "Y",
-		"CACHE_FILTER" => "N",
+		"CACHE_FILTER" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y"
 	),
 	false

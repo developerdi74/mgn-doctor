@@ -62,9 +62,9 @@ $strReturn.='<div class="breadcrumb bx-breadcrumb" itemprop="http://schema.org/b
 
 //console($arResult);
 // в услугах убрать промежуточные разделы
-$j=count($arResult)-2;
+$j=count($arResult)-1;
 if($arResult[1]['LINK']=='/service/'){
-	for($i=2; $i<=$j; $i++){
+	for($i=1; $i<=$j; $i++){
 		unset($arResult[$i]);
 	}
 }
@@ -82,7 +82,7 @@ $itemSize=count($arResult);
 for($index=0; $index<$itemSize; $index++){
 	$title=htmlspecialcharsex($arResult[$index]["TITLE"]);
 	$arrow=($index>0?'<i class="fa fa-angle-right"></i>':'');
-	if($arResult[$index]["LINK"]<>"" && $index!=$itemSize-1){
+	if($arResult[$index]["LINK"]<>"" && $index!=$itemSize){
 		$strReturn.='
 			<div class="breadcrumbs bx-breadcrumb-item" id="bx_breadcrumb_'.$index.'" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 				'.$arrow.'

@@ -36,7 +36,7 @@ $APPLICATION->SetPageProperty("title", "Врачи в Магнитогорске
 		if($arSction = $rsSections->Fetch()):
 
 ?>
-<? $APPLICATION->AddChainItem($arSction['NAME'], $arSction['CODE']); ?>
+<?// $APPLICATION->AddChainItem($arSction['NAME'], $arSction['CODE']); ?>
 		 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"vrachi", 
@@ -51,7 +51,7 @@ $APPLICATION->SetPageProperty("title", "Врачи в Магнитогорске
 		"CACHE_FILTER" => "Y",
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "A",
+		"CACHE_TYPE" => "Y",
 		"CHECK_DATES" => "Y",
 		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
