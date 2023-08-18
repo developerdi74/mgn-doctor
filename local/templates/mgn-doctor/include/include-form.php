@@ -1,12 +1,36 @@
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");?>
-<?
-	$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM");
-	$arFilter = Array("IBLOCK_ID"=>25, "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y");
-	$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>150), $arSelect);
-	while($ob = $res->GetNextElement())
-	{
-	 $arDoctors[] = $ob->GetFields();
-	}
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+use \Bitrix\Main\Data\Cache;
+
+$cache = Cache::createInstance(); // Служба кеширования
+
+$cachePath = 'doctors'; // папка, в которой лежит кеш
+$cacheTtl = 122; // срок годности кеша (в секундах)
+$cacheKey = 'doctors_for_form'; // имя кеша
+
+if ($cache->initCache($cacheTtl, $cacheKey, $cachePath)){
+    $arDoctors = $cache->getVars(); // Получаем переменные
+    $cache->output(); // Выводим HTML пользователю в браузер
+}
+elseif ($cache->startDataCache()){
+
+    $arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM");
+    $arFilter = Array("IBLOCK_ID"=>25, "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y");
+    $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>150), $arSelect);
+    while($ob = $res->GetNextElement())
+    {
+        $arDoctors[] = $ob->GetFields();
+    }
+    // Если что-то пошло не так и решили кеш не записывать
+    $cacheInvalid = false;
+    if ($cacheInvalid or empty($arDoctors))
+    {
+        $cache->abortDataCache();
+    }
+    // Всё хорошо, записываем кеш
+    $cache->endDataCache($arDoctors);
+}
+
+
 ?>
 <!-- POPUP APPOINMENT END -->
 

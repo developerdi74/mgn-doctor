@@ -27,13 +27,13 @@ $APPLICATION->SetPageProperty("title", "Врачи в Магнитогорске
 
 		if($arSction = $rsSections->Fetch()):
 
-		$APPLICATION->AddChainItem($arSction['NAME'], $arSction['CODE']);
+		//$APPLICATION->AddChainItem($arSction['NAME'], $arSction['CODE']);
 		$APPLICATION->IncludeComponent(
 		"bitrix:news.list",
 		"vrachi",
 		array(
 			"ACTIVE_DATE_FORMAT" => "d.m.Y",
-			"ADD_SECTIONS_CHAIN" => "N",
+			"ADD_SECTIONS_CHAIN" => "Y",
 			"AJAX_MODE" => "N",
 			"AJAX_OPTION_ADDITIONAL" => "",
 			"AJAX_OPTION_HISTORY" => "N",
@@ -42,7 +42,7 @@ $APPLICATION->SetPageProperty("title", "Врачи в Магнитогорске
 			"CACHE_FILTER" => "Y",
 			"CACHE_GROUPS" => "Y",
 			"CACHE_TIME" => "36000000",
-			"CACHE_TYPE" => "N",
+			"CACHE_TYPE" => "Y",
 			"CHECK_DATES" => "Y",
 			"DETAIL_URL" => "",
 			"DISPLAY_BOTTOM_PAGER" => "Y",
@@ -134,9 +134,9 @@ $APPLICATION->SetPageProperty("title", "Врачи в Магнитогорске
 				"AJAX_OPTION_STYLE" => "Y",
 				"AJAX_OPTION_HISTORY" => "N",
 				"AJAX_OPTION_ADDITIONAL" => "",
-				"CACHE_TYPE" => "N",
+				"CACHE_TYPE" => "Y",
 				"CACHE_TIME" => "36000000",
-				"CACHE_GROUPS" => "N",
+				"CACHE_GROUPS" => "Y",
 				"SET_TITLE" => "Y",
 				"SET_CANONICAL_URL" => "N",
 				"SET_BROWSER_TITLE" => "Y",
