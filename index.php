@@ -81,7 +81,7 @@ $APPLICATION->SetTitle("Семейный доктор в Магнитогорс�
 <div class="container check-up">
   <div class="row">
     <div class="check-up-inner check-up__inner">
-      <h4 class="check-up__title test">Чек-лист для ПРОВЕРКИ организма – <span>всего за 24 часа</span></h4>
+      <h4 class="check-up__title test">Чек-лист для ПРОВЕРКИ организма</h4>
       <div class="check-up__btns">
         <a href="/news/stati/chek-list-dlya-proverki-organizma-proydi-za-24-chasa/" class="btn btn-white check-up__btn">Узнать больше</a>
       </div>
