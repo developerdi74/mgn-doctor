@@ -3,6 +3,7 @@ $GLOBALS['API_VERSION'] = "v1.1";
 require_once __DIR__."/include/chromephp-master/ChromePhp.php";
 require_once __DIR__."/include/Mobile_Detect.php";
 require_once __DIR__."/include/apiFunctions.php";
+require_once __DIR__."/include/cacheFunctions.php";
 require_once __DIR__."/include/convertWebp.php"; //Конвертирование в webp
 CModule::IncludeModule('iblock');
 function console($data){
