@@ -57,3 +57,30 @@ if ($request->isAjaxRequest() && ($request->get('action') === 'showMore' || $req
 		'epilogue' => $epilogue,
 	));
 }*/
+//Получение SEO раздела
+$rsSections = CIBlockSection::GetList(array(),array('IBLOCK_ID' => 25, '=CODE' => $arParams['SECT_CODE_PARAM']), false, Array("UF_DETI"));
+if ($arSection = $rsSections->Fetch()){
+    $sec_id = $arSection["ID"];
+    $title_detskii=$arSection['UF_DETI'];
+}
+
+$ipropValues = new \Bitrix\Iblock\InheritedProperty\SectionValues(25,$sec_id);
+$IPROPERTY  = $ipropValues->getValues();
+if(empty($IPROPERTY['SECTION_PAGE_TITLE'])){
+    $header = $arSection["NAME"];
+}else {
+    $header =  $IPROPERTY['SECTION_PAGE_TITLE'];
+}
+//-----------------------------------------------------------------------------
+//Проверка на какой мы странице если детская то установить детский заголовок
+$uri = "/specialists";
+$section_code = explode("/",$_SERVER['REQUEST_URI']);
+$title = $IPROPERTY['SECTION_META_TITLE'];
+if($title_detskii && $section_code[1] == 'detskie-vrachi'){
+    $header = $title_detskii;
+    $title = $title_detskii." в Магнитогорске | Семейный доктор";
+}
+//-----------------------------------------------------------------------------
+$APPLICATION->SetPageProperty("title", $title);
+$APPLICATION->SetPageProperty("description",$IPROPERTY['SECTION_META_DESCRIPTION']);
+$APPLICATION->SetPageProperty("keywords", $IPROPERTY['SECTION_META_KEYWORDS']);
