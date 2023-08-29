@@ -57,7 +57,7 @@ if ($request->isAjaxRequest() && ($request->get('action') === 'showMore' || $req
 		'epilogue' => $epilogue,
 	));
 }*/
-//Ïîëó÷åíèå SEO ðàçäåëà
+//ÐŸÐ¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ SEO Ñ€Ð°Ð·Ð´ÐµÐ»Ð°
 $rsSections = CIBlockSection::GetList(array(),array('IBLOCK_ID' => 25, '=CODE' => $arParams['SECT_CODE_PARAM']), false, Array("UF_DETI"));
 if ($arSection = $rsSections->Fetch()){
     $sec_id = $arSection["ID"];
@@ -72,13 +72,13 @@ if(empty($IPROPERTY['SECTION_PAGE_TITLE'])){
     $header =  $IPROPERTY['SECTION_PAGE_TITLE'];
 }
 //-----------------------------------------------------------------------------
-//Ïðîâåðêà íà êàêîé ìû ñòðàíèöå åñëè äåòñêàÿ òî óñòàíîâèòü äåòñêèé çàãîëîâîê
+//ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð° ÐºÐ°ÐºÐ¾Ð¹ Ð¼Ñ‹ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ðµ ÐµÑÐ»Ð¸ Ð´ÐµÑ‚ÑÐºÐ°Ñ Ñ‚Ð¾ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ Ð´ÐµÑ‚ÑÐºÐ¸Ð¹ Ð·Ð°Ð³Ð¾Ð»Ð¾Ð²Ð¾Ðº
 $uri = "/specialists";
 $section_code = explode("/",$_SERVER['REQUEST_URI']);
 $title = $IPROPERTY['SECTION_META_TITLE'];
 if($title_detskii && $section_code[1] == 'detskie-vrachi'){
     $header = $title_detskii;
-    $title = $title_detskii." â Ìàãíèòîãîðñêå | Ñåìåéíûé äîêòîð";
+    $title = $title_detskii." Ð² ÐœÐ°Ð³Ð½Ð¸Ñ‚Ð¾Ð³Ð¾Ñ€ÑÐºÐµ | Ð¡ÐµÐ¼ÐµÐ¹Ð½Ñ‹Ð¹ Ð´Ð¾ÐºÑ‚Ð¾Ñ€";
 }
 //-----------------------------------------------------------------------------
 $APPLICATION->SetPageProperty("title", $title);

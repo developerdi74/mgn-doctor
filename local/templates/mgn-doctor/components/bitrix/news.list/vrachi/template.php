@@ -198,7 +198,6 @@ if($_GET['PAGEN_1']){
                                     html += "</div><div class='d-inline-block align-top'>";
                                 }
                                 html += "<div class='date_access_list'>"+day.date_rec+"</div>";
-                                console.log(index);
                             }
                         });
                         html += "</div>";
