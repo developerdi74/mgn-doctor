@@ -31,7 +31,7 @@ $arTemplateParameters = array(
 		"VALUE" => "Y",
 		"DEFAULT" =>"N",
 		"REFRESH"=> "Y",
-	),	
+	),
 );
 
 if ($arCurrentValues["USE_SHARE"] == "Y")
@@ -51,7 +51,7 @@ if ($arCurrentValues["USE_SHARE"] == "Y")
 		"COLS" => 25,
 		"REFRESH"=> "Y",
 	);
-	
+
 	if (trim($arCurrentValues["SHARE_TEMPLATE"]) == '')
 		$shareComponentTemlate = false;
 	else
@@ -74,7 +74,7 @@ if ($arCurrentValues["USE_SHARE"] == "Y")
 		"TYPE" => "STRING",
 		"DEFAULT" => "",
 	);
-	
+
 	$arTemplateParameters["SHARE_SHORTEN_URL_KEY"] = array(
 		"NAME" => GetMessage("T_IBLOCK_DESC_NEWS_SHARE_SHORTEN_URL_KEY"),
 		"TYPE" => "STRING",

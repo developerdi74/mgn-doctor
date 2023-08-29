@@ -1,6 +1,6 @@
 <?php
 
-//Получает расписание карточки врача
+//РџРѕР»СѓС‡Р°РµС‚ СЂР°СЃРїРёСЃР°РЅРёРµ РєР°СЂС‚РѕС‡РєРё РІСЂР°С‡Р°
 function getPlanning($medecins_id){
     $ver = $GLOBALS['API_VERSION'];
     if( $curl = curl_init() ) {
@@ -10,9 +10,9 @@ function getPlanning($medecins_id){
         curl_setopt($curl, CURLOPT_PORT, '9595');
 
         $out = curl_exec($curl);
-        $result = json_decode($out, true); // вывод результата
+        $result = json_decode($out, true); // РІС‹РІРѕРґ СЂРµР·СѓР»СЊС‚Р°С‚Р°
 
-        if(curl_error($curl)) { // если возникла ошибка
+        if(curl_error($curl)) { // РµСЃР»Рё РІРѕР·РЅРёРєР»Р° РѕС€РёР±РєР°
             echo( 'error='.curl_error($curl));
         }
         curl_close($curl);
@@ -24,7 +24,7 @@ function getPlanning($medecins_id){
     }
 }
 
-//Получает id врача из медиалога и пишет в инфоблок
+//РџРѕР»СѓС‡Р°РµС‚ id РІСЂР°С‡Р° РёР· РјРµРґРёР°Р»РѕРіР° Рё РїРёС€РµС‚ РІ РёРЅС„РѕР±Р»РѕРє
 function getMedecinsID($fam,$name1,$name2,$id){
     $ver = $GLOBALS['API_VERSION'];
     if( $curl = curl_init() ) {
@@ -40,24 +40,24 @@ function getMedecinsID($fam,$name1,$name2,$id){
         curl_setopt($curl, CURLOPT_PORT, '9595');
 
         $out = curl_exec($curl);
-        $result = json_decode($out, true); // вывод результата
+        $result = json_decode($out, true); // РІС‹РІРѕРґ СЂРµР·СѓР»СЊС‚Р°С‚Р°
 
-        if(curl_error($curl)) { // если возникла ошибка
+        if(curl_error($curl)) { // РµСЃР»Рё РІРѕР·РЅРёРєР»Р° РѕС€РёР±РєР°
             echo( 'error='.curl_error($curl));
         }
         curl_close($curl);
         if($result['medecins_id']){
-            $ELEMENT_ID = $id;  // код элемента
+            $ELEMENT_ID = $id;  // РєРѕРґ СЌР»РµРјРµРЅС‚Р°
             $IBLOCK_ID = 25;
-            $PROPERTY_CODE = "MEDIALOG_ID";  // код свойства
-            $PROPERTY_VALUE = $result['medecins_id'];  // значение свойства
+            $PROPERTY_CODE = "MEDIALOG_ID";  // РєРѕРґ СЃРІРѕР№СЃС‚РІР°
+            $PROPERTY_VALUE = $result['medecins_id'];  // Р·РЅР°С‡РµРЅРёРµ СЃРІРѕР№СЃС‚РІР°
             CIBlockElement::SetPropertyValuesEx($ELEMENT_ID, $IBLOCK_ID, array($PROPERTY_CODE => $PROPERTY_VALUE));
         }
         return $result['medecins_id'];
     }
 }
 
-//Получает даты расписание в списке врачей категории
+//РџРѕР»СѓС‡Р°РµС‚ РґР°С‚С‹ СЂР°СЃРїРёСЃР°РЅРёРµ РІ СЃРїРёСЃРєРµ РІСЂР°С‡РµР№ РєР°С‚РµРіРѕСЂРёРё
 function getPlannings($medecins_ids){
     $ver = $GLOBALS['API_VERSION'];
     $get = http_build_query($medecins_ids);
@@ -66,9 +66,9 @@ function getPlannings($medecins_ids){
         curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
         curl_setopt($curl, CURLOPT_PORT, '9595');
         $out = curl_exec($curl);
-        $result = json_decode($out, true); // вывод результата
+        $result = json_decode($out, true); // РІС‹РІРѕРґ СЂРµР·СѓР»СЊС‚Р°С‚Р°
 
-        if(curl_error($curl)) { // если возникла ошибка
+        if(curl_error($curl)) { // РµСЃР»Рё РІРѕР·РЅРёРєР»Р° РѕС€РёР±РєР°
             echo( 'error='.curl_error($curl));
         }
         curl_close($curl);
@@ -79,7 +79,7 @@ function getPlannings($medecins_ids){
         }
     }
 }
-//не работает
+//РЅРµ СЂР°Р±РѕС‚Р°РµС‚
 function logPlanning($print, $fileName='logapi.txt'){
     if(isset($print)){
         $log = date('Y-m-d H:i:s') . print_r($print,true);
