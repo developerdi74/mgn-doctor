@@ -1,4 +1,5 @@
 <?php
+/*
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 $medecins_id = $_GET['medecins_id'];
 
@@ -15,3 +16,4 @@ $days = getPlanning($medecins_id);?>
     <? endforeach;?>
 <? endif; ?>
     </div>
+*/?>
