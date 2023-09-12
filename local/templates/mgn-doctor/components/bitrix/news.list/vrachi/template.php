@@ -59,28 +59,28 @@
 			}
 		 }
 		 $chet = 0;
-?>
-<?
+
 //-----------------------------------------------------------------------------
 
 		 //Получаем цену первичного приема по ID услуги
 		 //
-
-		 foreach ($item['PROPERTIES']['SERVICE']['VALUE'] as $value) {
-		 		$serv = CIBlockElement::GetList(Array(), array("IBLOCK_ID"=>24,"ID"=>$value), false, Array());
-		 		$ob2 = $serv->GetNextElement();
-		 		$arFields2 = $ob2->GetFields();
-		 		$arProps2 = $ob2->GetProperties();
-		 		//Сравнение разделов врача и его услуг
-		 		if($arProps2['SPECIALIZATION']['VALUE'] == $sec_id){
-			 		if(mb_stripos($arFields2['NAME'],"первичный")){
-			 			$price = CPrice::GetBasePrice($arFields2['ID']);
-			 			$min_price = $price['PRICE'];
-			 		}
-		 		}
-		 }
-		 $item['PROPERTIES']['ONE_PRIEM']['VALUE'] = round($min_price);
-
+if(empty($item['PROPERTIES']['ONE_PRIEM']['VALUE'])) {
+    foreach ($item['PROPERTIES']['SERVICE']['VALUE'] as $value) {
+        $serv = CIBlockElement::GetList(array(), array("IBLOCK_ID" => 24, "ID" => $value), false, array());
+        $ob2 = $serv->GetNextElement();
+        $arFields2 = $ob2->GetFields();
+        $arProps2 = $ob2->GetProperties();
+        //Сравнение разделов врача и его услуг
+        if ($arProps2['SPECIALIZATION']['VALUE'] == $sec_id) {
+            if (mb_stripos($arFields2['NAME'], "первичный")) {
+                $price = CPrice::GetBasePrice($arFields2['ID']);
+                $min_price = $price['PRICE'];
+            }
+        }
+    }
+    $item['PROPERTIES']['ONE_PRIEM']['VALUE'] = round($min_price);
+}
+        $item['PROPERTIES']['ONE_PRIEM']['VALUE'] = str_replace("₽", "", $item['PROPERTIES']['ONE_PRIEM']['VALUE']);
 //-----------------------------------------------------------------------------
 ?>
 	<?
