@@ -270,7 +270,8 @@ $APPLICATION->ShowPanel();?>
 					</div>
 					<div class="header__bottom-right">
 						<div class="header__call">
-							<a class="btn btn-grey header__btn open_ondocwidjet">Записаться на приём</a>
+                            <a href="/specialists/" class="btn btn-grey header__btn">Записаться на приём</a>
+<!--                            <a class="btn btn-grey header__btn open_ondocwidjet">Записаться на приём</a>-->
 						<!-- <a href="#order-appointment" data-fancybox data-src="#order-appointment" class="btn btn-grey header__btn">Записаться на приём</a>
 							<a href="/personal/" class="btn btn-grey header__btn">Записаться на приём</a>-->
 						</div>
