@@ -22,7 +22,11 @@ $post_data = [
     'exam_id' => $_POST['exam_id_form'],
     'comment' => $_POST['comment'],
     'phone' => $_POST['phone'],
+    'nameReg' => $_POST['nameReg'],
 ];
+if(isset($_POST['childReg'])){
+    $post_data['childReg'] = $_POST['childReg'];
+}
 if(isset($_POST['doc_name'])){
     $fio = $_POST['doc_name'];
 }else{
@@ -55,7 +59,7 @@ $curl = curl_init();
 curl_close($curl);
 $months = array( 1 => 'января' , 'февраля' , 'марта' , 'апреля' , 'мая' , 'июня' , 'июля' , 'августа' , 'сентября' , 'октября' , 'ноября' , 'декабря' );
 $arrayResult = json_decode($result, true);
-if($arrayResult['info']['DATE_START']){
+if(isset($arrayResult['info']['DATE_START'])){
     $monthRus = $months[date('n', strtotime($arrayResult['info']['DATE_START']))];
     $arrayResult['info']['DATE_START'] = date('d '.$monthRus.' Y - H:i', strtotime($arrayResult['info']['DATE_START']));
 }

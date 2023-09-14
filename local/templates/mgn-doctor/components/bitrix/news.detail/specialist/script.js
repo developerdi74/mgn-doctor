@@ -20,6 +20,7 @@ $(document).ready(function(){
         $('.hide_load_block').show();
     });
 
+
     $('.specialist-info__right').on('change', '#selected_day', function(){
         var id = $(this).val();
 
@@ -54,6 +55,10 @@ $(document).ready(function(){
             $("#confirm_entry_modal .btn-submit").addClass('disabled');
         }
     });
+    $('html').on('click', '#child-btn', function(){
+        $('#child-block').slideToggle();
+    });
+
     $('html').on('click', '#confirm_entry_modal .btn-submit', function(){
 
         $('#confirm_entry_modal .success-hide').hide();
@@ -62,28 +67,25 @@ $(document).ready(function(){
         var phone = validatePhone($('#entry_btn').val());
         var date_rec = $('#date_rec').val();
         var exam_id_form = $('#exam_id_form').val();
-        var namemyname = $('#namemyname').val();
-        var comment = $('#comment').val();
-        var medecins_id = $('#medecins_id').val();
-        var doc_name = $('.specialists-item__name').html();
-        var doc_spec = $('.specialist-info__position:eq(1)').html();
-
+        var data={
+            phone:          phone,
+            date_rec:       date_rec,
+            exam_id_form:   exam_id_form,
+            comment:        $('#comment').val(),
+            childReg:       $('#childReg').val(),
+            nameReg:        $('#nameReg').val(),
+            namemyname:     $('#namemyname').val(),
+            medecins_id:    $('#medecins_id').val(),
+            doc_name:       $('.specialists-item__name').html(),
+            doc_spec:       $('.specialist-info__position:eq(1)').html(),
+        }
         if($(this).prop('disabled') === false && phone != false && date_rec.length != 0 && exam_id_form.length != 0){
             $("#confirm_entry_modal .btn-submit").attr('disabled',true);
             $.ajax({
                 url: '/include/api/setplanning.php',
                 method: 'post',
                 dataType: 'json',
-                data: {
-                    phone: phone,
-                    date_rec: date_rec,
-                    exam_id_form: exam_id_form,
-                    comment: comment,
-                    namemyname: namemyname,
-                    medecins_id: medecins_id,
-                    doc_name: doc_name,
-                    doc_spec: doc_spec,
-                },
+                data: data,
                 success: function(data){
                     if(data.code == '001'){
                         console.log(data);

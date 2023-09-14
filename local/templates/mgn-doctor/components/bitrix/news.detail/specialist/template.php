@@ -94,15 +94,21 @@ $name = $arResult["NAME"];?>
 									<?if(isset($arResult['DISPLAY_PROPERTIES']['AGE']['VALUE_ENUM_ID'])):?>
 									<?
 										$priem = 0;
+                                        $priemVzros = 0;
+                                        $priemChild = 0;
 										if(in_array("111", $arResult['DISPLAY_PROPERTIES']['AGE']['VALUE_ENUM_ID'])!==false){
+										    $priemVzros = 1;
 											$priem++;
 											$text_who="Принимает только взрослых";
 										}
 										if(in_array("110", $arResult['DISPLAY_PROPERTIES']['AGE']['VALUE_ENUM_ID'])!==false){
 											$text_who="Принимает только детей";
 											$priem++;
+                                            $priemChild = 1;
 										}
 										if($priem == 2){
+                                            $priemVzros = 1;
+                                            $priemChild = 1;
 											$text_who="Принимает взрослых и детей";
 										}
 
@@ -456,6 +462,8 @@ $name = $arResult["NAME"];?>
     <?
     $dataAjax['ID'] = $arResult['ID'];
     $dataAjax['NAME'] = $arResult['NAME'];
+    $dataAjax['CHILD'] = $priemChild;
+    $dataAjax['VZROS'] = $priemVzros;
     $dataAjax['PROPERTIES']['MEDIALOG_ID']['VALUE'] = $arResult['PROPERTIES']['MEDIALOG_ID']['VALUE'];
     $dataAjaxJson = json_encode($dataAjax);
     ?>
