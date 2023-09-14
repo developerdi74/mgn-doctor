@@ -1338,15 +1338,38 @@ text-decoration:none
 }
 
 .header__navi {
-background-color:var(--green-color);
-width:40px;
-height:40px;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-left:15px
+    background-color: var(--green-color);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
 }
 
+.header__navi a{
+    color: #fff;
+    font-weight: 300;
+}
+.header__navi.header__login:hover{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+.header__navi.header__login:hover a{
+    color: #000;
+}
+.header__navi.header__login:hover svg{
+    filter: contrast(175%) brightness(12%);
+}
+.header__navi.header__login svg{
+    margin-left: 5px;
+}
+.header__navi.header__login{
+    width: auto;
+    margin-right:10px;
+    padding: 20px 20px;
+}
 .header__navi svg {
 max-width:17px
 }
@@ -10435,7 +10458,7 @@ margin:0 22px
 
 .header-bottom__mobile .header__schedule svg,.header-bottom__mobile .header__login svg {
 margin-right:12px;
-max-width:21px;
+/*max-width:21px;*/
 height:auto
 }
 
@@ -11962,8 +11985,9 @@ right:3px
 
 .header__navi {
 background-color:transparent;
-width:20px;
+/*width:20px;*/
 height:40px;
+padding:20px 0px;
 margin-left:20px
 }
 
@@ -12036,7 +12060,7 @@ box-shadow:none
 
 .header__navi {
 background-color:transparent;
-width:45px;
+/*width:45px;*/
 height:100%;
 margin-left:0
 }

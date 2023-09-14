@@ -2,6 +2,13 @@
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 
 $arResult = $_GET;
+if($arResult['VZROS']==1 && $arResult['CHILD']==1){
+    $priem = 3;
+}elseif($arResult['CHILD']){
+    $priem = 2;
+}else{
+    $priem = 1;
+}
 if(empty($arResult['PROPERTIES']['MEDIALOG_ID']['VALUE'])){
     $explodeName = explode(' ',$arResult['NAME']);
     $medecins_id = getMedecinsID($explodeName[0], $explodeName[1],$explodeName[2], $arResult['ID']);
@@ -191,14 +198,44 @@ foreach ($planningArray['days'] as $allDay){
                             </span>
                         </label>
                     </div>
+                    <?if($priem == 2):?>
+                    <div class="popup-item">
+                        <label style="color: #ff0000">Внимание! Данный врач принимает только детей!
+                        </label>
+                    </div>
+                    <?endif;?>
 
                     <div class="popup-item">
-                        <label>Выбранная дата и время записи
+                        <label>Ваше имя:
+                            <span class="form-control-wrap contact-tel">
+                                <input type="text" name="nameReg" placeholder="Введите Ваше имя" id='nameReg' class="nameReg" value="">
+                            </span>
+                        </label>
+                    </div>
+                    <div class="popup-item">
+                        <label>Выбранная дата и время записи:
                             <span class="form-control-wrap contact-tel">
                                 <input type="text" name="date_rec" id="date_rec" readonly>
                             </span>
                         </label>
                     </div>
+                    <?if($priem == 3):?>
+                        <div class="popup-item">
+                            <label>
+                                <span class="child-btn" id="child-btn">Записать ребенка</span>
+                            </label>
+                        </div>
+                    <?endif;?>
+
+                    <?if($priem == 2 || $priem == 3):?>
+                        <div class="popup-item" id="child-block" style="<?=($priem == 3)? "display: none;" : ""?>">
+                            <label>Имя ребенка:
+                                <span class="form-control-wrap contact-tel">
+                                    <input type="text" name="childReg" placeholder="Введите полное имя ребенка" id='childReg' class="childReg" value="">
+                                </span>
+                            </label>
+                        </div>
+                    <?endif;?>
 
                     <div class="popup-item">
                         <label>Для подтверждения записи введите Ваш номер телефона
@@ -209,6 +246,7 @@ foreach ($planningArray['days'] as $allDay){
                             </span>
                         </label>
                     </div>
+
 
                     <div class="popup-item">
                         <label>Ваш комментарий
