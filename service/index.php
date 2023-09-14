@@ -590,7 +590,7 @@ $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 												</div>
 												<div class="row justify-content-between service-detail-line">
 													<div class="service-detail-price" data-price="750" style="line-height: 2.5em;">750 руб.</div>
-													<button class="btn btn-outline-dark btn__ open_ondocwidjet">Записаться</button>
+													<a href="/specialists/" class="btn btn-outline-dark btn__">Записаться</a>
 												</div>
 											</div>
 										</div>
@@ -601,7 +601,7 @@ $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 												</div>
 												<div class="row justify-content-between service-detail-line">
 													<div class="service-detail-price" data-price="350" style="line-height: 2.5em;">350 руб.</div>
-													<button class="btn btn-outline-dark btn__ open_ondocwidjet">Записаться</button>
+													<a href="/specialists/" class="btn btn-outline-dark btn__">Записаться</a>
 												</div>
 											</div>
 										</div>
@@ -612,7 +612,7 @@ $APPLICATION->AddChainItem('Услуги и цены', '/service/');?>
 												</div>
 												<div class="row justify-content-between service-detail-line">
 													<div class="service-detail-price" data-price="3500" style="line-height: 2.5em;">3 500 руб.</div>
-													<button class="btn btn-outline-dark btn__ open_ondocwidjet">Записаться</button>
+													<a href="/specialists/" class="btn btn-outline-dark btn__">Записаться</a>
 												</div>
 											</div>
 										</div>

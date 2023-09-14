@@ -287,7 +287,7 @@
 			</a>
 
 			<!-- <a href="#order-appointment" data-fancybox="" data-src="#order-appointment" class="to-order"> -->
-			<a class="to-order open_ondocwidjet">
+			<a href="/specialists/" class="to-order">
 				<div class="">
 					<div>
 						<img src="<?=SITE_TEMPLATE_PATH?>/img/write.svg" width="20" height="20" style="display: block; margin: 0 auto; margin-top: 5px">
@@ -305,8 +305,9 @@
 		<div class="container">
 			<div class="row home-footer-navi__row">
 				<div class="home-footer-navi__item">
-					<a class="btn btn-green home-footer-navi__btn open_ondocwidjet">
-					<!-- <a href="#order-appointment" data-fancybox="" data-src="#order-appointment" class="btn btn-green home-footer-navi__btn open_ondocwidjet"> -->
+                    <a href="/specialists/" class="btn btn-green home-footer-navi__btn">
+                    <!--<a class="btn btn-green home-footer-navi__btn open_ondocwidjet"> -->
+                    <!-- <a href="#order-appointment" data-fancybox="" data-src="#order-appointment" class="btn btn-green home-footer-navi__btn open_ondocwidjet"> -->
 						<svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M6.54348 15.375C6.54348 15.7202 6.27099 16 5.93478 16H2.43478C1.0922 16 0 14.8785 0 13.5V2.5C0 1.12146 1.0922 0 2.43478 0H9.91841C11.2609 0 12.3532 1.12146 12.3532 2.5V9.125C12.3532 9.47021 12.0806 9.75 11.7445 9.75C11.4083 9.75 11.1358 9.47021 11.1358 9.125V2.5C11.1358 1.81079 10.5896 1.25 9.91841 1.25H2.43478C1.76355 1.25 1.21739 1.81079 1.21739 2.5V13.5C1.21739 14.1892 1.76355 14.75 2.43478 14.75H5.93478C6.27099 14.75 6.54348 15.0298 6.54348 15.375ZM13.7151 10.1793C13.4418 9.97839 13.0616 10.0431 12.8659 10.3236L9.86563 14.6268C9.78371 14.7244 9.68099 14.7454 9.62607 14.7491C9.56924 14.7529 9.45939 14.7456 9.36512 14.6534L7.42276 12.7384C7.18035 12.4994 6.79504 12.5073 6.56214 12.7563C6.32925 13.0054 6.33709 13.401 6.57962 13.64L8.52388 15.557C8.81515 15.8416 9.20379 16 9.60372 16C9.63808 16 9.67255 15.9988 9.70703 15.9965C10.1426 15.9667 10.5493 15.7491 10.8229 15.3995C10.8299 15.3906 10.8368 15.3813 10.8433 15.3719L13.8558 11.0513C14.0515 10.7706 13.9886 10.3802 13.7151 10.1793ZM3.04015 3.75H9.30972C9.64581 3.75 9.91841 4.02979 9.91841 4.375C9.91841 4.72021 9.64581 5 9.30972 5H3.04015C2.70394 5 2.43145 4.72021 2.43145 4.375C2.43145 4.02979 2.70394 3.75 3.04015 3.75ZM9.91841 6.875C9.91841 6.52979 9.64581 6.25 9.30972 6.25H3.04015C2.70394 6.25 2.43145 6.52979 2.43145 6.875C2.43145 7.22021 2.70394 7.5 3.04015 7.5H9.30972C9.64581 7.5 9.91841 7.22021 9.91841 6.875ZM2.43145 9.375C2.43145 9.02979 2.70394 8.75 3.04015 8.75H6.84783C7.18404 8.75 7.45652 9.02979 7.45652 9.375C7.45652 9.72021 7.18404 10 6.84783 10H3.04015C2.70394 10 2.43145 9.72021 2.43145 9.375Z" fill="white"/>
 						</svg>
@@ -326,8 +327,9 @@
 					</a>
 				</div>
 				<div class="home-footer-navi__item">
-					<a class="btn btn-green open_ondocwidjet home-footer-navi__btn">
-					<!-- <a href="#order-appointment" data-fancybox="" data-src="#order-appointment" class="btn btn-green open_ondocwidjet home-footer-navi__btn"> -->
+                    <a href="/specialists/" class="btn btn-green home-footer-navi__btn">
+                        <!--<a class="btn btn-green open_ondocwidjet home-footer-navi__btn">
+                         <a href="#order-appointment" data-fancybox="" data-src="#order-appointment" class="btn btn-green open_ondocwidjet home-footer-navi__btn"> -->
 						<svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M11.8648 3.88725L8.17255 0.137344C8.08637 0.0497812 7.96874 0 7.84615 0H1.38462C0.621139 0 0 0.630844 0 1.40625V14.5938C0 15.3692 0.621139 16 1.38462 16H10.6154C11.3789 16 12 15.3692 12 14.5938V4.21875C12 4.09094 11.9472 3.97091 11.8648 3.88725ZM8.30769 1.60041L10.4242 3.75H8.76923C8.51474 3.75 8.30769 3.53972 8.30769 3.28125V1.60041ZM1.38462 15.0625H10.6154C10.8699 15.0625 11.0769 14.8522 11.0769 14.5938V4.6875H8.76923C8.00575 4.6875 7.38462 4.05666 7.38462 3.28125V0.9375H1.38462C1.13012 0.9375 0.923077 1.14778 0.923077 1.40625V14.5938C0.923077 14.8522 1.13012 15.0625 1.38462 15.0625Z" fill="white"/>
 							<path d="M8.76953 6.625H3.23107C2.97618 6.625 2.76953 6.83487 2.76953 7.09375C2.76953 7.35263 2.97618 7.5625 3.23107 7.5625H8.76953C9.02442 7.5625 9.23107 7.35263 9.23107 7.09375C9.23107 6.83487 9.02442 6.625 8.76953 6.625Z" fill="white"/>

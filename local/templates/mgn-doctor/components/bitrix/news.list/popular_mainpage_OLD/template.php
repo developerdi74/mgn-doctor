@@ -43,7 +43,7 @@ $this->setFrameMode(true);
 <?if($_SESSION['isMobile']===true){?>
 	<div class="row mobile-row">
 		<div class="main-directions__right">
-			<a class="btn btn-green btn-sign-up open_ondocwidjet">Записаться</a>
+			<a href='/specialists/' class="btn btn-green btn-sign-up">Записаться</a>
 			<!-- <a href="#order-appointment" data-fancybox="" data-src="#order-appointment" class="btn btn-green btn-sign-up">Записаться</a> -->
 			<div class="slider__nav main-directions__nav navigation">
 				<div class="slider__nav-prev"><img src="<?=SITE_TEMPLATE_PATH?>/img/arrow-prev.svg" height="11" width="20" alt="prev"></div>
