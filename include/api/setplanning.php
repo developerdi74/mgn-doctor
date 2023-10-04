@@ -22,21 +22,17 @@ $post_data = [
     'exam_id' => $_POST['exam_id_form'],
     'comment' => $_POST['comment'],
     'phone' => $_POST['phone'],
-    'nameReg' => $_POST['nameReg'],
+    'NOM' => $_POST['NOM'],
+    'PRENOM' => $_POST['PRENOM'],
+    'PATRONYME' => $_POST['PATRONYME'],
+    'GOD_ROGDENIQ' => $_POST['GOD_ROGDENIQ'],
+    'childReg' => $_POST['childReg'],
 ];
-if(isset($_POST['childReg'])){
-    $post_data['childReg'] = $_POST['childReg'];
-}
-if(isset($_POST['doc_name'])){
-    $fio = $_POST['doc_name'];
-}else{
-    $fio = NULL;
-}
-if(isset($_POST['doc_spec'])){
-    $spec = $_POST['doc_spec'];
-}else{
-    $spec = NULL;
-}
+
+
+$fio = (isset($_POST['doc_name'])) ? $_POST['doc_name'] : NULL;
+$spec = (isset($_POST['doc_spec'])) ? $_POST['doc_spec'] : NULL;
+
 
 $check = checkOnlineRecord($_POST['medecins_id']);
 if($check == false && $USER->GetID()!=6){
@@ -57,8 +53,11 @@ $curl = curl_init();
     curl_setopt($curl, CURLOPT_POST, true); // true - означает, что отправляется POST запрос
     $result = curl_exec($curl);
 curl_close($curl);
-$months = array( 1 => 'января' , 'февраля' , 'марта' , 'апреля' , 'мая' , 'июня' , 'июля' , 'августа' , 'сентября' , 'октября' , 'ноября' , 'декабря' );
+
+//print_r($result);
 $arrayResult = json_decode($result, true);
+
+$months = array( 1 => 'января' , 'февраля' , 'марта' , 'апреля' , 'мая' , 'июня' , 'июля' , 'августа' , 'сентября' , 'октября' , 'ноября' , 'декабря' );
 if(isset($arrayResult['info']['DATE_START'])){
     $monthRus = $months[date('n', strtotime($arrayResult['info']['DATE_START']))];
     $arrayResult['info']['DATE_START'] = date('d '.$monthRus.' Y - H:i', strtotime($arrayResult['info']['DATE_START']));
@@ -72,13 +71,10 @@ if($arrayResult['code'] == 001){
     //logPlanning($post_data); неработает
 }
 $result = json_encode($arrayResult);
+
 echo $result;
 return;
 
-if($check){
-    $array['id_record'] = $check;
-    $result = json_encode($array);
-}
 ?>
 
 <?php

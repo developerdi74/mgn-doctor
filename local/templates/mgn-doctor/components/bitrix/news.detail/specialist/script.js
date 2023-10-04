@@ -1,4 +1,65 @@
 $(document).ready(function(){
+    $('html').on('click', '#check_politic',function (){
+        $(this).val(($(this).is(":checked")) ? "1" : "");
+    });
+   $('html').on('click touchstart', '.next-slide', function(){
+
+        let step = ($(this).attr("step") !== undefined)? Number($(this).attr("step")) : 0 ;
+        let parent = $(this).closest('.save_slide');
+        let slide = Number(parent.attr('slide')) + step;
+        let error=0;
+
+        if(step>0){
+
+            parent.find('.require-filed').each(function (){
+                if(checkField($(this).val()) === false){
+                    $(this).addClass('error-border');
+                    if($(this).is('input[type="checkbox"]')){
+                        $(this).closest('.form-accept').find('.checkbox-text').addClass('error-border');
+                    }
+                    error=1;
+                }
+            });
+
+            if(error == 1){
+                $('.error-message').show();
+                setTimeout(() => {
+                    $('.error-message').hide();
+                    $('.error-border').removeClass('error-border');
+                }, 4000);
+                return false;
+            }
+        }
+        parent.hide();
+        $(".save_slide[slide="+slide+"]").show();
+
+        let type = $(this).attr('id');
+        if(type=='child'){
+            $("#childReg").val(1);
+            $("#label_nom").html('Введите фамилию ребенка*');
+            $("#label_prenom").html('Введите имя ребенка*');
+            $("#label_patronyme").html('Введите отчество ребенка*');
+        }else{
+            if($(this).attr('param')=='reset'){
+                $("#childReg").val(0);
+            }
+            $("#label_nom").html('Введите фамилию*');
+            $("#label_prenom").html('Введите имя*');
+            $("#label_patronyme").html('Введите отчество*');
+        }
+        return false;
+    });
+
+    function checkField(field){
+        /*if(field.is('input').is('input[type="checkbox"]')){
+
+        }*/
+        if(field.length>0){
+            return field;
+        }else{
+            return false;
+        }
+    }
     $('.specialist-info__right').on('click', '.addSaveDate', function(){
         var select_date = $(this).find('.active_date').attr('data-date');
         if(!select_date){
@@ -7,7 +68,7 @@ $(document).ready(function(){
         $('.select_date').removeClass('select_date');
         $(this).addClass('select_date');
         $("select option[select-date$="+select_date+"]").prop('selected', true);
-        var assss = $("select option[select-date$="+select_date+"]").val();
+        //var assss = $("select option[select-date$="+select_date+"]").val();
 
         $(".selected_date").addClass('d-none');
         var activeSelectTime = $(".selected_date").find(".selected_date[selected-date$="+select_date+"]");
@@ -56,7 +117,7 @@ $(document).ready(function(){
         }
     });
     $('html').on('click', '#child-btn', function(){
-        $('#child-block').slideToggle();
+        //$('#child-block').slideToggle();
     });
 
     $('html').on('click', '#confirm_entry_modal .btn-submit', function(){
@@ -73,7 +134,10 @@ $(document).ready(function(){
             exam_id_form:   exam_id_form,
             comment:        $('#comment').val(),
             childReg:       $('#childReg').val(),
-            nameReg:        $('#nameReg').val(),
+            NOM:            $('#NOM').val(),
+            PRENOM:         $('#PRENOM').val(),
+            PATRONYME:      $('#PATRONYME').val(),
+            GOD_ROGDENIQ:   $('#GOD_ROGDENIQ').val(),
             namemyname:     $('#namemyname').val(),
             medecins_id:    $('#medecins_id').val(),
             doc_name:       $('.specialists-item__name').html(),
@@ -88,7 +152,7 @@ $(document).ready(function(){
                 data: data,
                 success: function(data){
                     if(data.code == '001'){
-                        console.log(data);
+                       // console.log(data);
                         $('.success_exam').html($(':selected', "#exam_id").text());
                         $('.success_date').html(data.info.DATE_START);
                         $('.success_phone').html($('#entry_btn').val());

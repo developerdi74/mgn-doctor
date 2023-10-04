@@ -187,76 +187,125 @@ foreach ($planningArray['days'] as $allDay){
         <div class="popup__content popup-content">
             <div class="popup__form success-hide">
                 <form name="form-set-planning" class='' action="<?=SITE_DIR."include/api/setplanning.php"?>" method="post">
-                    <h4 class="popup__title">Подтверждение записи</h4>
-                    <div class="popup-item">
-                        <label>Услуга
-                            <span class="form-control-wrap contact-tel">
+                    <div class="save_slide" slide=1>
+                        <h4 class="popup__title">Кого записываете?</h4>
+                        <?/*if($priem == 2):?>
+                            <div class="popup-item">
+                                <label style="color: #ff0000">Внимание! Данный врач принимает только детей!
+                                </label>
+                            </div>
+                        <?endif;*/?>
+                            <div class="">
+                                    <span class="slide-btn <?=($priem != 1 && $priem != 3)? "disabled" : "next-slide" ;?>" id="self" step="1">Записываю себя</span>
+                                    <span class="slide-btn <?=($priem != 2 && $priem != 3)? "disabled" : "next-slide" ;?>" id="child" step="1" >Записываю ребенка</span>
+                                <?/*if($priem == 3 || $priem == 1 ):?>
+                                    <span class="slide-btn next-slide" id="alien" step="1">Записываю другого человека</span>
+                                <?endif;*/?>
+                            </div>
+
+                    </div>
+
+                    <div class="save_slide hidden_popup_slide" slide=2>
+                        <h4 class="popup__title">Данные для записи:</h4>
+                        <div class="popup-item">
+                            <label><span id = 'label_nom'>Ваша фамилия*</span>
+                                <span class="form-control-wrap contact-tel">
+                                <input type="text" name="NOM" placeholder="Фамилия" id='NOM' class="require-filed" value="">
+                            </span>
+                            </label>
+                        </div>
+                        <div class="popup-item">
+                            <label><span id = 'label_prenom'>Ваше имя*</span>
+                                <span class="form-control-wrap contact-tel">
+                                <input type="text" name="PRENOM" placeholder="Введите имя" id='PRENOM' class="require-filed" value="">
+                            </span>
+                            </label>
+                        </div>
+                        <div class="popup-item">
+                            <label><span id = 'label_patronyme'>Ваше отчество*</span>
+                                <span class="form-control-wrap contact-tel">
+                                <input type="text" name="PATRONYME" placeholder="Введите отчество" id='PATRONYME' class="require-filed" value="">
+                            </span>
+                            </label>
+                        </div>
+                        <div class="popup-item">
+                            <label>
+                             <span id = 'label_god_rog'>Год рождения*</span>
+                             <span class="form-control-wrap contact-tel">
+                                    <select name="GOD_ROGDENIQ" id="GOD_ROGDENIQ" class="">
+                                        <?for($year=1900; $year<=date('Y'); $year++):?>
+                                            <option value="<?=$year?>" <?=$year==1999 ? "selected": "";?>><?=$year?></option>
+                                        <?endfor;?>
+                                    </select>
+                            </span>
+                            </label>
+                        </div>
+                        <div class="popup-item">
+                            <label>
+                                <div class="form-accept">
+                                    <span>
+                                            <input type="checkbox" id="check_politic" class="require-filed" name="check_politic" value="">
+                                    </span>
+                                    <span class="checkbox-text">Согласен на обработку персональных данных.
+                                        <noindex>
+                                            <a href="/personal/privaci.php" target="_blank">Политика конфиденциальности</a>
+                                        </noindex>
+                                    </span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="error-message" style="display: none">
+                            Заполните все обязательные поля!
+                        </div>
+                        <div class="popup-item">
+                            <div class="slide-btn next-slide prev-slide" step="-1" param="reset">Назад</div>
+                            <div class="slide-btn next-slide check-field" step="1">Далее</div>
+                        </div>
+                    </div>
+                    <div class="save_slide hidden_popup_slide" slide="3">
+                        <h4 class="popup__title">Информация о записи:</h4>
+                        <div class="popup-item">
+                            <label>Услуга
+                                <span class="form-control-wrap contact-tel">
                                 <input type="hidden" name="exam_id_form" id="exam_id_form" readonly>
                                 <input type="hidden" name="medecins_id" id="medecins_id" value="<?=$medecins_id?>" readonly>
+                                <input type="hidden" name="childReg" id="childReg" value="0" readonly>
                                 <input type="text" style="display:block;height:0px;width:0px;opacity:0;padding:0;border:0;margin:0;" value="" name="namemyname" id="namemyname" readonly>
                                 <div class="select_exam" id="exam_id_name"></div>
                             </span>
-                        </label>
-                    </div>
-                    <?if($priem == 2):?>
-                    <div class="popup-item">
-                        <label style="color: #ff0000">Внимание! Данный врач принимает только детей!
-                        </label>
-                    </div>
-                    <?endif;?>
-
-                    <div class="popup-item">
-                        <label>Ваше имя:
-                            <span class="form-control-wrap contact-tel">
-                                <input type="text" name="nameReg" placeholder="Введите Ваше имя" id='nameReg' class="nameReg" value="">
-                            </span>
-                        </label>
-                    </div>
-                    <div class="popup-item">
-                        <label>Выбранная дата и время записи:
-                            <span class="form-control-wrap contact-tel">
-                                <input type="text" name="date_rec" id="date_rec" readonly>
-                            </span>
-                        </label>
-                    </div>
-                    <?if($priem == 3):?>
-                        <div class="popup-item">
-                            <label>
-                                <span class="child-btn" id="child-btn">Записать ребенка</span>
                             </label>
                         </div>
-                    <?endif;?>
-
-                    <?if($priem == 2 || $priem == 3):?>
-                        <div class="popup-item" id="child-block" style="<?=($priem == 3)? "display: none;" : ""?>">
-                            <label>Имя ребенка:
+                        <div class="popup-item">
+                            <label>Выбранная дата и время записи:
                                 <span class="form-control-wrap contact-tel">
-                                    <input type="text" name="childReg" placeholder="Введите полное имя ребенка" id='childReg' class="childReg" value="">
+                                    <input type="text" name="date_rec" id="date_rec" readonly>
                                 </span>
                             </label>
                         </div>
-                    <?endif;?>
+                        <div class="popup-item">
+                            <label>Для подтверждения записи введите Ваш номер телефона
+                                <span class="form-control-wrap contact-tel">
+                                    <input type="tel" name="phone" placeholder="+7 (___) ___-____" id='entry_btn' class="phone" value="">
+                                </span>
+                                <span class="error_message" style="display: none">
+                                </span>
+                            </label>
+                        </div>
 
-                    <div class="popup-item">
-                        <label>Для подтверждения записи введите Ваш номер телефона
-                            <span class="form-control-wrap contact-tel">
-                                <input type="tel" name="phone" placeholder="+7 (___) ___-____" id='entry_btn' class="phone" value="">
-                            </span>
-                            <span class="error_message" style="display: none">
-                            </span>
-                        </label>
-                    </div>
-
-
-                    <div class="popup-item">
-                        <label>Ваш комментарий
-                            <span class="form-control-wrap contact-tel">
+                        <div class="popup-item">
+                            <label>Ваш комментарий
+                                <span class="form-control-wrap contact-tel">
                                 <input type="text" name="comment" id='comment' placeholder="Напишите вопрос, или другая интересующая информация" value="">
                             </span>
-                        </label>
+                            </label>
+                        </div>
+                        <div class="popup-item">
+                            <div class="slide-btn next-slide prev-slide" step="-1">Назад</div>
+                            <input type="submit" value="Записаться" class="btn-submit btn btn-green popup-btn disabled" disabled>
+                        </div>
+
                     </div>
 
-                    <input type="submit" value="Записаться" class="btn-submit btn btn-green popup-btn disabled" disabled>
                 </form>
             </div>
             <div class="preload_container_popup" style="display: none;">
