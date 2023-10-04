@@ -211,6 +211,10 @@ div.news-detail img.detail_picture
 .popup .popup-item label span{
     margin-top: 0px;
 }
+#confirm_entry_modal .popup__form .popup-item .btn{
+    min-width: auto;
+    max-width: 50%;
+}
 .popup .popup-item label input{
     margin-top: 5px;
 }

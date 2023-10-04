@@ -3549,7 +3549,7 @@ background:var(--green-color)
 }
 
 .specialists-tabs__nav .nav-item:hover,.specialists-tabs__nav .nav-item {
-border:none!important
+
 }
 
 .specialist-schedule {
@@ -3586,7 +3586,7 @@ max-width:95%
 }
 
 .nav-tabs-specialists .nav-item .nav-link {
-border-right:none;
+border:none;
 background:transparent;
 color:var(--green-color)
 }
@@ -3721,7 +3721,7 @@ justify-content:space-between
 .nav-tabs-specialists .nav-item {
 display:block;
 margin:0;
-width:25%
+    width: calc( 100% / 4 - 5px );
 }
 
 .tab-pane-edu__title {
@@ -10010,8 +10010,10 @@ padding-bottom:40px
 }
 
 .nav-tabs-specialists .nav-item {
-margin:0;
-width:50%
+    margin: 0;
+    width: calc( 50% - 5px );
+    margin-bottom: 5px;
+    margin-right: 5px;
 }
 
 .specialists-tabs__nav .nav-link {
@@ -10298,7 +10300,7 @@ margin-bottom:30px
 }
 
 .specialists-tabs__nav .nav-item:nth-child(2n) .nav-link,.specialists-tabs__nav .nav-item:last-child .nav-link {
-border-right:1px solid var(--green-color)
+border: none;
 }
 
 .specialists-filter__item {
@@ -10864,9 +10866,6 @@ line-height:36px;
 text-align:center
 }
 
-.nav-tabs-specialists .nav-item .nav-link {
-border-right:1px solid var(--green-color)
-}
 
 .tab-pane-edu__title {
 font-weight:500;
@@ -12895,8 +12894,8 @@ margin-bottom:0
 }
 
 .nav-tabs-specialists .nav-item {
-margin:0;
-width:50%
+    margin: 0px 5px 5px 0px;
+    width: calc( 50% - 5px );
 }
 
 .nav-tabs-specialists .nav-item:nth-child(2n) .nav-link {
@@ -13734,7 +13733,7 @@ width:100%
 }
 
 .specialists-tabs__nav .nav-item:nth-child(2n) .nav-link,.specialists-tabs__nav .nav-item:last-child .nav-link {
-border-left:1px solid var(--green-color)
+border:none;
 }
 
 .page-form__item .contact-radio {
