@@ -26,6 +26,9 @@
     height: 40px;
     line-height: 40px;
 }
+#confirm_entry_modal .jq-checkbox input, #confirm_entry_modal .jq-radio input{
+
+}
 .doctor_day{
 
 }
@@ -44,6 +47,9 @@
 }
 .select_date{
     background-color: #7ca82b;
+}
+.select_date span, .addSaveDate:hover span{
+    color: #fff !important;
 }
 .carousel-control-prev {
      left: 0;
@@ -184,21 +190,73 @@ div.news-detail img.detail_picture
     bottom: 0;
     right: 0;
 }
-.child-btn{
+#confirm_entry_modal .jq-selectbox__dropdown ul{
+    max-height: 200px !important;
+    overflow: auto;
+    overflow-y: scroll;
+}
+.slide-btn{
     display: inline-block;
     padding: 10px 30px;
-    background-color: #454c57;
-    border: 1px solid #fff;
+    background-color: var(--green-color);
+    border: 1px solid var(--green-color);
     font-size: 16px;
     font-weight: 700;
     color: #fff;
     cursor: pointer;
     text-align: center;
+    margin-bottom: 10px;
+    width: 100%;
 }
-.child-btn:hover{
+.popup .popup-item label span{
+    margin-top: 0px;
+}
+.popup .popup-item label input{
+    margin-top: 5px;
+}
+.error-border{
+    border-color: #f42c2c;
+    color: #f42c2c !important;
+}
+.error-message{
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.save_slide .disabled{
+    opacity: 0.8;
+    background-color: #e2e3e5;
+    border-color: #e2e3e5;
+}
+.save_slide .disabled:hover{
+    background-color: #e2e3e5;
+    color: #fff;
+    border-color: #e2e3e5;
+}
+.popup .popup-item  .btn{
+    margin: 0px;
+    height: auto;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.popup-item .next-slide{
+    max-width: 180px;
+    margin: 0 auto;
+}
+.slide-btn:hover{
     background-color: #fff;
-    color: #000;
-    border: 1px solid #000;
+    color: var(--green-color);
+    border: 1px solid var(--green-color);
+}
+.slide-btn.prev-slide{
+    background-color: #fff;
+    color: var(--green-color);
+    border: 1px solid var(--green-color);
+}
+.slide-btn.prev-slide:hover{
+    background-color: var(--btn-grey-color);
+    color: #fff;
+    border: 1px solid var(--btn-grey-color);
 }
 .error_phone{
     color: #f42c2c;
@@ -232,4 +290,16 @@ div.news-detail img.detail_picture
     font-size: 18px;
     font-weight: 600;
     margin-top: 5px
+}
+.hidden_popup_slide{
+    display: none;
+}
+
+@media screen and (max-width: 768px){
+    .popup-item .next-slide{
+        display: inline-block;
+        width: 48%;
+        max-width: 100%;
+        margin-right: 2%;
+    }
 }

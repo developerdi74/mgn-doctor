@@ -2,8 +2,9 @@
 /*
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 
-echo json_encode(getPlannings($_GET));
+//echo json_encode(getPlannings($_GET));
 /*
+ удалить
 function getPlannings($medecins_ids){
     $get = http_build_query($medecins_ids);
     if( $curl = curl_init() ) {

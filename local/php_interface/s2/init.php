@@ -1,5 +1,5 @@
 <?
-$GLOBALS['API_VERSION'] = "v1.2";
+$GLOBALS['API_VERSION'] = "v1.2.1";
 require_once __DIR__."/include/chromephp-master/ChromePhp.php";
 require_once __DIR__."/include/Mobile_Detect.php";
 require_once __DIR__."/include/apiFunctions.php";

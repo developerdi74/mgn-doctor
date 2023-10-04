@@ -84,7 +84,7 @@ $APPLICATION->ShowPanel();?>
 		<div class="container">
 			<div class="row header-bottom__mobile-row">
 				<div class="header__schedule header-bottom__mobile-col">
-					<a href="/specialists/raspisanie-vrachey/">
+					<a href="/about/">
 						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M17.6562 1.5625H16.7188V0H15.1562V1.5625H4.84375V0H3.28125V1.5625H2.34375C1.05141 1.5625 0 2.61391 0 3.90625V17.6562C0 18.9486 1.05141 20 2.34375 20H17.6562C18.9486 20 20 18.9486 20 17.6562V3.90625C20 2.61391 18.9486 1.5625 17.6562 1.5625ZM18.4375 17.6562C18.4375 18.087 18.087 18.4375 17.6562 18.4375H2.34375C1.91297 18.4375 1.5625 18.087 1.5625 17.6562V7.34375H18.4375V17.6562ZM1.5625 5.78125H18.4375V3.90625C18.4375 3.47547 18.087 3.125 17.6562 3.125H16.7188V4.6875H15.1562V3.125H4.84375V4.6875H3.28125V3.125H2.34375C1.91297 3.125 1.5625 3.47547 1.5625 3.90625V5.78125Z" fill="#fff"/>
 							<rect x="3" y="9" width="2" height="2" fill="white"/>
@@ -200,7 +200,7 @@ $APPLICATION->ShowPanel();?>
 					</div>
 					<div class="header__right">
 						<div class="header__schedule">
-							<a href="/specialists/raspisanie-vrachey/">
+							<a href="/about/">
 								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" clip-rule="evenodd" d="M17.6562 1.5625H16.7188V0H15.1562V1.5625H4.84375V0H3.28125V1.5625H2.34375C1.05141 1.5625 0 2.61391 0 3.90625V17.6562C0 18.9486 1.05141 20 2.34375 20H17.6562C18.9486 20 20 18.9486 20 17.6562V3.90625C20 2.61391 18.9486 1.5625 17.6562 1.5625ZM18.4375 17.6562C18.4375 18.087 18.087 18.4375 17.6562 18.4375H2.34375C1.91297 18.4375 1.5625 18.087 1.5625 17.6562V7.34375H18.4375V17.6562ZM1.5625 5.78125H18.4375V3.90625C18.4375 3.47547 18.087 3.125 17.6562 3.125H16.7188V4.6875H15.1562V3.125H4.84375V4.6875H3.28125V3.125H2.34375C1.91297 3.125 1.5625 3.47547 1.5625 3.90625V5.78125Z" fill="#75A72D"/>
 									<rect x="3" y="9" width="2" height="2" fill="#75A72D"/>

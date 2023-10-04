@@ -467,7 +467,7 @@ $name = $arResult["NAME"];?>
     $dataAjax['PROPERTIES']['MEDIALOG_ID']['VALUE'] = $arResult['PROPERTIES']['MEDIALOG_ID']['VALUE'];
     $dataAjaxJson = json_encode($dataAjax);
     ?>
-    <script>
+    <script async>
         $(document).ready(function(){
             if($('.specialist-info__right').attr('online_pl') == 1){
                 var data = <?=$dataAjaxJson?>;
@@ -479,9 +479,9 @@ $name = $arResult["NAME"];?>
                     success: function(data){
                         $('.specialist-info__right').html(data);
                         setTimeout(function() {
-                            $('input, select').styler();
+                            $('select').styler();
                             $(".phone").mask("+7 (999) 999-9999");
-                        }, 1)
+                        }, 99)
                     }
                 });
             }

@@ -173,12 +173,13 @@ if($_GET['PAGEN_1']){
     $section_url=$section_url.'_'.$_GET['PAGEN_1'];
 }
 ?>
-<script defer>
+<script async>
     $(window).on('load', function (){
         $.ajax({
             url: '/include/api/loadListPlannings.php',
             method: 'get',
             dataType: 'json',
+            async: true,
             data: {medecins_ids: <?=json_encode($medIDs)?>,
                     cache_code: "<?=$section_url?>"},
             success: function(data){

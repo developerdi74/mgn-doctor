@@ -1,5 +1,5 @@
 <?php
-/*
+/*deletre
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 $medecins_id = $_GET['medecins_id'];
 
