@@ -16,3 +16,4 @@ $days = getPlanning($medecins_id);?>
     <? endforeach;?>
 <? endif; ?>
     </div>
+*/?>
