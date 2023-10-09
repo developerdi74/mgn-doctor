@@ -13917,6 +13917,9 @@ background-color:#fff;
 color:#000
 }
 
+.fl-price{
+    font-size: 10px;
+}
 .label_date_access{
     font-style: normal;
     font-weight: 300;
