@@ -62,7 +62,9 @@ $this->setFrameMode(true);
                                         <? endif; ?>
                                     </h2>
                                     <p class="main-slider__text"><? echo $arItem["PREVIEW_TEXT"]; ?></p>
+                                    <?if(!empty($arItem['PROPERTIES']['URL']['VALUE'])):?>
                                     <a href="<?= $arItem['PROPERTIES']['URL']['VALUE'] ?>" class="btn btn-green  main-slider__btn">Подробнее</a>
+                                    <?endif;?>
                                 </div>
                             </div>
                         </div>

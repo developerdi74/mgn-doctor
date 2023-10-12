@@ -924,7 +924,7 @@ $(document).ready(function(){
 				nav: false,
 				dots: false,
 				mouseDrag: false,
-				autoplay: true,
+				autoplay: false,
 				autoplayTimeout: 8000,
 				autoPlay: 3000,
 				speed: 1200,
