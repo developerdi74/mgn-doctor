@@ -35,7 +35,7 @@ use \Bitrix\Main\Localization\Loc;
 			<?}?>
 			<?=$price['PRINT_RATIO_PRICE'];?>
 		</span>
-        <div class="fl-price">*для физических лиц</div>
+        <?/*div class="fl-price">*для физических лиц</div>*/?>
 	</div>
 </div>
 
