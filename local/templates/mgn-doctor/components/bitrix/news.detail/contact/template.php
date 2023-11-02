@@ -172,7 +172,7 @@ $this->setFrameMode(true);
 							<img src="/upload/Kazantseva_Lidia_Andreevna.png">
 						<?}?>
 						<?if($_REQUEST['ELEMENT_CODE']=='klinika-na-50-let-magnitki' || $_REQUEST['ELEMENT_CODE']=='klinika-na-zhukova'){?>
-							<img src="/upload/Andronov_Vladimir_Petrovich.png">
+							<img src="/upload/radchkova.png">
 						<?}?>
 					</div>
 					<div class="specialists-item__status"><span class="active-status"></span></div>
@@ -182,7 +182,7 @@ $this->setFrameMode(true);
 						<h4 class="chief__name">Казанцева Лидия Андреевна</h4>
 					<?}?>
 					<?if($_REQUEST['ELEMENT_CODE']=='klinika-na-50-let-magnitki' || $_REQUEST['ELEMENT_CODE']=='klinika-na-zhukova'){?>
-						<h4 class="chief__name">Андронов Владимир Петрович</h4>
+						<h4 class="chief__name">Рядчикова Татьяна Анатольевна</h4>
 					<?}?>
 					<h6 class="chief__position">ГЛАВНЫЙ ВРАЧ</h6>
 					<p class="chief__description">
