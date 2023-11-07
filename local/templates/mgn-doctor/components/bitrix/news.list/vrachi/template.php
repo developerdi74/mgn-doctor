@@ -198,7 +198,7 @@ if($_GET['PAGEN_1']){
                                 if(index == 3){
                                     html += "</div><div class='d-inline-block align-top'>";
                                 }
-                                html += "<div class='date_access_list'>"+day.date_rec+"</div>";
+                                html += "<div class='date_access_list'>"+day.format_date+"</div>";
                             }
                         });
                         html += "</div>";
