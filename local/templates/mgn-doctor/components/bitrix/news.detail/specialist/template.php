@@ -460,10 +460,13 @@ $name = $arResult["NAME"];?>
 		</div>
 	</section>
     <?
+
+    //dd($arResult);
     $dataAjax['ID'] = $arResult['ID'];
     $dataAjax['NAME'] = $arResult['NAME'];
     $dataAjax['CHILD'] = $priemChild;
     $dataAjax['VZROS'] = $priemVzros;
+    $dataAjax['IBLOCK_SECTION_ID'] = $arResult['IBLOCK_SECTION_ID'];
     $dataAjax['PROPERTIES']['MEDIALOG_ID']['VALUE'] = $arResult['PROPERTIES']['MEDIALOG_ID']['VALUE'];
     $dataAjaxJson = json_encode($dataAjax);
     ?>

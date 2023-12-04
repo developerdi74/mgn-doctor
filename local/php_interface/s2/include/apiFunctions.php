@@ -46,12 +46,16 @@ function getMedecinsID($fam,$name1,$name2,$id){
             echo( 'error='.curl_error($curl));
         }
         curl_close($curl);
+        $IBLOCK_ID = 25;
         if($result['medecins_id']){
-            $ELEMENT_ID = $id;  // код элемента
-            $IBLOCK_ID = 25;
-            $PROPERTY_CODE = "MEDIALOG_ID";  // код свойства
-            $PROPERTY_VALUE = $result['medecins_id'];  // значение свойства
-            CIBlockElement::SetPropertyValuesEx($ELEMENT_ID, $IBLOCK_ID, array($PROPERTY_CODE => $PROPERTY_VALUE));
+            $propadd = [
+                "MEDIALOG_ID"=>$result['medecins_id'],
+                "ONLINE_PLANNING"=>126,
+            ];
+            CIBlockElement::SetPropertyValuesEx($id, $IBLOCK_ID, $propadd);
+        }else{
+            $propadd = ["ONLINE_PLANNING"=>127];
+            CIBlockElement::SetPropertyValuesEx($id, $IBLOCK_ID, $propadd);
         }
         return $result['medecins_id'];
     }
