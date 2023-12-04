@@ -1,5 +1,5 @@
 <?
-$GLOBALS['API_VERSION'] = "v1.2.2";
+$GLOBALS['API_VERSION'] = "v1.2.3";
 require_once __DIR__."/include/chromephp-master/ChromePhp.php";
 require_once __DIR__."/include/Mobile_Detect.php";
 require_once __DIR__."/include/apiFunctions.php";
@@ -160,9 +160,9 @@ function removeDirectory($dir){
 	rmdir($dir);
 }
 
-	function prnt($data){
+	function dd($data){
 		echo "<pre>";
-		print_r($data);
+		var_dump($data);
 		echo "</pre>";
 	}
 ?>

@@ -334,6 +334,101 @@ foreach ($planningArray['days'] as $allDay){
 
 </div>
 <? else: //пустое значение проверки дней расписания ?>
+
+    <?
+
+    $db_old_groups = CIBlockElement::GetElementGroups($arResult['ID'], true);
+    $ar_new_groups = [];
+    while($ar_group = $db_old_groups->Fetch())
+        $ar_new_groups[] = $ar_group["ID"];
+
+    $age=[];
+    if($arResult['CHILD']==1)
+        $age[]='110';
+    if($arResult['VZROS']==1)
+        $age[]='111';
+    $arrFilterVrachi = array(
+        "SECTION_ID" => $ar_new_groups,
+        "!=ID"=>$arResult['ID'],
+        "PROPERTY_AGE"=>$age,
+        "!=PROPERTY_ONLINE_PLANNING"=>0,
+        "!=PROPERTY_MEDIALOG_ID"=>"",
+        "ONLINE_PLANNING"=>1,
+    );
+   // dd($arrFilterVrachi);
+    $APPLICATION->IncludeComponent(
+        "bitrix:news.list",
+        "docs-list-detail",
+        array(
+            "ACTIVE_DATE_FORMAT" => "d.m.Y",
+            "ADD_SECTIONS_CHAIN" => "N",
+            "AJAX_MODE" => "N",
+            "AJAX_OPTION_ADDITIONAL" => "",
+            "AJAX_OPTION_HISTORY" => "N",
+            "AJAX_OPTION_JUMP" => "N",
+            "AJAX_OPTION_STYLE" => "N",
+            "CACHE_FILTER" => "N",
+            "CACHE_GROUPS" => "N",
+            "CACHE_TIME" => "0",
+            "CACHE_TYPE" => "N",
+            "CHECK_DATES" => "Y",
+            "DETAIL_URL" => "",
+            "DISPLAY_BOTTOM_PAGER" => "Y",
+            "DISPLAY_DATE" => "Y",
+            "DISPLAY_NAME" => "Y",
+            "DISPLAY_PICTURE" => "Y",
+            "DISPLAY_PREVIEW_TEXT" => "Y",
+            "DISPLAY_TOP_PAGER" => "N",
+            "FIELD_CODE" => array(
+                0 => "NAME",
+                1 => "",
+            ),
+            "FILTER_NAME" => "arrFilterVrachi",
+            "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+            "IBLOCK_ID" => "25",
+            "IBLOCK_TYPE" => "mgn_doctor_service",
+            "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+            "INCLUDE_SUBSECTIONS" => "Y",
+            "MESSAGE_404" => "",
+            "NEWS_COUNT" => "5",
+            "PAGER_BASE_LINK_ENABLE" => "N",
+            "PAGER_DESC_NUMBERING" => "N",
+            "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+            "PAGER_SHOW_ALL" => "N",
+            "PAGER_SHOW_ALWAYS" => "N",
+            "PAGER_TEMPLATE" => ".default",
+            "PAGER_TITLE" => "Новости",
+            "PARENT_SECTION" => "",
+            "PARENT_SECTION_CODE" => "",
+            "PREVIEW_TRUNCATE_LEN" => "",
+            "PROPERTY_CODE" => array(
+                0 => "DATE",
+               // 1 => "CLINIC",
+                2 => "AGE",
+                3 => "SPECIALIZATION",
+               // 4 => "SKILL",
+                6 => "RAITING",
+                7 => "",
+            ),
+            "SET_BROWSER_TITLE" => "N",
+            "SET_LAST_MODIFIED" => "N",
+            "SET_META_DESCRIPTION" => "N",
+            "SET_META_KEYWORDS" => "N",
+            "SET_STATUS_404" => "N",
+            "SET_TITLE" => "N",
+            "SHOW_404" => "N",
+            "SORT_BY1" => "ACTIVE_FROM",
+            "SORT_BY2" => "SORT",
+            "SORT_ORDER1" => "DESC",
+            "SORT_ORDER2" => "ASC",
+            "STRICT_SECTION_CHECK" => "N",
+            "COMPONENT_TEMPLATE" => "vrachi",
+            "COMPOSITE_FRAME_MODE" => "A",
+            "COMPOSITE_FRAME_TYPE" => "AUTO",
+        ),
+        false
+    );?>
+<?/*else:?>
     <div class="no-timesheet">
         Узнать акуальное расписание данного специалиста и записаться:
         <ul>
@@ -343,6 +438,10 @@ foreach ($planningArray['days'] as $allDay){
             <li>написав в чат (на сайте справа внизу)</li>
         </ul>
     </div>
+<?
+*/?>
+
+
 <? endif;//конец проверки дней расписания ?>
 <?php
 //print_r($planningArray['exams']);

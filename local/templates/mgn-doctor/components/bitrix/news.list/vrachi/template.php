@@ -125,6 +125,9 @@ if(empty($item['PROPERTIES']['ONE_PRIEM']['VALUE'])) {
                         <div class="access-date mt-2 position-relative" medecins-id="<?=$medecins_id?>">
                             <?if($item['PROPERTIES']['ONLINE_PLANNING']['VALUE'] != 0):?>
                                 <div class="cnt_loader"><div class="loader_mini" style=""></div></div>
+                            <?else:?>
+                                <div class='label_date_access'> Запись по телефону.</div>
+                                <div class='list_phone'><a href='tel:73519581111' class=''>+7(3519) 581-111</a></div>
                             <?endif;?>
                         </div>
 				</div>
@@ -203,12 +206,16 @@ if($_GET['PAGEN_1']){
                         });
                         html += "</div>";
                         }else{
-                            html = "<div class='label_date_access'> Запись по телефону.</div>" +
-                                "<div class='list_phone'><a href='tel:73519581111' class=''>+7(3519) 581-111</a></div>";
+                            html = "<div class='label_date_access'>Свободных дат нет</div>";
                         }
                         $('[medecins-id = "'+key+'"]').html(html);
                         $('.access-date .cnt_loader').hide();
 
+                    }
+                });
+                $('[medecins-id]').each(function (){
+                    if($(this).find('.cnt_loader').length){
+                        $(this).html("<div class='label_date_access'>Свободных дат нет</div>");
                     }
                 });
             }
