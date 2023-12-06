@@ -77,8 +77,8 @@ if ($arResult["isFormErrors"] == "Y"):?><?=$arResult["FORM_ERRORS_TEXT"];?><? en
                 <?/* if ($arResult["F_RIGHT"] >= 15):?>
                     <input type="hidden" name="web_form_apply" value="Y"/>
                     <input type="submit" name="web_form_apply" value="<?= GetMessage("FORM_APPLY") ?>"/>
-                <? endif; */?>
-                &nbsp;<input type="reset" value="<?= GetMessage("FORM_RESET"); ?>"/>
+                <? endif;
+                &nbsp;<input type="reset" value="<?= GetMessage("FORM_RESET"); ?>"/> */?>
             </th>
         </tr>
         </tfoot>
