@@ -1,5 +1,9 @@
 <?
 $GLOBALS['API_VERSION'] = "v1.2.3";
+
+//Прикрепить файл к письму
+AddEventHandler("main", "OnBeforeEventAdd", array("MailEventHandler", "onBeforeEventAddHandler"));
+
 require_once __DIR__."/include/chromephp-master/ChromePhp.php";
 require_once __DIR__."/include/Mobile_Detect.php";
 require_once __DIR__."/include/apiFunctions.php";
@@ -165,4 +169,48 @@ function removeDirectory($dir){
 		var_dump($data);
 		echo "</pre>";
 	}
+
+//Прикрепить файл к письму
+class MailEventHandler
+{
+    static function onBeforeEventAddHandler(&$event, &$lid, &$arFields, &$message_id, &$files)
+    {
+        // Меняем тип почтового события и ID почтового шаблона на свои
+        if ($event === 'FORM_FILLING_LOAD_ANKETS' && $message_id === '61') {
+
+            if (!is_array($files)) $files = [];
+
+            foreach ($arFields as $key => $field) {
+
+                if ($link = self::getLinkFromField($field)) {
+
+                    if ($arFile = self::getFileFromLink($link)) {
+
+                        $files[] = $arFile['FILE_ID'];
+
+                    }
+
+                }
+
+            }
+        }
+    }
+
+    // Ищем ссылки на скачивания файлов в письме
+    static function getLinkFromField($field)
+    {
+        // Укажите https или http, в зависимости от того, как работает ваш сайт
+        preg_match("/(https\:.*form_show_file.*action\=download)/", $field, $out);
+        return ($out[1] ?: false);
+    }
+
+
+    static function getFileFromLink($link)
+    {
+        $uri = new \Bitrix\Main\Web\Uri($link);
+        parse_str($uri->getQuery(), $query);
+        return CFormResult::GetFileByHash($query["rid"], $query["hash"]);
+    }
+
+}
 ?>

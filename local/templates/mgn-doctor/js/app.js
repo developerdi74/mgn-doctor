@@ -1674,4 +1674,5 @@ $(document).ready(function(){
 		 $("#popular-services__owl").trigger("prev.owl.carousel");
 	});
 
+	$(".phone-mask").mask("+7 (999) 999-9999");
 });
