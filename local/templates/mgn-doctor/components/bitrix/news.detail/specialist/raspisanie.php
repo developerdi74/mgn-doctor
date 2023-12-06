@@ -299,6 +299,19 @@ foreach ($planningArray['days'] as $allDay){
                             </span>
                             </label>
                         </div>
+                        <?/*
+                        <div class="popup-item">
+                            <label>
+                                <div class="form-accept">
+                                    <span>
+                                        <input type="checkbox" id="check_whatsapp" name="check_whatsapp" checked>
+                                    </span>
+                                    <span class="checkbox-text">Согласие на получение уведомлений по WhatsApp
+                                    </span>
+                                </div>
+                            </label>
+                        </div>
+                        */?>
                         <div class="popup-item">
                             <div class="slide-btn next-slide prev-slide" step="-1">Назад</div>
                             <input type="submit" value="Записаться" class="btn-submit btn btn-green popup-btn disabled" disabled>
@@ -353,7 +366,7 @@ foreach ($planningArray['days'] as $allDay){
         "PROPERTY_AGE"=>$age,
         "!=PROPERTY_ONLINE_PLANNING"=>0,
         "!=PROPERTY_MEDIALOG_ID"=>"",
-        "ONLINE_PLANNING"=>1,
+        "PROPERTY_ONLINE_PLANNING"=>1,
     );
    // dd($arrFilterVrachi);
     $APPLICATION->IncludeComponent(

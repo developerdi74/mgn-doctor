@@ -401,29 +401,34 @@
   <?=$_SERVER['SCRIPT_URL']?>
 <div style="display: none;" id="order-appointment" class="popup popup-small appointment-call">
 	<div class="popup__content popup-content">
-		<? $APPLICATION->IncludeComponent("bitrix:form.result.new", "template", [
-				"COMPONENT_TEMPLATE"    =>"template",
-				"WEB_FORM_ID"           =>"6",
-				"IGNORE_CUSTOM_TEMPLATE"=>"N",
-				"USE_EXTENDED_ERRORS"   =>"Y",
-				"SEF_MODE"              =>"N",
-				"CACHE_TYPE"            =>"Y",
-				"CACHE_TIME"            =>"36000000",
-				"LIST_URL"              =>"",
-				"EDIT_URL"              =>"",
-				"SUCCESS_URL"           =>$_SERVER['SCRIPT_URL']."?success=1",
-				"CHAIN_ITEM_TEXT"       =>"",
-				"CHAIN_ITEM_LINK"       =>"",
-				"VARIABLE_ALIASES"      =>[
-					"WEB_FORM_ID"=>"WEB_FORM_ID",
-					"RESULT_ID"  =>"RESULT_ID",
-				],
-				"AJAX_MODE" => "Y",
-				"AJAX_OPTION_SHADOW" => "N",
-				"AJAX_OPTION_JUMP" => "N",
-				"AJAX_OPTION_STYLE" => "Y",
-				"AJAX_OPTION_HISTORY" => "N",
-			], false); ?>
+		<? $APPLICATION->IncludeComponent(
+	"bitrix:form.result.new", 
+	"template", 
+	array(
+		"COMPONENT_TEMPLATE" => "template",
+		"WEB_FORM_ID" => "8",
+		"IGNORE_CUSTOM_TEMPLATE" => "N",
+		"USE_EXTENDED_ERRORS" => "Y",
+		"SEF_MODE" => "N",
+		"CACHE_TYPE" => "Y",
+		"CACHE_TIME" => "36000000",
+		"LIST_URL" => "",
+		"EDIT_URL" => "",
+		"SUCCESS_URL" => $_SERVER["SCRIPT_URL"]."?success=1",
+		"CHAIN_ITEM_TEXT" => "",
+		"CHAIN_ITEM_LINK" => "",
+		"AJAX_MODE" => "Y",
+		"AJAX_OPTION_SHADOW" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"AJAX_OPTION_HISTORY" => "N",
+		"VARIABLE_ALIASES" => array(
+			"WEB_FORM_ID" => "WEB_FORM_ID",
+			"RESULT_ID" => "RESULT_ID",
+		)
+	),
+	false
+); ?>
 	</div>
 </div>
 <?/*
@@ -719,25 +724,30 @@
   <!-- POPUP APPOINMENT -->
 <div style="display: none;" id="ask-question-modal" class="popup popup-small ask-question-modal">
 	<div class="popup__content popup-content">
-		<? $APPLICATION->IncludeComponent("bitrix:form.result.new", "template", [
-				"COMPONENT_TEMPLATE"    =>"template",
-				"WEB_FORM_ID"           =>"7",
-				"IGNORE_CUSTOM_TEMPLATE"=>"N",
-				"USE_EXTENDED_ERRORS"   =>"Y",
-				"SEF_MODE"              =>"N",
-				"AJAX_MODE"             =>"Y",
-				"CACHE_TYPE"            =>"Y",
-				"CACHE_TIME"            =>"3600000",
-				"LIST_URL"              =>"",
-				"EDIT_URL"              =>"",
-				"SUCCESS_URL"           =>"",
-				"CHAIN_ITEM_TEXT"       =>"",
-				"CHAIN_ITEM_LINK"       =>"",
-				"VARIABLE_ALIASES"      =>[
-					"WEB_FORM_ID"=>"WEB_FORM_ID",
-					"RESULT_ID"  =>"RESULT_ID",
-				]
-			], false); ?>
+		<? $APPLICATION->IncludeComponent(
+	"bitrix:form.result.new", 
+	"template", 
+	array(
+		"COMPONENT_TEMPLATE" => "template",
+		"WEB_FORM_ID" => "8",
+		"IGNORE_CUSTOM_TEMPLATE" => "N",
+		"USE_EXTENDED_ERRORS" => "Y",
+		"SEF_MODE" => "N",
+		"AJAX_MODE" => "Y",
+		"CACHE_TYPE" => "Y",
+		"CACHE_TIME" => "3600000",
+		"LIST_URL" => "",
+		"EDIT_URL" => "",
+		"SUCCESS_URL" => "",
+		"CHAIN_ITEM_TEXT" => "",
+		"CHAIN_ITEM_LINK" => "",
+		"VARIABLE_ALIASES" => array(
+			"WEB_FORM_ID" => "WEB_FORM_ID",
+			"RESULT_ID" => "RESULT_ID",
+		)
+	),
+	false
+); ?>
 	</div>
 </div>
 
