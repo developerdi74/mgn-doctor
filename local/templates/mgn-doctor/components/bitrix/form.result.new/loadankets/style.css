@@ -11,6 +11,9 @@ table.form-table
 	font-weight: 900;
 	margin-bottom: 40px;
 }
+.form-load-ankets .text-center h3{
+	text-align: center;
+}
 .form-load-ankets table.form-table th,.form-load-ankets  table.form-table td
 {
 	border:1px solid #fff;
