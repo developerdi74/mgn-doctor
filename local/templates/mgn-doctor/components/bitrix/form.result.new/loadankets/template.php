@@ -4,8 +4,9 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();?>
 <?php
 if ($arResult["isFormErrors"] == "Y"):?><?=$arResult["FORM_ERRORS_TEXT"];?><? endif; ?>
     <?if($arResult['FORM_NOTE']):?>
-        <div class="success_message_file_load">
-            Спасибо! Ваша анкета принята!
+        <div class="success_message_file_load text-center">
+            Спасибо! Ваша анкета принята!<br>
+            Перейти на сайт <a href="https://mgn-doctor.ru/">Семейного доктор</a><br><br>
             <?//= $arResult["FORM_NOTE"] ?>
         </div>
     <?endif;?>
