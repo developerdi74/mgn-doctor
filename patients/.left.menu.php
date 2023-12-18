@@ -27,7 +27,7 @@ $aMenuLinks = array(
 	),
 	array(
 		"Онлайн консультация",
-		"https://mgn-doctor.bitrix24.site/",
+		"https://mgn-doctor.bitrix24site.ru/",
 		array(),
 		array("img" => "online consultation.svg"),
 		""
