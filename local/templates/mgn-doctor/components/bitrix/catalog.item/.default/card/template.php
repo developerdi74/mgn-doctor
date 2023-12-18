@@ -24,7 +24,7 @@ use \Bitrix\Main\Localization\Loc;
 	<h6><?=$item["NAME"]?></h6>
 	<div class="price-cont">
 		<? if( $item["IBLOCK_SECTION_ID"] == "1577"):?>
-			<span><a style="opacity: 1;" target="_blank" href="https://mgn-doctor.bitrix24.site/" class="serv-subitem-btn">записаться</a></span>
+			<span><a style="opacity: 1;" target="_blank" href="https://mgn-doctor.bitrix24site.ru/" class="serv-subitem-btn">записаться</a></span>
 		<?else:?>	
 <!--			<span><a href="#order-appointment" data-fancybox="" data-src="#order-appointment" class="serv-subitem-btn">записаться</a></span>-->
 		<?endif;?>
