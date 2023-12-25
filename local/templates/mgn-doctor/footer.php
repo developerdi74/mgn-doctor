@@ -109,8 +109,7 @@
 						</span>
 					</h5>
 					<ul class="footer-item__list">
-						<li><a href="/specialists/raspisanie-vrachey/">Клиника</a></li>
-						<li><a href="/">Аптека</a></li>
+						<li><a href="/about/">Клиника</a></li>
 					</ul>
 				</div>
 				<div class="footer-item__bottom">

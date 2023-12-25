@@ -17,12 +17,13 @@ $this->setFrameMode(true);
   <div class="container health-calc__container">
     <div class="row justify-content-between row-vmiddle">
       <h2 class="section-title health-calc__title">КАЛЬКУЛЯТОР ЗДОРОВЬЯ</h2>
-      <div class="health-calc__btn-wrap">
+      <?/*<div class="health-calc__btn-wrap">
         <a href="/calculator/" class="btn btn-grey-tr news__btn">Все тесты</a>
-      </div>
+      </div>*/?>
     </div>
+      <?/*
     <div class="mobile-row">
-      <div class="health-calc-select">
+         <div class="health-calc-select">
         <select name="health-calc-select" id="health-calc-select">
           <option value="">Калькулятор нормы воды</option>
           <option value="">Экспресс тест на коронавирус</option>
@@ -35,7 +36,7 @@ $this->setFrameMode(true);
       <div class="health-calc-select__text" data-health-desc="">
         В случае острого заболевания или обострения хронического проводится экспертиза временной нетрудоспособности с выдачей "больничного листа" по болезни или по уходу за больным ребенком.
       </div>
-    </div>
+    </div>*/?>
 
     <div class="row">
       <div class="health-calc__list health-calc__list--left">
