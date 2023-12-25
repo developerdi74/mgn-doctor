@@ -457,7 +457,7 @@ $APPLICATION->SetTitle("Семейный доктор в Магнитогорс�
 
       <? $APPLICATION->IncludeComponent(
           "bitrix:news.list",
-          "news",
+          "newsv2",
           array(
             "ACTIVE_DATE_FORMAT" => "d.m.Y",
             "ADD_SECTIONS_CHAIN" => "N",
