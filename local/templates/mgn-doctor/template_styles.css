@@ -9705,7 +9705,6 @@ width:100%
 }
 
 .mega-menu ul li a {
-background-color:#820000;
 width:100%
 }
 
@@ -10655,7 +10654,7 @@ margin-top:40px
 }
 
 .health-calc__container > .row {
-flex-wrap:nowrap
+flex-wrap:wrap
 }
 
 .news .news__item {
@@ -10734,8 +10733,11 @@ color:#333;
 margin-bottom:15px
 }
 
-.health-calc__list--left,.health-calc__list--right {
+.health-calc__list--right {
 display:none
+}
+.health-calc__list{
+    flex-wrap: wrap;
 }
 
 .health-calc-select {

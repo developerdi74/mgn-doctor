@@ -1702,13 +1702,15 @@
         color: #333;
         margin-bottom: 15px;
     }
-    .health-calc__list--left,
     .health-calc__list--right{
         display: none;
     }
     .health-calc-select{
         width: 100%;
         margin-bottom: 15px;
+    }
+    .health-calc__list{
+        flex-direction: column;
     }
     .health-calc-select .jq-selectbox{
         width: 100%;
