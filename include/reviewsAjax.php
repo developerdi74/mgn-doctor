@@ -63,7 +63,6 @@ if(strlen($clinic)>0){
 
 $type=($score>0) ? "clinic": "docs";
 
-sendTelegram($name, $tel, $text, $clinic, $specialists, $score);
 
 $PROP["PHONE"]=$tel;
 
@@ -78,9 +77,15 @@ $arLoadProductArray=[
 	"DETAIL_TEXT"      =>$docText,
 ];
 
-if($PRODUCT_ID=$el->Add($arLoadProductArray)) echo "New ID: ".$PRODUCT_ID;
-else
-	echo "Error: ".$el->LAST_ERROR;
+if($PRODUCT_ID=$el->Add($arLoadProductArray)) {
+    sendTelegram($name, $tel, $text, $clinic, $specialists, $score);
+    echo json_encode(["success" => 1]);
+}
+else{
+    echo json_encode(["error" => 1]);
+    //echo "Error: ".$el->LAST_ERROR;
+}
+return;
 
 
 function sendTelegram($name=0,$tel=0,$message=0,$clinic=0, $specialists=0, $score=0){
