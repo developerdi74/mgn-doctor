@@ -113,7 +113,8 @@ function sendTelegram($name=0,$tel=0,$message=0,$clinic=0, $specialists=0, $scor
 	  $url = "https://api.telegram.org/bot".$token."/sendMessage?chat_id=".$chat_id."&parse_mode=html&text=".$txt;
 
 	    if( $curl = curl_init() ) {
-	      curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER , true);
 	      $out = curl_exec($curl);
 	      curl_close($curl);
 	    }
