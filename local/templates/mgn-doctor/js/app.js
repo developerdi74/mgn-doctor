@@ -138,12 +138,16 @@ $(document).ready(function(){
 			method: "POST",
 			url: "/include/reviewsAjax.php",
 			data: $(this).serialize(),
+			dataType: 'json',
 			success: function (data) {
-				console.log( data );
-				$('#reviews-modal').html( $('#popoup-success') );
-				$('#popoup-success').show();
-				$('.wpd-form-wrap').hide();
-				$('.specialists-reviews-success').show();
+				if(data.success == 1){
+					$('#reviews-modal').html( $('#popoup-success') );
+					$('#popoup-success').show();
+					$('.wpd-form-wrap').hide();
+					$('.specialists-reviews-success').show();
+				}else{
+					$('[name=form-reviews]').append("<div class='error-msg'>Не все обязательные поля заполнены!</div>")
+				}
 			}
 		});
 

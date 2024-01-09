@@ -6918,7 +6918,11 @@ blockquote p {
     display: none;
     transition: .4s
 }
-
+.error-msg{
+    font-size: 16px;
+    color: #ff0000;
+    margin: 10px 0px;
+}
 .contact-radio .error:before {
     content: '';
     position: absolute;
