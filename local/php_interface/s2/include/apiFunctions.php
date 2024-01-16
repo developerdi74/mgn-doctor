@@ -90,4 +90,27 @@ function logPlanning($print, $fileName='logapi.txt'){
         file_put_contents('/include/api/logapi/'.$fileName, $log . PHP_EOL, FILE_APPEND);
     }
 }
+function getDataMedialog($url,$ver=null){
+    if($ver==null){
+        $ver = $GLOBALS['API_VERSION'];
+    }
+    $api = "http://109.195.215.58/api/".$ver."/";
+    if( $curl = curl_init() ) {
+        curl_setopt($curl, CURLOPT_URL, $api.$url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
+        curl_setopt($curl, CURLOPT_PORT, '9595');
+        $out = curl_exec($curl);
+        $result = json_decode($out, true); // вывод результата
+
+        if(curl_error($curl)) { // если возникла ошибка
+            echo( 'error='.curl_error($curl));
+        }
+        curl_close($curl);
+        if($result){
+            return $result;
+        }else{
+            return false;
+        }
+    }
+}
 ?>
