@@ -12,7 +12,9 @@ if(!$USER->IsAdmin()){
             ["data"]=>
       string(10) "Текст"
     }*/
+    exit;
 }
+
 if(empty($_GET['id'])){
     exit;
 }
