@@ -1,4 +1,4 @@
-<html>
+<?/*?><html>
 <head><title>Создание ссылок на папки bitrix, local и upload</title></head>
 <body>
 <?
