@@ -17,25 +17,25 @@ $this->setFrameMode(true); ?>
     $arrCount = -1;
     $firstLine = 0;
     $cntSec = count($arResult['SECTIONS']);
-    $intSec = (int)($cntSec / 4); ?>
-    <? foreach ($arResult['SECTIONS'] as &$arSection): ?>
-<? $activeElements = null;
-$arFilter = array(
-    "IBLOCK_ID" => 25,
-    "SECTION_ID" => $arSection['ID'],
-    "PROPERTY_AGE" => AGE, //фильтр возраста
-);
+    $intSec = (int)($cntSec / 4);
 
-$res = CIBlockElement::GetList(array("SORT" => "ASC"), $arFilter, array("ID"));
-if ($count = $res->fetch()) {
-    $activeElements[] = $count;
-}
-if (count($activeElements) == null) { //Изменено при переходе с none
-    continue;
-}
+foreach ($arResult['SECTIONS'] as $key => $arSection):
 
-?>
-<? $firstLetter = mb_substr($arSection["NAME"], 0, 1);
+    $activeElements = null;
+    $arFilter = array(
+        "IBLOCK_ID" => 25,
+        "SECTION_ID" => $arSection['ID'],
+        "PROPERTY_AGE" => AGE, //фильтр возраста
+    );
+    $res = CIBlockElement::GetList(array("SORT" => "ASC"), $arFilter, array("ID"));
+    if ($count = $res->fetch()) {
+        $activeElements[] = $count;
+    }
+    if (count($activeElements) == null) { //Изменено при переходе с none
+        continue;
+    }
+
+    $firstLetter = mb_substr($arSection["NAME"], 0, 1);
 if ($bukva == $firstLetter) {
     $bukva = $bukva;
 } else {
@@ -43,31 +43,30 @@ if ($bukva == $firstLetter) {
     $smena = 1;
     $arrCount++;
 
-} ?>
-
-
-<? if ($smena == 1):
+}
+if ($smena == 1):
 $smena = 0; ?>
 <? if ($arrCount != 0) {
     echo "</div>";
     $arrCount++;
-} //Закрытие block_row_vr?>
+} //Закрытие block_row_vr
+?>
     <div class="block_row_vr">
         <div>
             <b><?= $bukva ?></b>
         </div>
         <? endif; ?>
-        <?
-        $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
-        $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
-        ?>
+        <? $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
+        $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams); ?>
         <? if ($arSection["ELEMENT_CNT"] > 0) { ?>
             <div id="<?= $this->GetEditAreaId($arSection['ID']); ?>" class="">
-                <a href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><?= $arSection["NAME"]; ?><? //=$arSection["ELEMENT_CNT"]?></a>
+                <a href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><?= $arSection["NAME"]; ?>
+                    <span class="el_cnt"><?=$arSection["ELEMENT_CNT"] ?></span>
+                </a>
             </div>
         <? } ?>
 
-        <? endforeach; ?>
+<? endforeach; ?>
     </div> <? //закрытие block_row_vr?>
 
 </div>
