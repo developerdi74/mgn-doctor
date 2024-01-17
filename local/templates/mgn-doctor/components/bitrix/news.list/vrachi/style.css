@@ -2,9 +2,11 @@ pre{
 	font-size: 16px !important;
 }
 .section_vrachi .row_vr{
-	margin-bottom: 20px;
-	border:  1px solid #B5B7BA;
+	margin-bottom: 25px;
+	border: 1px solid #B5B7BA;
 	overflow: hidden;
+	border-radius: 5px;
+	box-shadow: 0px 0px 6px 0px #b5b5b5;
 }
 
 .section_vrachi .row_vr img{
@@ -35,7 +37,7 @@ pre{
 .section_vrachi .name-cherta-vr{
 	position: relative;
 	width: 100px;
-	height: 8px;
+	height: 6px;
 	left: 0px;
 	top: -15px;
 	background: #7CA82B;
@@ -46,9 +48,15 @@ pre{
 	margin-top: 15px;
 	font-weight: bold;
 }
+.label_date_access{
+	margin-bottom: 5px;
+}
+.access-date{
+	margin-bottom: 10px;
 
+}
  .section_vrachi .save-btn-vr{
-	width:  174px;
+	width:  auto;
 	height:  44px;
 	background: #7CA82B;
 	color: #fff;
@@ -63,6 +71,7 @@ pre{
     right: 40px;
     box-sizing: border-box;
     border: 1px solid #fff;
+	 transition: all 0.3s;
 }
 
 .section_vrachi .save-btn-vr:hover{
@@ -158,7 +167,18 @@ pre{
 .img_vr a{
 
 }
-
+.who_is{
+}
+.age-pr{
+	display: inline-block;
+	padding: 3px 10px;
+	background-color: #454c57;
+	color: #ffffff;
+	border-radius: 59px;
+	font-size: 11px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
 .name-vr h2{
 	margin: 0;
 	padding: 0;

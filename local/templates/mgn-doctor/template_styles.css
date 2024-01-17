@@ -1362,6 +1362,7 @@ span.wpcf7-list-item {
     align-items: center;
     justify-content: center;
     margin-left: 15px;
+    transition: all 0.3s;
 }
 
 .header__navi a {
@@ -1712,7 +1713,7 @@ nav.menu {
     width: auto;
     max-width: 100%;
     height: auto;
-    max-height: auto
+    max-height: auto;
 }
 
 .main-slider__row {
