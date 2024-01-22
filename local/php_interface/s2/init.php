@@ -164,11 +164,40 @@ function removeDirectory($dir){
 	rmdir($dir);
 }
 
-	function dd($data){
-		echo "<pre>";
-		var_dump($data);
-		echo "</pre>";
+function dd($data){
+	echo "<pre>";
+	var_dump($data);
+	echo "</pre>";
+	exit;
+}
+function vd($data){
+	echo "<pre>";
+	var_dump($data);
+	echo "</pre>";
+}
+
+function setPrice($PRODUCT_ID, $price){
+	$arFields = Array(
+		"PRODUCT_ID" => $PRODUCT_ID,
+		"PRICE" => $price,
+		"CURRENCY"=>"RUB",
+		"CATALOG_GROUP_ID"=>1,
+		"QUANTITY_FROM"=>false,
+		"QUANTITY_TO"=>false
+	);
+	vd($arFields);
+	$res = CPrice::GetList(array(),array("PRODUCT_ID" => $PRODUCT_ID));
+	//$res = CPrice::GetList(array(),array("PRODUCT_ID" => 889));
+	//dd($res->Fetch());
+	if ($arr = $res->Fetch()){
+		CPrice::Update($arr["ID"], $arFields);
+		return 'update';
+	}else{
+		$a = CPrice::Add($arFields);
+		return 'add';
 	}
+
+}
 
 //Прикрепить файл к письму
 class MailEventHandler

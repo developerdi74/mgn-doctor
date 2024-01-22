@@ -8,9 +8,13 @@ if(!$USER->IsAdmin()){
 CModule::IncludeModule("catalog");
 //http://192.168.19.90/api/dop/services/
 //https://dev2.mgn-doctor.ru/setprice/
-$chance = 99;
+$chance = 59;
 //dd(getDataMedialog('services','dop'));
 $new = getDataMedialog('services','dop');
+
+$sections = getSections();
+//dd($new[0]);
+
 $exclude=['Прием (осмотр, консультация)',
 'прием','Прием','-',' - ','врача','акушера',
 '  ','   ','1-й триместр','2-й триместр',
@@ -37,7 +41,7 @@ $exclude=['Прием (осмотр, консультация)',
     string(51) "Ультразвуковая диагностика"
   }*/
 $old = getServiceIblock(24);
-dd(count($old));
+$del=0;
 foreach ($old as $key=>$item){
     foreach ($new as $nom=>$n){
         /*if($n[3]-$item['CATALOG_PRICE_1']>500 || $n[3]-$item['CATALOG_PRICE_1']<-500){
@@ -52,8 +56,9 @@ foreach ($old as $key=>$item){
             }else{
                 $pre="НЕ ";
             }
-
             unset($old[$key]);
+            unset($new[$nom]);
+            $del++;
             break;
         }else{
             $a=trim(str_replace($exclude," ",$item['NAME']));
@@ -65,7 +70,7 @@ foreach ($old as $key=>$item){
         }
     }
 }
-
+vd($del);
 ?>
 <script
     src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -80,7 +85,9 @@ foreach ($old as $key=>$item){
         <?/*<td>FM_SERV_ID</td>*/?>
         <td>Схожие услуги</td>
     </tr>
-    <? foreach ($old as $key=>$item):?>
+    <? foreach ($old as $key=>$item):
+        break;
+    ?>
         <?if(isset($item['SIMILAR']) || $chance==99):?>
         <tr>
             <td><?=$key?></td>
@@ -109,22 +116,39 @@ foreach ($old as $key=>$item){
         </tr>
         <?endif;?>
     <? endforeach; ?>
-<?/*
-<table>
-<? foreach($new as $key=>$n):?>
+</table>
+<? vd(count($new)); ?>
+<table border="1">
     <tr>
+        <td>#</td>
+        <td>FM_SERV_ID</td>
+        <td>Названи</td>
+        <td>Текущая цена</td>
+        <td>Раздел</td>
+        <td>Раздел на сайте</td>
+        <td>Действия</td>
+    </tr>
+<? foreach($new as $key=>$n):?>
+    <tr class="closest">
         <td><?=$key?></td>
-        <td><?=$n[0]?></td>
-        <td><?=$n[1]?></td>
-        <td><?=$n[2]?></td>
-        <td><?=$n[3]?></td>
+        <td class="serv-id"><?=$n[1]?></td>
+        <td class="title"><?=$n[2]?></td>
+        <td class="price"><?=$n[3]?></td>
+        <td ><?=$n[6]?></td>
+        <td>
+            <select name="" class="select-sect">
+                <?foreach ($sections as $sect):?>
+                    <option value="<?=$sect['ID']?>"><?=$sect['NAME']?></option>
+                <?endforeach;?>
+            </select>
+        </td>
+        <td>
+            <button class="addserv">ДОБАВИТЬ</button>
+        </td>
     </tr>
 <? endforeach;?>
 </table>
-*/?>
-
-
-
+<? ?>
 
 
 
@@ -134,7 +158,7 @@ foreach ($old as $key=>$item){
         $arFilter = Array(
             //"%NAME"=>"Медицинский",
             "IBLOCK_ID"=>IntVal($id),
-            "!PROPERTY_FM_SERV_ID"=>false,
+            //"!PROPERTY_FM_SERV_ID"=>false,
             "ACTIVE"=>"Y"
         );
         $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>1500,'iNumPage'=>1), $arSelect);
@@ -151,27 +175,17 @@ foreach ($old as $key=>$item){
         return $data;
     }
 
-
-
-
-    function setPrice($PRODUCT_ID, $price){
-        $arFields = Array(
-            "PRODUCT_ID" => $PRODUCT_ID,
-            "PRICE" => $price,
-        );
-        $res = CPrice::GetList(
-            array(),
-            array(
-                "PRODUCT_ID" => $PRODUCT_ID,
-            )
-        );
-        if ($arr = $res->Fetch()){
-            CPrice::Update($arr["ID"], $arFields);
-        }else{
-            CPrice::Add($arFields);
+    function getSections(){
+        $arFilter = Array('IBLOCK_ID'=>24);
+        $db_list = CIBlockSection::GetList(Array('NAME'=>"asc"), $arFilter,false,Array('ID','NAME'));
+        while($ar_result = $db_list->GetNext()) {
+            $data[]=$ar_result;
         }
-
+        return $data;
     }
+
+
+
     ?>
     <script>
         $('.setprice').click(function (){
@@ -179,6 +193,27 @@ foreach ($old as $key=>$item){
             let get = $(this).attr('data');
             $.ajax({
                 url: '/setprice/setprice.php'+get,         /* Куда отправить запрос */
+                method: 'get',             /* Метод запроса (post или get) */
+                dataType: 'html',          /* Тип данных в ответе (xml, json, script, html). */
+                success: function(data){   /* функция которая будет выполнена после успешного запроса.  */
+                    $(this).html('ОТПРАВЛЕНО');
+                }
+            });
+            return false;
+        });
+
+        $('.addserv').click(function (){
+            let parent=$(this).closest('.closest');
+            let servid=parent.find('.serv-id').html();
+            let title=parent.find('.title').html();
+            let price=parent.find('.price').html();
+            let sect = parent.find('select').val();
+            let get = "?title="+title+"&servid="+servid+"&price="+price+"&sect="+sect;
+
+            console.log(get);
+
+            $.ajax({
+                url: '/setprice/addservice.php'+get,         /* Куда отправить запрос */
                 method: 'get',             /* Метод запроса (post или get) */
                 dataType: 'html',          /* Тип данных в ответе (xml, json, script, html). */
                 success: function(data){   /* функция которая будет выполнена после успешного запроса.  */
