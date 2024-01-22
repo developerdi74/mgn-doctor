@@ -12,7 +12,8 @@ $chance = 59;
 //dd(getDataMedialog('services','dop'));
 $new = getDataMedialog('services','dop');
 
-$sections = getSections();
+//$sections = getSections();
+$sections = [];
 //dd($new[0]);
 
 $exclude=['Прием (осмотр, консультация)',
