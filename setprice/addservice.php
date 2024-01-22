@@ -2,7 +2,6 @@
 require ($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 \Bitrix\Main\Loader::includeModule('iblock');
 //vd($_GET);
-exit;
 if(!$USER->IsAdmin()){
     exit;
 }
@@ -10,7 +9,7 @@ if(empty($_GET['servid']) || $_GET['price']<=0){
     echo "NOT PRICE";
     exit;
 }
-
+  
 $el = new CIBlockElement;
 $arFields = array(
     "NAME" => $_GET['title'],

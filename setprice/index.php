@@ -3,7 +3,7 @@ require ($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.p
 if(!$USER->IsAdmin()){
     echo "Закрыто";
     exit;
-}
+}  
 
 CModule::IncludeModule("catalog");
 //http://192.168.19.90/api/dop/services/
@@ -137,6 +137,7 @@ vd($del);
         <td class="price"><?=$n[3]?></td>
         <td ><?=$n[6]?></td>
         <td>
+            <input type="text" class='inputsect'>
             <select name="" class="select-sect">
                 <?foreach ($sections as $sect):?>
                     <option value="<?=$sect['ID']?>"><?=$sect['NAME']?></option>
@@ -208,7 +209,7 @@ vd($del);
             let servid=parent.find('.serv-id').html();
             let title=parent.find('.title').html();
             let price=parent.find('.price').html();
-            let sect = parent.find('select').val();
+            let sect = parent.find('.inputsect').val();
             let get = "?title="+title+"&servid="+servid+"&price="+price+"&sect="+sect;
 
             console.log(get);
