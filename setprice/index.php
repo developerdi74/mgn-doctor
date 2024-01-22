@@ -3,7 +3,7 @@ require ($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.p
 if(!$USER->IsAdmin()){
     echo "Закрыто";
     exit;
-}
+}  
 
 CModule::IncludeModule("catalog");
 //http://192.168.19.90/api/dop/services/

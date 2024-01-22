@@ -9,7 +9,7 @@ if(empty($_GET['servid']) || $_GET['price']<=0){
     echo "NOT PRICE";
     exit;
 }
-
+  
 $el = new CIBlockElement;
 $arFields = array(
     "NAME" => $_GET['title'],
