@@ -12,7 +12,8 @@ $chance = 59;
 //dd(getDataMedialog('services','dop'));
 $new = getDataMedialog('services','dop');
 
-$sections = getSections();
+//$sections = getSections();
+$sections = [];
 //dd($new[0]);
 
 $exclude=['Прием (осмотр, консультация)',
@@ -136,6 +137,7 @@ vd($del);
         <td class="price"><?=$n[3]?></td>
         <td ><?=$n[6]?></td>
         <td>
+            <input type="text" class='inputsect'>
             <select name="" class="select-sect">
                 <?foreach ($sections as $sect):?>
                     <option value="<?=$sect['ID']?>"><?=$sect['NAME']?></option>
@@ -207,7 +209,7 @@ vd($del);
             let servid=parent.find('.serv-id').html();
             let title=parent.find('.title').html();
             let price=parent.find('.price').html();
-            let sect = parent.find('select').val();
+            let sect = parent.find('.inputsect').val();
             let get = "?title="+title+"&servid="+servid+"&price="+price+"&sect="+sect;
 
             console.log(get);

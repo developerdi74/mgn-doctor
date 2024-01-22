@@ -2,7 +2,6 @@
 require ($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 \Bitrix\Main\Loader::includeModule('iblock');
 //vd($_GET);
-exit;
 if(!$USER->IsAdmin()){
     exit;
 }
