@@ -7052,6 +7052,11 @@ input[type="radio"]:checked:after {
     letter-spacing: .056px
 }
 
+.note-detail{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
 .page-form-2 .page-form__name {
     min-width: 125px
 }

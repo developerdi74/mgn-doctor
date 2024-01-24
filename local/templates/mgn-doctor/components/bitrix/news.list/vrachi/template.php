@@ -118,15 +118,21 @@ if(empty($item['PROPERTIES']['ONE_PRIEM']['VALUE'])) {
                     ?>
 					<div class="name-vr"><h2><a href = "<?=$uri?>/<?=$item['CODE']?>/"><?=$item['NAME']?></a></h2></div>
 					<div class="name-cherta-vr"></div>
-                    <div class="who_is">
-                        <?if(!empty($item['PROPERTIES']['AGE']['VALUE'])):?>
+                    <?if(!empty($item['PROPERTIES']['AGE']['VALUE'])):?>
+                        <div class="who_is">
                             <? foreach($item['PROPERTIES']['AGE']['VALUE'] as $age):?>
                                 <div class="age-pr">
                                     <?=$age?>
                                 </div>
                             <? endforeach;?>
-                        <?endif;?>
-                    </div>
+                        </div>
+                    <?endif;?>
+                    <?if(!empty($item['PROPERTIES']['NOTE']['~VALUE'])):?>
+                        <div class="note-detail">
+                            <?=$item['PROPERTIES']['NOTE']['~VALUE']['TEXT'];?>
+                        </div>
+                    <?endif;?>
+
 					<div class="spec-vr"><? foreach($NAME_SPECIAL as $SPEC){ echo $SPEC;$chet++; if(count($NAME_SPECIAL)!=$chet) echo ", ";}?></div>
                     <?if(!empty($item['PROPERTIES']['STAZH']['VALUE'])):?><div class="staz-vr">Стаж <?=$item['PROPERTIES']['STAZH']['VALUE']?></div><?endif;?>
 					<?if(!empty($item['PROPERTIES']['CATEGORY']['VALUE'])):?><div class="category-vr"><?=$item['PROPERTIES']['CATEGORY']['VALUE']?></div><?endif;?>

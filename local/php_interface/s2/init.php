@@ -185,7 +185,6 @@ function setPrice($PRODUCT_ID, $price){
 		"QUANTITY_FROM"=>false,
 		"QUANTITY_TO"=>false
 	);
-	vd($arFields);
 	$res = CPrice::GetList(array(),array("PRODUCT_ID" => $PRODUCT_ID));
 	//$res = CPrice::GetList(array(),array("PRODUCT_ID" => 889));
 	//dd($res->Fetch());

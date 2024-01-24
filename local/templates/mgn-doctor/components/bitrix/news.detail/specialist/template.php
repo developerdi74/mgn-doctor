@@ -24,20 +24,7 @@ $clinic=$_POST["CLINIC"];
 if($clinic=='') $clinic=$arResult['PROPERTIES']['CLINIC']["VALUE_XML_ID"][0];
 
 $name = $arResult["NAME"];?>
-<? //console($arResult);
-//$noCalendar=$noCalendarFlag=false;
-//foreach($arResult['PROPERTIES']['CLINIC']['VALUE'] as $clinic){
-//	console($clinic);
-//	if(strpos($clinic, '50 лет')!==false || strpos($clinic, 'Жук')!==false || strpos($clinic, 'Домен')!==false){
-//		$noCalendar=true;
-//		console('сработало if');
-//	}
-//	else{
-//		$noCalendar=false;
-//		$noCalendarFlag=true;
-//		console('не сработало');
-//	}
-//}?>
+
 <!-- Микроразметка ---><div>
 <script type='application/ld+json'>
 {
@@ -90,7 +77,9 @@ $name = $arResult["NAME"];?>
 							</div>
 							<div class="specialists-item__content specialist-info__content">
 								<h1 class="specialists-item__title specialists-item__name"><?=$arResult["NAME"]?></h1>
-
+                                <?if(!empty($arResult['DISPLAY_PROPERTIES']['NOTE']["~VALUE"]['TEXT'])):?>
+                                    <div class="note-detail"><?=($arResult['DISPLAY_PROPERTIES']['NOTE']["~VALUE"]['TEXT'])?></div>
+                                <?endif;?>
 									<?if(isset($arResult['DISPLAY_PROPERTIES']['AGE']['VALUE_ENUM_ID'])):?>
 									<?
 										$priem = 0;

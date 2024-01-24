@@ -1,7 +1,7 @@
 <?php
 use \Bitrix\Main\Data\Cache;
 
-function dataCache($cacheKey, $function, $cacheTime = 60*60*24, $cachePath='allCache',$reset=0){
+function dataCache($cacheKey, $function, $cacheTime = 60*60*4, $cachePath='allCache',$reset=0){
     if($reset==1) $cacheTime=1;
     $cache = Cache::createInstance(); // Служба кеширования
 
