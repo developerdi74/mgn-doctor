@@ -221,7 +221,7 @@ if($_GET['PAGEN_1']){
                         });
                         html += "</div>";
                         }else{
-                            html = "<div class='label_date_access'>В ближайшие 3 недели свободных дат нет</div>";
+                            html = "<div class='label_date_access'>Есть онлайн раписание!</div>";
                         }
                         $('[medecins-id = "'+key+'"]').html(html);
                         $('.access-date .cnt_loader').hide();
@@ -230,7 +230,7 @@ if($_GET['PAGEN_1']){
                 });
                 $('[medecins-id]').each(function (){
                     if($(this).find('.cnt_loader').length){
-                        $(this).html("<div class='label_date_access'>В ближайшие 3 недели свободных дат нет</div>");
+                        $(this).html("<div class='label_date_access'>Есть онлайн раписание!</div>");
                     }
                 });
             }
