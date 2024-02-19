@@ -137,7 +137,28 @@ font-display:swap
 .white:focus {
     background-color: #fff
 }
+#search-searvices-input{
+    width: 100%;
+}
+.search-input-services{
+    width: 100%;
+    margin-bottom: 20px;
+}
+#search-res{
+    width: 100%;
+}
+#search-res .cnt_loader{
+    position: relative;
+}
+#search-res .cnt_loader .loader_mini{
+    left: calc( 50% - 30px );
+}
 
+.title-res-search{
+    font-weight: 900;
+    font-size: 16px;
+    padding: 20px;
+}
 @media screen and (max-width: 768px) {
     .mobile_box {
         display: block;

@@ -1,0 +1,28 @@
+.service-list-item .serviceit-price__subitem{
+	padding: 5px 0;
+	width: calc( 50% - 40px );
+	margin-right: 20px;
+}
+}
+.service-list-item .serviceit-price__subitem h6{
+	margin: 0px;
+}
+.service-list-item .serviceit-price__item--left{
+	width: 100%;
+	padding-right: 0px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.service-list-item .all-services__subitem:hover{
+	padding-left: 0px;
+	padding-right: 0px;
+	background-color: #fff;
+	color: #000;
+}
+.service-list-item .all-services__subitem:hover h6, .service-list-item .all-services__subitem:hover span, .service-list-item .all-services__subitem:hover a{
+	color: #000;
+}
+.service-list-item .serviceit-price__item--left .all-services__subitem h6{
+	margin: 0px;
+}

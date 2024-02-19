@@ -326,7 +326,7 @@
 					</a>
 				</div>
 				<div class="home-footer-navi__item">
-                    <a href="/specialists/" class="btn btn-green home-footer-navi__btn">
+                    <a href="/documents/" class="btn btn-green home-footer-navi__btn">
                         <!--<a class="btn btn-green open_ondocwidjet home-footer-navi__btn">
                          <a href="#order-appointment" data-fancybox="" data-src="#order-appointment" class="btn btn-green open_ondocwidjet home-footer-navi__btn"> -->
 						<svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
