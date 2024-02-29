@@ -1,0 +1,12 @@
+.item-vac{
+	margin-bottom: 20px;
+	padding: 20px;
+	border-bottom: 1px solid #000;
+}
+.item-vac>div{
+	 margin-bottom: 10px;
+ }
+.title-vac{
+	margin-bottom: 10px;
+	font-weight: 700;
+ }

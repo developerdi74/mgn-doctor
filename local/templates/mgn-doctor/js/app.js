@@ -33,7 +33,9 @@ $(document).ready(function(){
              }
 	   });
 */
-
+	$(".footer-item>div").click(function(){
+		$(this).find('.footer-item__list').toggle( "slow");
+	});
 	$(document).on('click', '.show-more-text', function () {
 		if( $(this).html() == "развернуть" ){
 			$('.chief__about').css('max-height','100%');
