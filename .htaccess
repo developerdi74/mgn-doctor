@@ -1,0 +1,257 @@
+Options -Indexes 
+ErrorDocument 404 /404.php
+
+php_value max_input_vars 10000
+
+<IfModule mod_php5.c>
+  php_flag session.use_trans_sid off
+  #php_flag default_charset UTF-8
+  #php_value display_errors 1
+</IfModule>
+
+<IfModule mod_php7.c>
+  php_flag session.use_trans_sid off
+  #php_flag default_charset UTF-8
+  #php_value display_errors 1
+</IfModule>
+
+<FilesMatch "(rk|redirect).(php)$">
+	RewriteCond %{QUERY_STRING} goto= [NC]
+	RewriteRule ^.*$ - [F]
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
+  RewriteEngine On  # todo Это должно быть включено
+    
+  #del //
+  RewriteCond %{REQUEST_URI} ^(.*)/{2,}(.*)$
+  RewriteRule (.*) %1/%2 [R=301,L] 
+
+  RewriteCond %{THE_REQUEST} //
+  RewriteRule .* /$0 [R=301,L]
+
+  #del www
+  RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+  #add /
+  RewriteCond %{REQUEST_URI} ^(.*/[^/\.]+)$
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [R=301,L]
+
+
+  RewriteCond %{REQUEST_URI} ^(.*)/index.php$
+  RewriteRule ^(.*)$ %1/ [R=301,L] 
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+  RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+  RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+
+	RewriteRule ^service-detail /service/$1 [R=301,L]
+
+	Redirect 301  /service-detail/detskoe-i-grudnichkovoe-plavanie-basseyn/		https://mgn-doctor.ru/service/detskoe-i-grudnichkovoe-plavanie-basseyn/
+	Redirect 301  /service-detail/diagnostika/									https://mgn-doctor.ru/service/diagnostika/
+	Redirect 301  /service-detail/vydacha-spravok-medkomissii/					https://mgn-doctor.ru/service/vydacha-spravok-medkomissii/
+	Redirect 301  /service-detail/napravleniya-kliniki/							https://mgn-doctor.ru/service/napravleniya-kliniki/
+	Redirect 301  /service-detail/analizy-/										https://mgn-doctor.ru/service/analizy/
+	Redirect 301  /service-detail/oftalmologiya/								https://mgn-doctor.ru/service/oftalmologiya/
+	Redirect 301  /service-detail/stomatologiya/								https://mgn-doctor.ru/service/stomatologiya/
+	Redirect 301  /service-detail/gastroenterologiya/							https://mgn-doctor.ru/service/gastroenterologiya/
+	Redirect 301  /service-detail/pediatriya/									https://mgn-doctor.ru/service/pediatriya/
+	Redirect 301  /service-detail/trikhologiya/									https://mgn-doctor.ru/service/trikhologiya/
+	Redirect 301  /service-detail/ftiziatriya/									https://mgn-doctor.ru/service/ftiziatriya/
+	Redirect 301  /service-detail/nutritsiologiya/								https://mgn-doctor.ru/service/nutritsiologiya/
+	Redirect 301  /service-detail/travmatologiya-ortopediya/					https://mgn-doctor.ru/service/travmatologiya-ortopediya/
+	Redirect 301  /service-detail/allergologiya-immunologiya/					https://mgn-doctor.ru/service/allergologiya-immunologiya/
+	Redirect 301  /service-detail/gematologiya-gemostaziologiya/				https://mgn-doctor.ru/service/gematologiya-gemostaziologiya/
+
+	Redirect 301	/service/priemy-vrachey2/									https://mgn-doctor.ru/service/allergologiya-immunologiya/
+	Redirect 301	/service/priemy-vrachey3/									https://mgn-doctor.ru/service/gastroenterologiya/
+	Redirect 301	/service/diagnostika3/										https://mgn-doctor.ru/service/gastroenterologiya/
+	Redirect 301	/service/priemy-vrachey4/									https://mgn-doctor.ru/service/gematologiya-gemostaziologiya/
+	Redirect 301	/service/lechebnye-manipulyatsii/							https://mgn-doctor.ru/service/akusherstvo-i-ginekologiya/
+	Redirect 301	/service/drugoe1/											https://mgn-doctor.ru/service/akusherstvo-i-ginekologiya/
+	Redirect 301	/service/vedenie-beremennosti/								https://mgn-doctor.ru/service/akusherstvo-i-ginekologiya/
+	Redirect 301	/service/detskiy-ginekolog/									https://mgn-doctor.ru/service/akusherstvo-i-ginekologiya/
+	Redirect 301	/service/diaognostika/										https://mgn-doctor.ru/service/akusherstvo-i-ginekologiya/
+	Redirect 301	/service/operativnye-vmeshatelstva/							https://mgn-doctor.ru/service/akusherstvo-i-ginekologiya/
+	Redirect 301	/service/priemy-vrachey/									https://mgn-doctor.ru/service/akusherstvo-i-ginekologiya/
+	Redirect 301	/service/priemy-vrachey5/									https://mgn-doctor.ru/service/dermatovenerologiya/
+	Redirect 301	/service/diagnostika4/										https://mgn-doctor.ru/service/dermatovenerologiya/
+	Redirect 301	/service/lechebnye-manipulyatsii3/							https://mgn-doctor.ru/service/dermatovenerologiya/
+	Redirect 301	/service/priemy-vrachey_I/									https://mgn-doctor.ru/service/infektologiya/
+	Redirect 301	/service/priemy-vrachey9/									https://mgn-doctor.ru/service/kardiologiya/
+	Redirect 301	/service/diagnostika-k/										https://mgn-doctor.ru/service/koloproktologiya/
+	Redirect 301	/service/operativnye-vmeshatelstva-k/						https://mgn-doctor.ru/service/koloproktologiya/
+	Redirect 301	/service/priemy-vrachey1/									https://mgn-doctor.ru/service/koloproktologiya/
+	Redirect 301	/service/priemy-vrachey6/									https://mgn-doctor.ru/service/mammologiya/
+	Redirect 301	/service/diagnostika_m/										https://mgn-doctor.ru/service/mammologiya/
+	Redirect 301	/service/lechebnye-manipulyatsii_N/							https://mgn-doctor.ru/service/nevrologiya/
+	Redirect 301	/service/priemy-vrachey_N/									https://mgn-doctor.ru/service/nevrologiya/
+	Redirect 301	/service/priemy-vrachey_й/									https://mgn-doctor.ru/service/neyrokhirurgiya/
+	Redirect 301	/service/lechenie/											https://mgn-doctor.ru/service/neyrokhirurgiya/
+	Redirect 301	/service/priemy-vrachey_F/									https://mgn-doctor.ru/service/nefrologiya/
+	Redirect 301	/service/diagnostika_2/										https://mgn-doctor.ru/service/nutritsiologiya/
+	Redirect 301	/service/priemy-vrachey_2/									https://mgn-doctor.ru/service/nutritsiologiya/
+	Redirect 301	/service/diagnostika_/										https://mgn-doctor.ru/service/onkologiya/
+	Redirect 301	/service/operativnoe-vmeshatelstvo_/						https://mgn-doctor.ru/service/onkologiya/
+	Redirect 301	/service/priemy-vrachey_у/									https://mgn-doctor.ru/service/onkologiya/
+	Redirect 301	/service/diagnostika_3/										https://mgn-doctor.ru/service/otorinolaringologiya/
+	Redirect 301	/service/lechebnye-manipulyatsii_з/							https://mgn-doctor.ru/service/otorinolaringologiya/
+	Redirect 301	/service/operativnoe-vmeshatelstvo_у/						https://mgn-doctor.ru/service/otorinolaringologiya/
+	Redirect 301	/service/priemy-vrachey_ъ/									https://mgn-doctor.ru/service/otorinolaringologiya/
+	Redirect 301	/service/operativnoe-vmeshatelstvo-stoimost-ukazana-za-1-element-pri-udalenii-dopolnitelno-oplachivaetsya-ana/		https://mgn-doctor.ru/service/oftalmologiya/
+	Redirect 301	/service/diagnostika_8/										https://mgn-doctor.ru/service/oftalmologiya/
+	Redirect 301	/service/lechebnye-manipulyatsii_v/							https://mgn-doctor.ru/service/oftalmologiya/
+	Redirect 301	/service/nochnye-linzy/										https://mgn-doctor.ru/service/oftalmologiya/
+	Redirect 301	/service/priemy-vrachey_O/									https://mgn-doctor.ru/service/oftalmologiya/
+	Redirect 301	/service/priemy-vrachey_1/									https://mgn-doctor.ru/service/pediatriya/
+	Redirect 301	/service/priemy-vrachey_K/									https://mgn-doctor.ru/service/psikhologiya-klinicheskaya-neyropsikhologiya/
+	Redirect 301	/service/zanyatiya/											https://mgn-doctor.ru/service/psikhologiya-klinicheskaya-neyropsikhologiya/
+	Redirect 301	/service/priemy-vrachey_3/									https://mgn-doctor.ru/service/pulmonologiya/
+	Redirect 301	/service/priemy-vrachey_4/									https://mgn-doctor.ru/service/revmatologiya/
+	Redirect 301	/service/lechebnye-manipulyatsii_4/							https://mgn-doctor.ru/service/revmatologiya/
+	Redirect 301	/service/medkomissii/										https://mgn-doctor.ru/service/
+#	Redirect 301	/service/drugoe/											https://mgn-doctor.ru/service/drugoe/
+	Redirect 301	/service/oformlenie-bolnichnykh-listkov/					https://mgn-doctor.ru/service/
+	Redirect 301	/service/spravki-/											https://mgn-doctor.ru/service/
+#	Redirect 301	/service/meditsinskie-karty/								https://mgn-doctor.ru/service/drugoe/
+	Redirect 301	/service/gigiena-i-profilaktika-polosti-rta/				https://mgn-doctor.ru/service/stomatologiya/
+	Redirect 301	/service/stomatologiya-khirurgicheskaya1/					https://mgn-doctor.ru/service/stomatologiya/
+	Redirect 301	/service/lechenie-terapechvticheskoe/						https://mgn-doctor.ru/service/stomatologiya/
+	Redirect 301	/service/lechenie-postoyannykh-zubov/						https://mgn-doctor.ru/service/stomatologiya/
+	Redirect 301	/service/gigiena-i-profilaktika-polosti-rta1/				https://mgn-doctor.ru/service/stomatologiya/
+	Redirect 301	/service/priemy-vrachey_st/									https://mgn-doctor.ru/service/stomatologiya/
+	Redirect 301	/service/lechenie-molochnykh-zubov/							https://mgn-doctor.ru/service/stomatologiya/
+	Redirect 301	/service/priemy-vrachey7/									https://mgn-doctor.ru/service/stomatologiya/
+	Redirect 301	/service/stomatologiya-khirurgicheskaya/					https://mgn-doctor.ru/service/stomatologiya/
+	Redirect 301	/service/priemy-vrachey-t/									https://mgn-doctor.ru/service/terapiya/
+	Redirect 301	/service/priemy-vrachey_6/									https://mgn-doctor.ru/service/travmatologiya-ortopediya/
+	Redirect 301	/service/lechebnye-manipulyatsii-6/							https://mgn-doctor.ru/service/travmatologiya-ortopediya/
+	Redirect 301	/service/ultrazvukovaya-diagnostika/						https://mgn-doctor.ru/service/uzi/
+	Redirect 301	/service/operativnoe-vmeshatelstvo/							https://mgn-doctor.ru/service/urologiya/
+	Redirect 301	/service/priemy-vrachey_8/									https://mgn-doctor.ru/service/urologiya/
+	Redirect 301	/service/лечебные%20манипуляции-9/							https://mgn-doctor.ru/service/urologiya/
+	Redirect 301	/service/priemy-vrachey_q/									https://mgn-doctor.ru/service/ftiziatriya/
+	Redirect 301	/service/priemy-vracheyл/									https://mgn-doctor.ru/service/khirurgiya/
+	Redirect 301	/service/operativnoe-vmeshatelstvoл/						https://mgn-doctor.ru/service/khirurgiya/
+	Redirect 301	/service/lechebnye-manipulyatsiiог/							https://mgn-doctor.ru/service/khirurgiya/
+	Redirect 301	/service/operativnoe-vmeshatelstvoло/						https://mgn-doctor.ru/service/khirurgiya-lazernaya/
+	Redirect 301	/service/priemy-vrachey-с/									https://mgn-doctor.ru/service/khirurgiya-lazernaya/
+	Redirect 301	/service/priemy-vrachey_l/									https://mgn-doctor.ru/service/khirurgiya-sosudistaya/
+	Redirect 301	/service/priemy-vrachey_z/									https://mgn-doctor.ru/service/endokrinologiya/
+	Redirect 301	/service/lechebnye-manipulyatsii2/							https://mgn-doctor.ru/service/allergologiya-immunologiya/
+	Redirect 301	/service/analizy-/											https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/mikrobiologiya/									https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/lekarstvennyy-monitoring/							https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/obshcheklinicheskie-issledovaniya/					https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/koagulogramma/										https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/opredelenie-zapasov-mikroelementov-v-organizme/	https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/torch-infektsii-vnutriutrobnye/					https://mgn-doctor.ru/service/analizy/
+#	Redirect 301	/service/endoskopiya/										https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/protozoynye-i-parazitarnye-infektsii-gelmintozy/	https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/biokhimicheskie-issledovaniya/						https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/onkomarkery/										https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/infektsii/											https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/skrining-narkoticheskikh-i-psikhoaktivnykh-veshchestv/		https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/immunogematologiya/								https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/immunogenetika/									https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/neorganicheskie-veshchestva-mikroelementy/			https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/gormonalnye-issledovaniya/							https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/immunologicheskie-issledovaniya/					https://mgn-doctor.ru/service/analizy/
+	Redirect 301	/service/detskaya-dermatologiya/							https://mgn-doctor.ru/service/dermatovenerologiya/
+	Redirect 301	/service/iv-terapiya-vitaminnye-kapelnitsy/					https://mgn-doctor.ru/service/iv-terapiya/
+	Redirect 301	/service/kabinet-okhrany-zreniya/							https://mgn-doctor.ru/service/oftalmologiya/
+	Redirect 301	/service/rentgenologicheskie-issledovaniya/					https://mgn-doctor.ru/service/rentgen/
+	Redirect 301	/service/napravleniya-kliniki/								https://mgn-doctor.ru/service/vrach-onlajn/
+	Redirect 301	/service/diagnostika/										https://mgn-doctor.ru/service/
+	Redirect 301	/service/vydacha-spravok-medkomissii/						https://mgn-doctor.ru/service/
+	Redirect 301	/service/funktsion-diagnostika/								https://mgn-doctor.ru/service/funktsionalnaya-diagnostika/
+#	Redirect 301	/service/zapolnenie-sanatorno-kurortnoy-karty-072-u			https://mgn-doctor.ru/service/medkomissiya-na-rabotu/
+
+	Redirect 301	/service/lechebnye-manipulyatsii/							https://mgn-doctor.ru/service/akusherstvo-i-ginekologiya/
+	Redirect 301	/service/drugoe1/											https://mgn-doctor.ru/service/akusherstvo-i-ginekologiya/
+	Redirect 301	/service/vedenie-beremennosti/								https://mgn-doctor.ru/service/akusherstvo-i-ginekologiya/
+	Redirect 301	/service/detskiy-ginekolog/									https://mgn-doctor.ru/service/akusherstvo-i-ginekologiya/
+	Redirect 301	/service/diaognostika/										https://mgn-doctor.ru/service/akusherstvo-i-ginekologiya/
+	Redirect 301	/service/operativnye-vmeshatelstva/							https://mgn-doctor.ru/service/akusherstvo-i-ginekologiya/
+	Redirect 301	/service/priemy-vrachey/									https://mgn-doctor.ru/service/akusherstvo-i-ginekologiya/
+	Redirect 301	/service-detail/napravleniya-kliniki/						https://mgn-doctor.ru/service/vrach-onlajn/
+
+	Redirect 301	/service-detail/vyezd-medsestry-na-dom/						https://mgn-doctor.ru/service/vyezd-medsestry-na-dom/
+	Redirect 301	/service-detail/vydacha-spravok-medkomissii/				https://mgn-doctor.ru/service/
+	Redirect 301	/service-detail/vrach-onlajn/								https://mgn-doctor.ru/service/vrach-onlajn/
+
+	Redirect 301	/service-detail/urologiya/									https://mgn-doctor.ru/service/urologiya/
+	Redirect 301	/service-detail/ultrazvukovaya-diagnostika/					https://mgn-doctor.ru/service/uzi/
+    Redirect 301	/service-detail/trikhologiya/								https://mgn-doctor.ru/service/trikhologiya/
+    Redirect 301	/service-detail/travmatologiya-ortopediya/					https://mgn-doctor.ru/service/travmatologiya-ortopediya//
+    Redirect 301	/service-detail/terapiya/									https://mgn-doctor.ru/service/terapiya/
+    Redirect 301	/service-detail/stomatologiya/								https://mgn-doctor.ru/service/stomatologiya/
+    Redirect 301	/service-detail/stomatologiya-khirurgicheskaya/				https://mgn-doctor.ru/service/stomatologiya-detskaya/
+    Redirect 301	/service-detail/spravki-abiturientam/						https://mgn-doctor.ru/service/spravki-abiturientam/
+    Redirect 301	/service-detail/spravki-/									https://mgn-doctor.ru/service/
+    Redirect 301	/service-detail/revmatologiya/								https://mgn-doctor.ru/service/revmatologiya/
+    Redirect 301	/service-detail/rentgenologicheskie-issledovaniya/			https://mgn-doctor.ru/service/rentgen/
+    Redirect 301	/service-detail/rentgenografiya/							https://mgn-doctor.ru/service/rentgen/
+    Redirect 301	/service-detail/rentgenografiya-pozvonochnika-/				https://mgn-doctor.ru/service/rentgen/
+    Redirect 301	/service-detail/pulmonologiya/								https://mgn-doctor.ru/service/pulmonologiya/
+    Redirect 301	/service-detail/psikhologiya-klinicheskaya-neyropsikhologiya-/		https://mgn-doctor.ru/service/psikhologiya-klinicheskaya-neyropsikhologiya-/
+    Redirect 301	/service-detail/psikhiatriya/								https://mgn-doctor.ru/service/psikhiatriya/
+    Redirect 301	/service-detail/protsedurnyy-kabinet/						https://mgn-doctor.ru/service/protsedurnyy-kabinet/
+    Redirect 301	/service-detail/priemy-vrachey6/							https://mgn-doctor.ru/service/mammologiya/
+    Redirect 301	/service-detail/priemy-vrachey3/							https://mgn-doctor.ru/service/gastroenterologiya/
+    Redirect 301	/service-detail/priemy-vrachey1/							https://mgn-doctor.ru/service/koloproktologiya/
+    Redirect 301	/service-detail/priemy-vrachey_N/							https://mgn-doctor.ru/service/nevrologiya/
+    Redirect 301	/service-detail/otorinolaringologiya/						https://mgn-doctor.ru/service/otorinolaringologiya/
+    Redirect 301	/service-detail/onkologiya/									https://mgn-doctor.ru/service/onkologiya/
+    Redirect 301	/service-detail/neyrokhirurgiya/							https://mgn-doctor.ru/service/neyrokhirurgiya/
+  	Redirect 301	/service-detail/nevrologiya/								https://mgn-doctor.ru/service/nevrologiya/
+    Redirect 301	/service-detail/nefrologiya/								https://mgn-doctor.ru/service/nefrologiya/
+    Redirect 301	/service-detail/medkomissii/								https://mgn-doctor.ru/service/
+    Redirect 301	/service-detail/mammologiya/								https://mgn-doctor.ru/service/mammologiya/
+    Redirect 301	/service-detail/lechebnye-manipulyatsii3/					https://mgn-doctor.ru/service/dermatovenerologiya/
+    Redirect 301	/service-detail/koloproktologiya/							https://mgn-doctor.ru/service/koloproktologiya/
+    Redirect 301	/service-detail/khirurgiya/									https://mgn-doctor.ru/service/khirurgiya/
+    Redirect 301	/service-detail/khirurgiya-sosudistaya/						https://mgn-doctor.ru/service/khirurgiya-sosudistaya/
+    Redirect 301	/service-detail/khirurgiya-lazernaya/						https://mgn-doctor.ru/service/khirurgiya-lazernaya/
+    Redirect 301	/service-detail/kardiologiya/								https://mgn-doctor.ru/service/kardiologiya/
+    Redirect 301	/service-detail/iv-terapiya/								https://mgn-doctor.ru/service/iv-terapiya/
+    Redirect 301	/service-detail/iv-terapiya-vitaminnye-kapelnitsy/			https://mgn-doctor.ru/service/iv-terapiya/
+    Redirect 301	/service-detail/irrigoskopiya/								https://mgn-doctor.ru/service/rentgen/
+    Redirect 301	/service-detail/infektsii/									https://mgn-doctor.ru/service/analizy/
+    Redirect 301	/service-detail/infektologiya/								https://mgn-doctor.ru/service/infektologiya/
+    Redirect 301	/service-detail/funktsiya-shchitovidnoy-zhelezy/			https://mgn-doctor.ru/service/analizy/
+    Redirect 301	/service-detail/funktsionalnaya-diagnostika/				https://mgn-doctor.ru/service/funktsionalnaya-diagnostika/
+    Redirect 301	/service-detail/fizioterapevticheskiy-kabinet/				https://mgn-doctor.ru/service/fizioterapevticheskiy-kabinet/
+    Redirect 301	/service-detail/endokrinologiya/							https://mgn-doctor.ru/service/endokrinologiya/
+    Redirect 301	/service-detail/dnevnoy-statsionar/							https://mgn-doctor.ru/service/dnevnoy-statsionar/
+    Redirect 301	/service-detail/dermatovenerologiya/						https://mgn-doctor.ru/service/dermatovenerologiya/
+    Redirect 301	/service-detail/akusherstvo-i-ginekologiya/					https://mgn-doctor.ru/service/akusherstvo-i-ginekologiya/
+
+	Redirect 301  /about/partners.php         https://mgn-doctor.ru/about/partnery/
+	Redirect 301  /about/list.php             https://mgn-doctor.ru/about/poryadok-vydachi-bolnichnykh-listkov/
+	Redirect 301  /about/contact.php          https://mgn-doctor.ru/about/kontakty/
+	Redirect 301  /about/vacancy.php          https://mgn-doctor.ru/about/vakansii/
+	Redirect 301  /about/bonus.php            https://mgn-doctor.ru/about/bonusnaya-programma/
+	Redirect 301  /about/address.php          https://mgn-doctor.ru/about/adresa-i-telefony-vyshestoyaschikh-organov/
+
+	Redirect 301  /specialists/timesheet.php  https://mgn-doctor.ru/specialists/raspisanie-vrachey/
+
+</IfModule>
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresByType image/jpeg "access plus 3 day"
+  ExpiresByType image/gif "access plus 3 day"
+  ExpiresByType image/png "access plus 3 day"
+  ExpiresByType text/css "access plus 3 day"
+  ExpiresByType application/javascript "access plus 3 day"  
+</IfModule>
