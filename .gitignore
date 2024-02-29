@@ -6,20 +6,12 @@
 #чтобы потом плагин нормально видел файлы
 #########################################
 /upload/
-<<<<<<< HEAD
-=======
 /upload
->>>>>>> d88dbd6d44431eec9ef07b5c36d0a3dbf066b097
 /video/
 /images-sd/
 /s/
 !/bitrix/php_interface/
-<<<<<<< HEAD
-/s/
-upload
-=======
 /local/templates/mgn-doctor/img
->>>>>>> d88dbd6d44431eec9ef07b5c36d0a3dbf066b097
 
 yandex_*.html
 google*.html
