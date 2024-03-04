@@ -24,10 +24,9 @@
 						<li><a href="/news/">Новости</a></li>
 						<li><a href="/about/bonusnaya-programma/">Бонусная программа</a></li>
 						<li><a href="/about/poryadok-vydachi-bolnichnykh-listkov/">Выдача больничных листков</a></li>
-						<li><a href="/action/">Чек-апп, акции</a></li>
+<!--						<li><a href="/action/">Чек-апп, акции</a></li>-->
 						<li><a href="/documents/?ELEMENT_ID=727&TAB=6#doc">Подготовка к диагностике и процедурам</a></li>
 						<li><a href="/news/stati/vy-v-poiskakh-idealnogo-podarka/">Подарочные сертификаты</a></li>
-						<li><a href="/documents/full-price.pdf">Скачать полный прайс-лист</a></li>
 					</ul>
 				</div>
 <!--				<div class="footer-item__bottom">-->

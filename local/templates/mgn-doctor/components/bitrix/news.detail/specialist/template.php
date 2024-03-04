@@ -163,18 +163,19 @@ $name = $arResult["NAME"];?>
 								</div>
 								<?endif;?>
 
-								<?if($noCalendarFlag==true && $noCalendar==false){?>
+								<?
+                                /*if($noCalendarFlag==true && $noCalendar==false){?>
 									<div class="specialists-item__btn">
 										<input type="hidden" value="<?=$arResult['ID']?>" name="DOCTOR">
 										<?/*<button class="btn btn-grey-tr btn-spec-signup" type="submit">Записаться на приём</a></button>*/?>
-										<?if($arResult['DISPLAY_PROPERTIES']['SPECIALIZATION']['DISPLAY_VALUE']=="Инструктор по плаванию"){?>
+										<?/*if($arResult['DISPLAY_PROPERTIES']['SPECIALIZATION']['DISPLAY_VALUE']=="Инструктор по плаванию"){?>
 											<a href="#order-appointment" data-fancybox="" data-src="#order-appointment" id="doctorOrder" class="btn btn-grey-tr btn-spec-signup">Записаться на занятие</a>
 										<?}else{?>
 											<a href="#order-appointment" data-fancybox="" data-src="#order-appointment" id="doctorOrder" class="btn btn-grey-tr btn-spec-signup">Записаться на приём</a>
-										<?}?>
-										<?/*<a href="/personal/?ID=<?= $arResult['ID'] ?>" class="btn btn-grey-tr btn-spec-signup">Записаться на приём</a>*/?>
+										<?}*/?>
+										<?/*<a href="/personal/?ID=<?= $arResult['ID'] ?>" class="btn btn-grey-tr btn-spec-signup">Записаться на приём</a>*//*?>
 									</div>
-								<?}?>
+								<?}*/?>
 							</div>
 						</div>
 					</div>
@@ -339,7 +340,7 @@ $name = $arResult["NAME"];?>
 										$res=CIblockElement::GetList(["DATE_CREATE"=>"DESC"], $arFilter, false, $arPages, $arSelect);
 										while($ob=$res->GetNextElement()){
 											$arFields=$ob->GetFields();
-											echo '<li><span><a href="#order-appointment" data-fancybox="" data-src="#order-appointment">'.$arFields['NAME'].'</a></span>';
+											echo '<li><span>'.$arFields['NAME'].'</span>';
 											echo '<span class="price">'.CurrencyFormat($arFields['CATALOG_PRICE_1'], "RUB").'</span></li>';
 										}
 									}?>
