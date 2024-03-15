@@ -65,20 +65,13 @@ $this->setFrameMode(true);
 									<h6 class="contacts-info__title">Контакты</h6>
 									<? foreach($arResult["DISPLAY_PROPERTIES"]["PHONE"]["VALUE"] as $Value) echo '<a href="tel:'.$Value.'" class="phone contacts-info__phone">'.$Value.'</a>'; ?>
 									<? echo '<a href="mailto:'.$arResult["DISPLAY_PROPERTIES"]["E_MAIL"]["VALUE"].'" class="mail email-gtag contacts-info__email">'.$arResult["DISPLAY_PROPERTIES"]["E_MAIL"]["VALUE"].'</a>'; ?>
-								</div>
-								<div class="contacts-info__item">
-									<a class="btn btn-grey header__btn open_ondocwidjet btn-lred contacts-info__btn">Записаться на приём</a>
-									<!-- <a href="#order-appointment" data-fancybox="" data-src="#order-appointment" class="btn btn-lred contacts-info__btn">Записаться на приём</a> -->
-									<?if($arResult["ID"]=='727'){?>
-										<a href="/specialists/raspisanie-vrachey/?CLINIC=1" class="btn btn-grey contacts-info__btn">Расписание</a>
-									<?}?>
-									<?if($arResult["ID"]=='728'){?>
-										<a href="/specialists/raspisanie-vrachey/?CLINIC=2" class="btn btn-grey contacts-info__btn">Расписание</a>
-									<?}?>
-									<?if($arResult["ID"]=='1240'){?>
-										<a href="/specialists/raspisanie-vrachey/?CLINIC=3" class="btn btn-grey contacts-info__btn">Расписание</a>
-									<?}?>
-								</div>
+
+                                    <?if(!empty($arResult["PROPERTIES"]["corp_mail"]['VALUE'])):?>
+                                        <br>
+                                        <h6 class="contacts-info__title">Корпоративный отдел</h6>
+                                        <?='<a href="mailto:'.$arResult["PROPERTIES"]["corp_mail"]["VALUE"].'" class="mail email-gtag contacts-info__email">'.$arResult["PROPERTIES"]["corp_mail"]["VALUE"].'</a>'; ?>
+                                    <?endif;?>
+                                </div>
 							</div>
 						</div>
 					</div>

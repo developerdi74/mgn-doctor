@@ -15,7 +15,7 @@ $this->setFrameMode(true);?>
 <section class="contacts">
 	<div class="container">
 		<div class="row row-contacts-title ">
-			<h1 class="page-title contacts__title">Адреса и телефоны медицинских центров Семейный доктор в Магнитогорске</h1>
+			<h1 class="page-title">Адреса и телефоны медицинских центров Семейный доктор в Магнитогорске</h1>
 		</div>
 		<?foreach($arResult["ITEMS"] as $arItem){
 			if(empty($arItem['PREVIEW_TEXT'])) continue;
@@ -40,20 +40,15 @@ $this->setFrameMode(true);?>
 										<h6 class="contacts-info__title">Контакты</h6>
 										<? foreach($arItem["DISPLAY_PROPERTIES"]["PHONE"]["VALUE"] as $Value) echo '<a href="tel:'.$Value.'" class="phone contacts-info__phone">'.$Value.'</a>'; ?>
 										<? echo '<a href="mailto:'.$arItem["DISPLAY_PROPERTIES"]["E_MAIL"]["VALUE"].'" class="mail email-gtag contacts-info__email">'.$arItem["DISPLAY_PROPERTIES"]["E_MAIL"]["VALUE"].'</a>'; ?>
-									</div>
-									<div class="contacts-info__item">
-										<a href="#order-appointment" data-fancybox="" data-src="#order-appointment" class="btn btn-lred contacts-info__btn">Записаться на приём</a>
-										<?if($arItem["ID"]=='727'){?>
-											<a href="/specialists/raspisanie-vrachey/?CLINIC=1" class="btn btn-grey contacts-info__btn">Расписание</a>
-										<?}?>
-										<?if($arItem["ID"]=='728'){?>
-											<a href="/specialists/raspisanie-vrachey/?CLINIC=2" class="btn btn-grey contacts-info__btn">Расписание</a>
-										<?}?>
-										<?if($arItem["ID"]=='1240'){?>
-											<a href="/specialists/raspisanie-vrachey/?CLINIC=3" class="btn btn-grey contacts-info__btn">Расписание</a>
-										<?}?>
-									</div>
-								</div>
+
+                                        <?if(!empty($arItem["PROPERTIES"]["corp_mail"]['VALUE'])):?>
+                                            <br>
+                                            <h6 class="contacts-info__title">Корпоративный отдел</h6>
+                                            <?='<a href="mailto:'.$arItem["PROPERTIES"]["corp_mail"]["VALUE"].'" class="mail email-gtag contacts-info__email">'.$arItem["PROPERTIES"]["corp_mail"]["VALUE"].'</a>'; ?>
+                                        <?endif;?>
+                                    </div>
+
+                                </div>
 							</div>
 						</div>
 					</div>

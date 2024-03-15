@@ -124,7 +124,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 			3 => "PHONE",
 			4 => "OPENING_HOURS",
 			5 => "PHOTO",
-			6 => "",
+			6 => "corp_mail",
+			7 => "",
 		),
 		"IBLOCK_URL" => "",
 		"DETAIL_URL" => "",
@@ -226,6 +227,10 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 	}
 }
 else{
+
+    $APPLICATION->SetTitle("Контакты МЦ Семейный доктор в Магнитогорске");
+    $APPLICATION->SetPageProperty("keywords", "адреса, телефоны, корпоративный отдел, профосмотр, медецинский центр, контакты");
+    $APPLICATION->SetPageProperty("description", "Контактная информация медицинских центров Семейный доктор: адреса филиалов, телефон единной справочной службы.");
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"contact", 
@@ -249,7 +254,8 @@ $APPLICATION->IncludeComponent(
 			2 => "E_MAIL",
 			3 => "PHONE",
 			4 => "OPENING_HOURS",
-			5 => "",
+			5 => "corp_mail",
+			6 => "",
 		),
 		"CHECK_DATES" => "Y",
 		"DETAIL_URL" => "",
@@ -297,7 +303,8 @@ $APPLICATION->IncludeComponent(
 		"COMPOSITE_FRAME_TYPE" => "AUTO"
 	),
 	false
-);?><br>
+);?>
+    <? include "contacts.php"?>
 <?}?>
 
 <?require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");?>

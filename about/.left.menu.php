@@ -8,7 +8,7 @@ $aMenuLinks = array(
 		""
 	),
 
-	array(
+/*	array(
 		"ул. Жукова, 11",
 		"/about/klinika-na-zhukova/",
 		array(),
@@ -28,10 +28,10 @@ $aMenuLinks = array(
 		array(),
 		array("img" => "clinic.svg"),
 		""
-	),
+	),*/
 	array(
 		"Контакты",
-		"/about/kontakty/",
+		"/about/",
 		array(),
 		array("img" => "contacts.svg"),
 		""
